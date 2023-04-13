@@ -6,7 +6,6 @@ import { VscHeart } from 'react-icons/vsc'
 import { FiShoppingCart } from 'react-icons/fi'
 import { HiMagnifyingGlass } from 'react-icons/hi2'
 
-
 export function Header() {
   return (
     <header className="flex flex-col flex-wrap border-b-[1px] border-opacity-30 border-black">
@@ -28,11 +27,22 @@ export function Header() {
               />
             </Link>
           </h1>
-          <div className='flex gap-3 items-center text-sm lg:text-lg xl:gap-6 2xl:gap-12'>
-            <Link href="/" className='hover:underline underline-offset-[5px] decoration-gray-800'>Home</Link>
-            <Link href="/" className='hover:underline underline-offset-[5px] decoration-gray-800'>Contact</Link>
-            <Link href="/" className='hover:underline underline-offset-[5px] decoration-gray-800'>About</Link>
-            <Link href="/" className='hover:underline underline-offset-[5px] decoration-gray-800'>Sign Up</Link>
+
+          <div>
+            <ul className='flex gap-3 items-center text-sm lg:text-lg xl:gap-6 2xl:gap-12'>
+              <li>
+                <Link href="/" className='hover:underline underline-offset-[5px] decoration-gray-800'>Home</Link>
+              </li>
+              <li>
+                <Link href="/" className='hover:underline underline-offset-[5px] decoration-gray-800'>Contact</Link>
+              </li>
+              <li>
+                <Link href="/" className='hover:underline underline-offset-[5px] decoration-gray-800'>About</Link>
+              </li>
+              <li>
+                <Link href="/" className='hover:underline underline-offset-[5px] decoration-gray-800'>Sign Up</Link>
+              </li>
+            </ul>
           </div>
         </div>
         <div className='flex gap-6 mx-4 items-center justify-center md:justify-between'>
@@ -43,11 +53,17 @@ export function Header() {
               placeholder='What are you looking for?'
               className='text-xs bg-[#eeeeee] rounded py-2 w-60 pl-5'
             />
-            <button><HiMagnifyingGlass size={23} className='-ml-[2.16rem]' /></button>
+            <button aria-label='Search'>
+              <HiMagnifyingGlass size={23} className='-ml-[2.16rem]' />
+            </button>
           </div>
           <div className='flex gap-4'>
-            <button><VscHeart size={23} /></button>
-            <button><FiShoppingCart size={23} /></button>
+            <Link href="/" aria-label='Wishlist' >
+              <VscHeart size={23} />
+            </Link>
+            <Link href="/" aria-label='Cart'>
+              <FiShoppingCart size={23} />
+            </Link>
           </div>
         </div>
       </section>
