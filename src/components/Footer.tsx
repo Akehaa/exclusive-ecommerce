@@ -15,7 +15,7 @@ import { RiCopyrightLine } from 'react-icons/ri'
 export function Footer() {
   return (
     <footer className="bg-black text-exclusive-text-1">
-      <section className='flex flex-row flex-wrap justify-center py-10 px-10 gap-x-10 md:gap-x-2 md:mx-auto lg:w-5/6 lg:pt-20 lg:justify-between lg:p-0 lg:pb-[3.75rem]'>
+      <section className='flex flex-row flex-wrap justify-center py-10 px-10 gap-x-10 md:gap-x-2 md:mx-auto lg:w-5/6 lg:pt-20 lg:justify-between lg:p-0'>
         <div className='flex flex-col mb-6 md:mb-0'>
           <Image
             src={Exclusive}
@@ -104,9 +104,9 @@ export function Footer() {
           </div>
         </div>
       </section>
-      <div className='flex items-center justify-center pb-6 opacity-40 gap-[0.375rem]'>
-        <span><RiCopyrightLine size={22}/></span>
-        <span className='font-light'>Copyright Rimel 2022. All right reserved</span>
+      <div className='flex items-center justify-center pb-6 opacity-30 gap-[0.375rem] border-t-2 border-white border-opacity-25'>
+        <span className='mt-4'><RiCopyrightLine size={22}/></span>
+        <span className='font-light mt-4'>Copyright Rimel 2022. All right reserved</span>
       </div>
     </footer>
   )
