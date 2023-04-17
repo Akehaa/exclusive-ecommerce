@@ -1,87 +1,83 @@
 "use client";
 
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
-import 'keen-slider/keen-slider.min.css'
-import { useKeenSlider } from 'keen-slider/react'
+import * as Popover from '@radix-ui/react-popover';
+import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
+
 
 export function NavigationBar() {
-  const [ref] = useKeenSlider<HTMLDivElement>({
-    breakpoints: {
-      "(min-width: 300px)": {
-        slides: { perView: 4, spacing: 12, number: 8 },
-      },
-      "(min-width: 700px)": {
-        slides: { perView: 5, spacing: 10 },
-      },
-    },
-  })
-
   return (
-    <NavigationMenu.Root ref={ref} className="keen-slider text-xs border-b-[1px] border-opacity-30 border-black flex-col md:px-3 lg:text-base lg:flex-row">
-      <NavigationMenu.List className='flex lg:flex-col '>
-        <NavigationMenu.Item className='keen-slider__slide flex py-1 items-center'>
-          <NavigationMenu.Trigger>
-            Woman’s Fashion
-          </NavigationMenu.Trigger>
-          <NavigationMenu.Content>
-            <NavigationMenu.Link href='/'>
-              Bags
-            </NavigationMenu.Link>
-          </NavigationMenu.Content>
+    <NavigationMenu.Root className="text-xs border lg:text-base">
+      <NavigationMenu.List className=' items-c flex flex-col gap-4 border-r-[1px] border-opacity-30 border-black'>
+        <NavigationMenu.Item>
+          <Popover.Root>
+            <Popover.Trigger className='flex items-center'>
+              Woman's Fashion
+              <MdOutlineKeyboardArrowRight size={24} />
+            </Popover.Trigger>
+            <Popover.Portal>
+              <Popover.Content side='right'>
+                <NavigationMenu.Link href='#'>
+                  Bags
+                </NavigationMenu.Link>
+              </Popover.Content>
+            </Popover.Portal>
+          </Popover.Root>
         </NavigationMenu.Item>
 
-        <NavigationMenu.Item className='keen-slider__slide flex py-1 items-center'>
-          <NavigationMenu.Trigger>
-            Men’s Fashion
-          </NavigationMenu.Trigger>
-          <NavigationMenu.Content>
-            <NavigationMenu.Link href='/'>
-              Jackets
-            </NavigationMenu.Link>
-          </NavigationMenu.Content>
+        <NavigationMenu.Item>
+          <Popover.Root>
+            <Popover.Trigger className='flex items-center'>
+              Mens's Fashion
+              <MdOutlineKeyboardArrowRight size={24} />
+            </Popover.Trigger>
+            <Popover.Portal>
+              <Popover.Content side='right'>
+                <NavigationMenu.Link href='#'>
+                  Jacket
+                </NavigationMenu.Link>
+              </Popover.Content>
+            </Popover.Portal>
+          </Popover.Root>
         </NavigationMenu.Item>
 
-        <NavigationMenu.Item className='keen-slider__slide flex py-1 items-center'>
-          <NavigationMenu.Link href='/'>
+        <NavigationMenu.Item>
+          <NavigationMenu.Link href='#'>
             Electronics
           </NavigationMenu.Link>
         </NavigationMenu.Item>
 
-        <NavigationMenu.Item className='keen-slider__slide flex py-1 items-center'>
-          <NavigationMenu.Link href='/'>
+        <NavigationMenu.Item>
+          <NavigationMenu.Link href='#'>
             Home & Lifestyle
           </NavigationMenu.Link>
         </NavigationMenu.Item>
 
-        <NavigationMenu.Item className='keen-slider__slide flex py-1 items-center'>
-          <NavigationMenu.Link href='/'>
+        <NavigationMenu.Item>
+          <NavigationMenu.Link href='#'>
             Medicine
           </NavigationMenu.Link>
         </NavigationMenu.Item>
 
-        <NavigationMenu.Item className='keen-slider__slide flex py-1 items-center'>
-          <NavigationMenu.Link href='/'>
+        <NavigationMenu.Item>
+          <NavigationMenu.Link href='#'>
             Baby’s & Toys
           </NavigationMenu.Link>
         </NavigationMenu.Item>
 
-        <NavigationMenu.Item className='keen-slider__slide flex py-1 items-center'>
-          <NavigationMenu.Link href='/'>
+        <NavigationMenu.Item>
+          <NavigationMenu.Link href='#'>
             Groceries & Pets
           </NavigationMenu.Link>
         </NavigationMenu.Item>
 
-        <NavigationMenu.Item className='keen-slider__slide flex py-1 items-center'>
-          <NavigationMenu.Link href='/'>
+        <NavigationMenu.Item>
+          <NavigationMenu.Link href='#'>
             Health & Beauty
           </NavigationMenu.Link>
         </NavigationMenu.Item>
-
-
-
         <NavigationMenu.Indicator />
       </NavigationMenu.List>
-
       <NavigationMenu.Viewport />
     </NavigationMenu.Root>
   )

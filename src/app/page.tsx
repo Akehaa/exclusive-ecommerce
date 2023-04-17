@@ -6,10 +6,10 @@ export default function Home() {
 
   return (
     <main>
-      <section className="flex-col">
-        <div>
+      <section className="flex ">
+        <aside>
           <NavigationBar />
-        </div>
+        </aside>
         <div>
           a
         </div>

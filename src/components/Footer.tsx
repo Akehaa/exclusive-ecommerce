@@ -42,19 +42,19 @@ export function Footer() {
 
         <div className='flex flex-col mb-6'>
           <h3 className='mb-6 font-medium text-xl'>Account</h3>
-          <Link href="/" className='mb-4'>My Account</Link>
-          <Link href="/" className='mb-4' >Login / Register</Link>
-          <Link href="/" className='mb-4'>Cart</Link>
-          <Link href="/" className='mb-4'>Wishlist</Link>
-          <Link href="/" className='mb-4'>Shop</Link>
+          <Link href="#" className='mb-4'>My Account</Link>
+          <Link href="#" className='mb-4' >Login / Register</Link>
+          <Link href="#" className='mb-4'>Cart</Link>
+          <Link href="#" className='mb-4'>Wishlist</Link>
+          <Link href="#" className='mb-4'>Shop</Link>
         </div>
 
         <div className='flex flex-col mb-6'>
           <h3 className='mb-6 font-medium text-xl '>Quick Link</h3>
-          <Link href="/" className='mb-4'>Privacy Policy</Link>
-          <Link href="/" className='mb-4'>Terms Of Use</Link>
-          <Link href="/" className='mb-4'>FAQ</Link>
-          <Link href="/" className='mb-4'>Contact</Link>
+          <Link href="#" className='mb-4'>Privacy Policy</Link>
+          <Link href="#" className='mb-4'>Terms Of Use</Link>
+          <Link href="#" className='mb-4'>FAQ</Link>
+          <Link href="#" className='mb-4'>Contact</Link>
         </div>
 
         <div className='flex flex-col'>
@@ -73,7 +73,7 @@ export function Footer() {
                 className='mt-2'
               />
               <div className='flex flex-col items-center'>
-                <Link href="/">
+                <Link href="#">
                   <Image
                     src={GooglePlay}
                     width={0}
@@ -83,7 +83,7 @@ export function Footer() {
                     className='w-32'
                   />
                 </Link>
-                <Link href="/">
+                <Link href="#">
                   <Image
                     src={AppStore}
                     width={0}
@@ -97,10 +97,10 @@ export function Footer() {
             </div>
           </div>
           <div className='flex gap-6'>
-            <Link href="/"><RiFacebookLine size={24} /></Link>
-            <Link href="/"><RiTwitterLine size={24} /></Link>
-            <Link href="/"><RiInstagramLine size={24} /></Link>
-            <Link href="/"><RiLinkedinLine size={24} /></Link>
+            <Link href="#"><RiFacebookLine size={24} /></Link>
+            <Link href="#"><RiTwitterLine size={24} /></Link>
+            <Link href="#"><RiInstagramLine size={24} /></Link>
+            <Link href="#"><RiLinkedinLine size={24} /></Link>
           </div>
         </div>
       </section>
