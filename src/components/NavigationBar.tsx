@@ -7,16 +7,78 @@ import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 
 export function NavigationBar() {
   return (
-    <NavigationMenu.Root className="text-xs border lg:text-base">
-      <NavigationMenu.List className=' items-c flex flex-col gap-4 border-r-[1px] border-opacity-30 border-black'>
-        <NavigationMenu.Item>
+    <NavigationMenu.Root className="text-xs w-32 pl-5 lg:text-base">
+      <NavigationMenu.List className=' flex flex-col gap-4 border-r-[1px] border-opacity-30 border-black'>
+        <NavigationMenu.Item className='flex justify-between mt-4'>
           <Popover.Root>
-            <Popover.Trigger className='flex items-center'>
+            <Popover.Trigger>
               Woman's Fashion
+            </Popover.Trigger>
+            <Popover.Trigger>
               <MdOutlineKeyboardArrowRight size={24} />
             </Popover.Trigger>
             <Popover.Portal>
-              <Popover.Content side='right'>
+              <Popover.Content side='right' sideOffset={10} className='bg-red-400 flex flex-wrap fixed w-56 h-56 overflow-scroll text-sm gap-3 py-4 pr-4 pl-6 mt-[-1.5rem]'>
+                <NavigationMenu.Link href='#'>
+                  bagsagsdyhsdysdyts
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bagshfds
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bags
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bagsaras
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bagsjfgdjkdtyykty
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bagsgfjdfg
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bags
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bags
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bagsfsd
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bagshhfsd
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bags
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bags
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bags
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bags
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bags
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bags
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bags
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bags
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bags
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Bags
+                </NavigationMenu.Link>
                 <NavigationMenu.Link href='#'>
                   Bags
                 </NavigationMenu.Link>
@@ -25,14 +87,61 @@ export function NavigationBar() {
           </Popover.Root>
         </NavigationMenu.Item>
 
-        <NavigationMenu.Item>
+        <NavigationMenu.Item className='flex justify-between'>
           <Popover.Root>
-            <Popover.Trigger className='flex items-center'>
-              Mens's Fashion
+            <Popover.Trigger>
+              Men's Fashion
+            </Popover.Trigger>
+            <Popover.Trigger>
               <MdOutlineKeyboardArrowRight size={24} />
             </Popover.Trigger>
             <Popover.Portal>
-              <Popover.Content side='right'>
+              <Popover.Content side='right' sideOffset={10} className='bg-red-400 flex flex-wrap fixed w-56 h-56 overflow-scroll text-sm gap-3 py-4 pr-4 pl-6 mt-[-4.5rem]'>
+                <NavigationMenu.Link href='#'>
+                  Jacket
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Jacket
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Jacket
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Jacket
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Jacket
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Jacket
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Jacket
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Jacket
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Jacket
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Jacket
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Jacket
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Jacket
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Jacket
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Jacket
+                </NavigationMenu.Link>
+                <NavigationMenu.Link href='#'>
+                  Jacket
+                </NavigationMenu.Link>
                 <NavigationMenu.Link href='#'>
                   Jacket
                 </NavigationMenu.Link>

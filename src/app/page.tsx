@@ -11,7 +11,7 @@ export default function Home() {
           <NavigationBar />
         </aside>
         <div>
-          a
+          
         </div>
       </section>
     </main>
