@@ -11,6 +11,7 @@ import { RiTwitterLine } from 'react-icons/ri'
 import { RiInstagramLine } from 'react-icons/ri'
 import { RiLinkedinLine } from 'react-icons/ri'
 import { RiCopyrightLine } from 'react-icons/ri'
+import { RiSendPlane2Line } from 'react-icons/ri'
 
 export function Footer() {
   return (
@@ -27,15 +28,20 @@ export function Footer() {
           />
           <h3 className='flex flex-col mb-6 font-medium text-xl'>Subscribe</h3>
           <span className='font-extralight mb-4'>Get 10% off your first order</span>
-          <input
-            placeholder='Enter your email'
-            className='py-3 pl-4 rounded-[0.250rem] bg-transparent border placeholder:opacity-70'>
-          </input>
+          <div className='flex items-center'>
+            <input
+              placeholder='Enter your email'
+              className='py-3 pl-4 pr-10 w-4/5 rounded-[0.250rem] bg-transparent border placeholder:opacity-70'>
+            </input>
+            <button>
+              <RiSendPlane2Line size={25} className='-ml-10' />
+            </button>
+          </div>
         </div>
 
         <div className='flex flex-col mb-6'>
           <h3 className='mb-6 font-medium text-xl'>Support</h3>
-          <span className='mb-4 text-center'>111 Bijoy sarani, Dhaka,<br/>  DH 1515, Bangladesh.</span>
+          <span className='mb-4 text-center'>111 Bijoy sarani, Dhaka,<br />  DH 1515, Bangladesh.</span>
           <span className='mb-4'>exclusive@gmail.com</span>
           <span className='mb-4'>+88015-88888-9999</span>
         </div>
@@ -105,7 +111,7 @@ export function Footer() {
         </div>
       </section>
       <div className='flex items-center justify-center pb-6 opacity-30 gap-[0.375rem] border-t-2 border-white border-opacity-25'>
-        <span className='mt-4'><RiCopyrightLine size={22}/></span>
+        <span className='mt-4'><RiCopyrightLine size={22} /></span>
         <span className='font-light mt-4'>Copyright Rimel 2022. All right reserved</span>
       </div>
     </footer>
