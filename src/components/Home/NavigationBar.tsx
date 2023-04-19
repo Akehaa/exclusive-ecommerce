@@ -17,10 +17,10 @@ export function NavigationBar() {
             </Popover.Trigger>
             <Popover.Portal>
               {/* Popover animation: https://www.radix-ui.com/docs/primitives/components/popover */}
-              <Popover.Content side='right' sideOffset={10} className='flex flex-col fixed w-52 h-52 lg:w-80 lg:h-80 gap-3 py-4 pr-4 pl-6 mt-[-1.5rem] overflow-auto text-sm bg-exclusive-background bg-transparent rounded-md shadow-[0_5px_8px_1px_hsla(206,22%,7%,.35)] will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade'>
+              <Popover.Content side='right' sideOffset={10} className='flex flex-col fixed w-52 h-52 lg:w-80 lg:h-80 gap-3 py-4 pr-4 pl-6 mt-[-1.5rem] overflow-auto text-sm bg-exclusive-background rounded-md shadow-[0_5px_8px_1px_hsla(206,22%,7%,.35)] will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade'>
                 <h2 className='text-base font-medium'>Woman's Fashion</h2>
                 <div className='grid grid-cols-2 gap-y-3'>
-                  <NavigationMenu.Link href='#' className=''>
+                  <NavigationMenu.Link href='#'>
                     Bags
                   </NavigationMenu.Link>
                   <NavigationMenu.Link href='#'>
@@ -67,7 +67,7 @@ export function NavigationBar() {
             </Popover.Trigger>
             <Popover.Portal>
               {/* Popover animation: https://www.radix-ui.com/docs/primitives/components/popover */}
-              <Popover.Content side='right' sideOffset={10} className='flex flex-col fixed w-52 h-52 lg:w-80 lg:h-80 gap-3 py-4 pr-4 pl-6 mt-[-4.4rem] overflow-auto text-sm bg-exclusive-background bg-transparent rounded-md shadow-[0_5px_8px_1px_hsla(206,22%,7%,.35)] will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade'>
+              <Popover.Content side='right' sideOffset={10} className='flex flex-col fixed w-52 h-52 lg:w-80 lg:h-80 gap-3 py-4 pr-4 pl-6 mt-[-4.4rem] overflow-auto text-sm bg-exclusive-background rounded-md shadow-[0_5px_8px_1px_hsla(206,22%,7%,.35)] will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade'>
                 <h2 className='text-base font-medium '>Men's Fashion</h2>
                 <div className='grid grid-cols-2 gap-y-3'>
                   <NavigationMenu.Link href='#'>
