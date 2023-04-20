@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Exclusive from '../assets/logo-header.svg'
+import Exclusive from '@/public/header/logo-header.svg'
 import Link from 'next/link'
 
 import { VscHeart } from 'react-icons/vsc'

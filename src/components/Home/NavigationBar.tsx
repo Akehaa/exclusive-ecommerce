@@ -16,41 +16,41 @@ export function NavigationBar() {
               <MdOutlineKeyboardArrowRight size={30} className='lg:mr-4' />
             </Popover.Trigger>
             <Popover.Portal>
-            {/* Popover animation by: https://www.radix-ui.com/docs/primitives/components/popover */}
-              <Popover.Content side='right' sideOffset={10} className='flex flex-col fixed w-52 h-52 lg:w-80 lg:h-80 gap-3 py-4 pr-4 pl-6 mt-[-1.5rem] overflow-auto text-sm bg-exclusive-background bg-transparent rounded-md shadow-[0_5px_8px_1px_hsla(206,22%,7%,.35)] will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade'> 
+              {/* Popover animation: https://www.radix-ui.com/docs/primitives/components/popover */}
+              <Popover.Content side='right' sideOffset={10} className='flex flex-col fixed w-52 h-52 lg:w-80 lg:h-80 gap-3 py-4 pr-4 pl-6 mt-[-1.5rem] overflow-auto text-sm bg-exclusive-background rounded-md shadow-[0_5px_8px_1px_hsla(206,22%,7%,.35)] will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade'>
                 <h2 className='text-base font-medium'>Woman's Fashion</h2>
                 <div className='grid grid-cols-2 gap-y-3'>
-                  <NavigationMenu.Link href='#' className='hover:underline decoration-1 underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Bags
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
-                    Tees &Tops
+                  <NavigationMenu.Link href='#'>
+                    Tees & Tops
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Blouses & Shirts
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Sweatshirts
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Knitwear
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Cardigans
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Outerwear
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Dresses
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Blazer & Suits
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Bottoms
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Sweatpants
                   </NavigationMenu.Link>
                 </div>
@@ -66,40 +66,41 @@ export function NavigationBar() {
               <MdOutlineKeyboardArrowRight size={30} className='lg:mr-4' />
             </Popover.Trigger>
             <Popover.Portal>
-              <Popover.Content side='right' sideOffset={10} className='flex flex-col fixed w-52 h-52 lg:w-80 lg:h-80 gap-3 py-4 pr-4 pl-6 mt-[-4.4rem] overflow-auto text-sm bg-exclusive-background bg-transparent rounded-md shadow-[0_5px_8px_1px_hsla(206,22%,7%,.35)] will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade'>
+              {/* Popover animation: https://www.radix-ui.com/docs/primitives/components/popover */}
+              <Popover.Content side='right' sideOffset={10} className='flex flex-col fixed w-52 h-52 lg:w-80 lg:h-80 gap-3 py-4 pr-4 pl-6 mt-[-4.4rem] overflow-auto text-sm bg-exclusive-background rounded-md shadow-[0_5px_8px_1px_hsla(206,22%,7%,.35)] will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade'>
                 <h2 className='text-base font-medium '>Men's Fashion</h2>
                 <div className='grid grid-cols-2 gap-y-3'>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Jacket
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Tees & Tanks
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Shirts
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Polo Shirts
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Bottoms
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Jeans
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Shorts
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Denim
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Outerwear
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Sweatshirts
                   </NavigationMenu.Link>
-                  <NavigationMenu.Link href='#' className='hover:underline underline-offset-[5px] decoration-black'>
+                  <NavigationMenu.Link href='#'>
                     Cardigans & Jumpers
                   </NavigationMenu.Link>
                 </div>
