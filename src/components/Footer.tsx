@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import Exclusive from '../assets/logo-footer.svg'
-import QRcode from '../assets/Qrcode.svg'
-import GooglePlay from '../assets/google-play-badge.png'
-import AppStore from '../assets/app-store-badge.svg'
+import Exclusive from '@/public/footer/logo-footer.svg'
+import QRcode from '@/public/footer/Qrcode.svg'
+import GooglePlay from '@/public/footer/google-play-badge.png'
+import AppStore from '@/public/footer/app-store-badge.svg'
 
 import { RiFacebookLine } from 'react-icons/ri'
 import { RiTwitterLine } from 'react-icons/ri'
