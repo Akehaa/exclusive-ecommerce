@@ -10,7 +10,7 @@ const settings: Settings = {
   dotsClass: "slick-dots slick-thumb",
   infinite: true,
   speed: 650,
-  autoplay: false,
+  autoplay: true,
   autoplaySpeed: 3400,
   pauseOnHover: true,
   slidesToShow: 1,
