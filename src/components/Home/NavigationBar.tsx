@@ -7,9 +7,9 @@ import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 
 export function NavigationBar() {
   return (
-    <NavigationMenu.Root className="text-xs w-32 ml-5 lg:w-64 lg:ml-10 lg:text-base xl:ml-[8.438rem] ">
+    <NavigationMenu.Root className="text-xs w-32 lg:w-64 lg:text-base">
       <NavigationMenu.List className=' flex flex-col gap-4 border-r-[1px] border-opacity-30 border-black'>
-        <NavigationMenu.Item className='flex justify-between mt-4'>
+        <NavigationMenu.Item className='flex justify-between mt-5 lg:mt-10'>
           <Popover.Root>
             <Popover.Trigger className='w-full flex justify-between items-center'>
               <span>Woman's Fashion</span>

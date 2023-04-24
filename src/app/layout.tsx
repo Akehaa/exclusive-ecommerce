@@ -13,14 +13,14 @@ export const metadata = {
 
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['300', '400', '500'],
-  variable: '--font-poppins'
+  weight: '400',
+  variable: '--font-poppins',
 })
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['500', '600'],
-  variable: '--font-inter'
+  weight: '600',
+  variable: '--font-inter',
 })
 
 export default function RootLayout({

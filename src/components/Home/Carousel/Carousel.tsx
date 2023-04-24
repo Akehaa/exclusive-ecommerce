@@ -8,6 +8,7 @@ import { Item1 } from "./Item1";
 const settings: Settings = {
   dots: true,
   dotsClass: "slick-dots slick-thumb",
+  arrows: false,
   infinite: true,
   speed: 650,
   autoplay: true,
