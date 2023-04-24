@@ -8,19 +8,19 @@ import { BsArrowRightShort } from 'react-icons/bs'
 
 export function Item1() {
   return (
-    <div className="bg-black h-[250px]">
-      <div className="flex flex-col items-center gap-x-2">
-        <Image src={appleLogo} alt="" width={120} height={49} className="pt-1" />
-        <span className="text-exclusive-text-1 font-sans font-bold text-lg mt-1">
+    <div className="bg-black h-[270px] md:grid md:grid-cols-[45%_55%] lg:h-[315px]">
+      <div className="flex flex-col items-center md:items-start md:ml-10 lg:mx-auto">
+        <Image src={appleLogo} alt="" width={120} height={49} className="pt-2 md:w-36 md:mt-8 md:mb-4 lg:w-40 xl:w-48" />
+        <span className="text-exclusive-text-1 font-inter font-semibold text-lg mt-2 md:text-2xl md:mb-4 lg:text-4xl lg:leading-[4rem] xl:text-4xl">
           Up to 10% <br /> off Voucher
         </span>
-        <Link href="#" className="flex mt-1 text-exclusive-text-1 font-sans font-medium text-xs underline underline-offset-4">
-          <span>Shop Now</span>
-          <BsArrowRightShort size={20} className="text-exclusive-text-1" />
+        <Link href="#" className="flex mt-2 md:items-center">
+          <span className="text-exclusive-text-1 font-poppins font-medium text-xs underline underline-offset-4 md:text-sm md:underline-offset-8">Shop Now</span>
+          <BsArrowRightShort size={22} className="text-exclusive-text-1 md:mt-1" />
         </Link>
       </div>
-      <div className="mt-2 flex justify-center">
-        <Image src={phone} alt="" quality={100} width={496} height={0} className="w-40" />
+      <div className="my-auto md:mt-2">
+        <Image src={phone} alt="" quality={100} width={496} height={0} className="mt-2 w-40 md:w-[31rem] mx-auto" />
       </div>
     </div>
   )

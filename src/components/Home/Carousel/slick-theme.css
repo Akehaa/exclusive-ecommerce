@@ -136,7 +136,7 @@
 
     display: inline-block;
 
-    width: 20px;
+    width: 12px;
     height: 20px;
     margin: 0 5px;
     padding: 0;
@@ -150,8 +150,8 @@
 
     display: block;
 
-    width: 21px;
-    height: 21px;
+    width: 20px;
+    height: 20px;
     padding: 5px;
 
     cursor: pointer;
@@ -175,7 +175,7 @@
 .slick-dots li button:before
 {
     /* font-family: 'slick'; */
-    font-size: 60px;
+    font-size: 40px;
     line-height: 20px;
 
     position: absolute;
