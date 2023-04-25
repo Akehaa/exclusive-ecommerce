@@ -14,6 +14,9 @@ export default function Home() {
           <Carousel />
         </div>
       </section>
+      <section>
+        
+      </section>
     </main>
   )
 }
