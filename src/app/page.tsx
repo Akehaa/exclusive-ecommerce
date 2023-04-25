@@ -1,5 +1,7 @@
 import { Carousel } from "../components/Home/Carousel/Carousel";
 import { NavigationBar } from "../components/Home/NavigationBar";
+import { ProductsOnSaleSlider } from "../components/Home/ProductsOnSaleSlider";
+import { SectionTag } from "../components/Home/SectionTag";
 
 
 export default function Home() {
@@ -14,8 +16,16 @@ export default function Home() {
           <Carousel />
         </div>
       </section>
-      <section>
-        
+      <section className="border-b mb-10">
+        <SectionTag />
+        <div className="flex mb-10 gap-12 lg:gap-24">
+          <h2 className="text-exclusive-text-2 font-inter font-semibold text-xl lg:text-3xl">Flash Sales</h2>
+          <span>counter</span>
+        </div>
+        <div className="mb-16">
+          <ProductsOnSaleSlider />
+        </div>
+        <button className="mb-16 font-medium">View All Products</button>
       </section>
     </main>
   )
