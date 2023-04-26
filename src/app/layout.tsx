@@ -15,12 +15,16 @@ const poppins = Poppins({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-poppins',
+  display: 'swap',
+  fallback: ['system-ui', 'arial']
 })
 
 const inter = Inter({
   subsets: ['latin'],
   weight: '600',
   variable: '--font-inter',
+  display: 'optional',
+  fallback: ['system-ui', 'arial']
 })
 
 export default function RootLayout({
@@ -29,8 +33,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${poppins.variable} ${inter.variable} font-poppins`}>
-      <body>
+    <html lang="en" className={`${poppins.variable} ${inter.variable} font-poppins overflow-x-hidden`}>
+      <body className='overflow-x-hidden'>
         <Header />
         {children}
         <Footer />
