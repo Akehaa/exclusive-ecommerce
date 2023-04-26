@@ -33,8 +33,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${poppins.variable} ${inter.variable} font-poppins`}>
-      <body>
+    <html lang="en" className={`${poppins.variable} ${inter.variable} font-poppins overflow-x-hidden`}>
+      <body className='overflow-x-hidden'>
         <Header />
         {children}
         <Footer />

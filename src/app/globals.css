@@ -7,3 +7,11 @@
     @apply min-h-screen bg-no-repeat bg-exclusive-background
   }
 }
+
+.slick-slide>div {
+  margin-right: 30px;
+}
+
+.slick-list {
+  margin-right: -30px
+}
