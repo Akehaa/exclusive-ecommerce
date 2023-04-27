@@ -15,10 +15,10 @@ module.exports = {
         'exclusive-text-1': '#FAFAFA',
         'exclusive-text-2': '#000000',
 
-        'exclusive-button-1': '#00FF66',
+        'exclusive-primary-1': '#00FF66',
 
-        'exclusive-button-2': '#DB4444',
-        'exclusive-button-2-hover': '#E07575',
+        'exclusive-secondary': '#DB4444',
+        'exclusive-secondary-hover': '#E07575',
       },
 
       fontFamily: {

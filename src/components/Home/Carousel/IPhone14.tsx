@@ -6,9 +6,9 @@ import Link from "next/link";
 
 import { BsArrowRightShort } from 'react-icons/bs'
 
-export function Item1() {
+export function Iphone14() {
   return (
-    <div className="bg-black h-[270px] md:grid md:grid-cols-[45%_55%] lg:h-[315px] -mr-[30px]"> {/* -mr-[30px] due to the margin right on globalcss */}
+    <div className="bg-black h-[274px] md:grid md:grid-cols-[45%_55%] lg:h-[324px] -mr-[30px]"> {/* -mr-[30px] due to the margin right on globalcss */}
       <div className="flex flex-col items-center md:items-start md:ml-10 lg:mx-auto">
         <Image src={appleLogo} alt="iPhone 14 Series" width={120} height={49} className="pt-2 mb-2 md:w-36 md:mt-7 md:mb-7 lg:w-40 xl:w-48" />
         <span className="text-exclusive-text-1 font-inter font-semibold text-lg md:text-2xl lg:text-4xl lg:mb-2 xl:text-5xl">

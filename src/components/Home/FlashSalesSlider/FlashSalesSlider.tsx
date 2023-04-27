@@ -3,6 +3,7 @@
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "./slick-theme.css";
+import { Product } from "./Product";
 
 const settings: Settings = {
   dots: false,
@@ -14,19 +15,19 @@ const settings: Settings = {
   slidesToScroll: 1,
   responsive: [
     {
-      breakpoint: 2000,
+      breakpoint: 2500,
       settings: {
         slidesToShow: 4.5,
       },
     },
     {
-      breakpoint: 1200,
+      breakpoint: 1900,
       settings: {
         slidesToShow: 3.5,
       },
     },
     {
-      breakpoint: 800,
+      breakpoint: 1200,
       settings: {
         slidesToShow: 2.5,
       },
@@ -43,31 +44,31 @@ const settings: Settings = {
 
 export function ProductsOnSaleSlider() {
   return (
-    <div className="">
+    <div>
       <Slider {...settings}>
-        <div className="bg-red-700 h-40">
-          <h3>1</h3>
+        <div className="h-[22rem]">
+          <Product />
         </div>
-        <div className="bg-yellow-700 h-40">
-          <h3>2</h3>
+        <div className="h-[22rem]">
+          <Product />
         </div>
-        <div className="bg-blue-700 h-40">
-          <h3>3</h3>
+        <div className="h-[22rem]">
+          <Product />
         </div>
-        <div className="bg-green-700 h-40">
-          <h3>4</h3>
+        <div className="h-[22rem]">
+          <Product />
         </div>
-        <div className="bg-purple-700 h-40">
-          <h3>5</h3>
+        <div className="h-[22rem]">
+          <Product />
         </div>
-        <div className="bg-orange-700 h-40">
-          <h3>6</h3>
+        <div className="h-[22rem]">
+          <Product />
         </div>
-        <div className="bg-pink-700 h-40">
-          <h3>7</h3>
+        <div className="h-[22rem]">
+          <Product />
         </div>
-        <div className="bg-fuchsia-700 h-40">
-          <h3>8</h3>
+        <div className="h-[22rem]">
+          <Product />
         </div>
       </Slider>
     </div>
