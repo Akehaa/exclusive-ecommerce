@@ -3,7 +3,7 @@
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "./slick-theme.css"
-import { Item1 } from "./Item1";
+import { Iphone14 } from "./IPhone14";
 
 const settings: Settings = {
   dots: true,
@@ -23,19 +23,19 @@ export function Carousel() {
     <div>
       <Slider {...settings}>
         <div>
-          <h3><Item1 /></h3>
+          <h3><Iphone14 /></h3>
         </div>
         <div>
-          <h3><Item1 /></h3>
+          <h3><Iphone14 /></h3>
         </div>
         <div>
-          <h3><Item1 /></h3>
+          <h3><Iphone14 /></h3>
         </div>
         <div>
-          <h3><Item1 /></h3>
+          <h3><Iphone14 /></h3>
         </div>
         <div>
-          <h3><Item1 /></h3>
+          <h3><Iphone14 /></h3>
         </div>
       </Slider>
     </div>

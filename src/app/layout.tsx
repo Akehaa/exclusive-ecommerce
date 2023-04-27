@@ -13,7 +13,7 @@ export const metadata = {
 
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: '400',
+  weight: ['400', '500'],
   variable: '--font-poppins',
   display: 'swap',
   fallback: ['system-ui', 'arial']
@@ -21,7 +21,7 @@ const poppins = Poppins({
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: '600',
+  weight: ['600', '700'],
   variable: '--font-inter',
   display: 'optional',
   fallback: ['system-ui', 'arial']
