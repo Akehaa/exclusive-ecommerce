@@ -15,7 +15,7 @@ const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-poppins',
-  display: 'swap',
+  // display: 'swap',
   fallback: ['system-ui', 'arial']
 })
 
@@ -23,7 +23,7 @@ const inter = Inter({
   subsets: ['latin'],
   weight: ['600', '700'],
   variable: '--font-inter',
-  display: 'optional',
+  // display: 'optional',
   fallback: ['system-ui', 'arial']
 })
 

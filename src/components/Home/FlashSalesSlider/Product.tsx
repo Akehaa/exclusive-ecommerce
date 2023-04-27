@@ -3,6 +3,7 @@ import GamingMonitor from '@/public/home/products/gaming_monitor.svg'
 
 import { FiEye } from 'react-icons/fi'
 import { VscHeart } from 'react-icons/vsc'
+import Link from "next/link";
 
 export function Product() {
   return (
@@ -20,15 +21,21 @@ export function Product() {
           </button>
         </div>
       </div>
-      <div className="flex justify-center mb-4 bg-[#ecebeb] rounded h-[250px] ">
+      <div className="bg-[#ecebeb] flex flex-col items-center mb-4 rounded pt-[3.775rem] h-[15.630rem] group md:pt-[2rem] lg:pt-[0.5rem] ">
         <Image
           src={GamingMonitor}
           alt="Gaming Monitor"
           width={190}
           height={0}
           quality={100}
-          className="px-4 lg:mt-4 md:px-0 lg:w-[220px] 2xl:w-[250px]">
+          className=" px-4 -mt-6  md:px-0 md:-mt-0 lg:w-52 ">
         </Image>
+        <footer className="w-full h-[15.630rem] overflow-hidden">
+          <span
+            className="text-exclusive-text-1 bg-black flex justify-center cursor-pointer rounded-b py-2 font-medium transform translate-y-[110%] opacity-0 group-hover:translate-y-[0%] group-hover:opacity-100 transition-all ease-in-out duration-200 mt-6 md:mt-0 lg:mt-[0.34rem] ">
+            Add To Cart
+          </span>
+        </footer>
       </div>
       <div className="flex flex-col gap-2">
         <div>
