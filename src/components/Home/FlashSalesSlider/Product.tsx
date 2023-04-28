@@ -6,6 +6,7 @@ import { VscHeart } from 'react-icons/vsc'
 import { ProductRating } from "../../ProductRating";
 import Link from "next/link";
 
+
 export function Product() {
   return (
     <div>

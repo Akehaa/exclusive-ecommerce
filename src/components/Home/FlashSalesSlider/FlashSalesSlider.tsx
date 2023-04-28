@@ -5,9 +5,13 @@ import "slick-carousel/slick/slick.css";
 import "./slick-theme.css";
 import { Product } from "./Product";
 
+import { useRef } from "react";
+import {HiArrowRight} from 'react-icons/hi'
+import {HiArrowLeft} from 'react-icons/hi'
+
 const settings: Settings = {
   dots: false,
-  arrows: true,
+  arrows: false,
   infinite: false,
   speed: 550,
   slidesToShow: 5.5,
@@ -49,9 +53,15 @@ const settings: Settings = {
 
 
 export function ProductsOnSaleSlider() {
+  const slider = useRef(null);
+
   return (
     <div>
-      <Slider {...settings}>
+      <div className="flex justify-end mr-6 gap-2 pb-[2.5rem] -mt-[4.4rem] md:mr-[6%] md:pb-[3.1rem] md:-mt-[5rem] lg:mr-[10%] 2xl:mr-[11%]">
+        <button className="bg-[#ecebeb] p-3 rounded-full w-9 h-9 md:w-12 md:h-12" onClick={() => slider?.current?.slickPrev()}><HiArrowLeft size="auto"/></button>
+        <button className="bg-[#ecebeb] p-3 rounded-full w-9 h-9 md:w-12 md:h-12" onClick={() => slider?.current?.slickNext()}><HiArrowRight size="auto"/></button>
+      </div>
+      <Slider ref={slider} {...settings}>
         <div className="h-[22rem]">
           <Product />
         </div>
