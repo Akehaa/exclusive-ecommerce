@@ -1,7 +1,10 @@
+'use client';
+
 import { Carousel } from "../components/Home/Carousel/Carousel";
 import { NavigationBar } from "../components/Home/NavigationBar";
 import { ProductsOnSaleSlider } from "../components/Home/FlashSalesSlider/FlashSalesSlider";
 import { SectionTag } from "../components/Home/SectionTag";
+import { ProductRating } from "../components/ProductRating";
 
 
 export default function Home() {
@@ -22,7 +25,7 @@ export default function Home() {
           <h2 className="text-exclusive-text-2 font-inter font-semibold text-xl lg:text-3xl">Flash Sales</h2>
           <span>counter</span>
         </div>
-        <div className="mb-16 -mr-6 md:-mr-10 lg:-mr-24 xl:-mr-32 2xl:-mr-48">
+        <div className="mb-16 -mr-6 md:-mr-10 lg:-mr-24 xl:-mr-32 2xl:-mr-52">
           <ProductsOnSaleSlider />
         </div>
         <div className="flex justify-center">
