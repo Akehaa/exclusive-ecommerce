@@ -16,7 +16,7 @@ const poppins = Poppins({
   weight: ['400', '500'],
   variable: '--font-poppins',
   // display: 'swap',
-  fallback: ['system-ui', 'arial']
+  fallback: ['sans','system-ui', 'arial']
 })
 
 const inter = Inter({
@@ -24,7 +24,7 @@ const inter = Inter({
   weight: ['600', '700'],
   variable: '--font-inter',
   // display: 'optional',
-  fallback: ['system-ui', 'arial']
+  fallback: ['sans','system-ui', 'arial']
 })
 
 export default function RootLayout({

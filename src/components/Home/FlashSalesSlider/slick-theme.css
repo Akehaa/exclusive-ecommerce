@@ -19,39 +19,49 @@
     line-height: 0;
 
     position: absolute;
-    top: 50%;
+    top: 0;
+    left: 28px;
+    margin-left: 87%;
 
     display: block;
 
-    width: 20px;
-    height: 20px;
-    padding: 0;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
+    width: 46px;
+    height: 46px;
+    padding: 0px;
+    border-radius: 25px;
+    -webkit-transform: translate(0, -300%);
+    -ms-transform: translate(0, -300%);
+    transform: translate(0, -180%);
 
     cursor: pointer;
 
-    color: transparent;
+    color: black;
     border: none;
     outline: none;
-    background: transparent;
+    background: #ecebeb;
+
+    @media only screen and (max-width: 600px) {
+    margin-left: 76%;
+    width: 36px;
+    height: 36px;
+    transform: translate(0, -200%);
+}
 }
 .slick-prev:hover,
 .slick-prev:focus,
 .slick-next:hover,
 .slick-next:focus
 {
-    color: transparent;
+    color: black;
     outline: none;
-    background: transparent;
+    background:#d4d3d3 ;
 }
 .slick-prev:hover:before,
 .slick-prev:focus:before,
 .slick-next:hover:before,
 .slick-next:focus:before
 {
-    opacity: 1;
+    color:black;;
 }
 .slick-prev.slick-disabled:before,
 .slick-next.slick-disabled:before
@@ -66,8 +76,7 @@
     font-size: 20px;
     line-height: 1;
 
-    opacity: .75;
-    color: white;
+    color: black;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
