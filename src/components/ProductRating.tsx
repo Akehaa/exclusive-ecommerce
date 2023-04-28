@@ -22,7 +22,7 @@ export function ProductRating() {
         emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
       />
       <Box sx={{ ml: 1 }}>
-        <span className='opacity-50 font-semibold'>(99)</span>
+        <span className='opacity-50 font-semibold text-sm'>(99)</span>
       </Box>
     </Box>
   );

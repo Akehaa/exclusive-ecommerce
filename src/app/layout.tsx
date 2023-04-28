@@ -15,16 +15,16 @@ const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-poppins',
-  display: 'swap',
-  fallback: ['system-ui', 'arial']
+  // display: 'swap',
+  fallback: ['sans','system-ui', 'arial']
 })
 
 const inter = Inter({
   subsets: ['latin'],
   weight: ['600', '700'],
   variable: '--font-inter',
-  display: 'optional',
-  fallback: ['system-ui', 'arial']
+  // display: 'optional',
+  fallback: ['sans','system-ui', 'arial']
 })
 
 export default function RootLayout({

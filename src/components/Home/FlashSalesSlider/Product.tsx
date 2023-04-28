@@ -4,6 +4,7 @@ import GamingMonitor from '@/public/home/products/gaming_monitor.svg'
 import { FiEye } from 'react-icons/fi'
 import { VscHeart } from 'react-icons/vsc'
 import { ProductRating } from "../../ProductRating";
+import Link from "next/link";
 
 export function Product() {
   return (
@@ -38,8 +39,8 @@ export function Product() {
         </footer>
       </div>
       <div className="flex flex-col gap-2">
-        <div>
-          <span className="font-medium line-clamp-4">IPS LCD Gaming Monitor</span>
+        <div className="flex">
+          <Link href="#" className="font-medium line-clamp-4">IPS LCD Gaming Monitor</Link>
         </div>
         <div className="flex gap-3">
           <span className="text-exclusive-secondary">$370</span>
