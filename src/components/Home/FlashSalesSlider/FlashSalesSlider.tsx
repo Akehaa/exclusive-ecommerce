@@ -21,7 +21,7 @@ const settings: Settings = {
       },
     },
     {
-      breakpoint: 1900,
+      breakpoint: 1600,
       settings: {
         slidesToShow: 3.5,
       },
@@ -29,7 +29,13 @@ const settings: Settings = {
     {
       breakpoint: 1200,
       settings: {
-        slidesToShow: 2.5,
+        slidesToShow: 2.8,
+      },
+    },
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 2.4,
       },
     },
     {
