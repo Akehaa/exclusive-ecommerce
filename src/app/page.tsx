@@ -5,6 +5,7 @@ import { NavigationBar } from "../components/Home/NavigationBar";
 
 import { SectionTag } from "../components/Home/SectionTag";
 import { SectionTitle } from "../components/Home/SectionTitle";
+import { BestSellingSlider } from "../components/Home/sliders/BestSellingSlider/BestSellingSlider";
 import { BrowseByCategorySlider } from "../components/Home/sliders/BrowseByCategorySlider/BrowseByCategorySlider";
 import { Carousel } from "../components/Home/sliders/Carousel/Carousel";
 import { FlashSalesSlider } from "../components/Home/sliders/FlashSalesSlider/FlashSalesSlider";
@@ -25,7 +26,7 @@ export default function Home() {
       <section className="border-b mb-20">
         <SectionTag content="Today's" />
         <div className="flex mb-10 gap-12 lg:gap-24">
-          <SectionTitle title="Flash Sales" />
+          <SectionTitle content="Flash Sales" />
           <span>counter</span>
         </div>
         <div className="mb-16 -mr-6 md:-mr-10 lg:-mr-20 xl:-mr-28 2xl:-mr-40 3xl:-mr-56">
@@ -37,10 +38,22 @@ export default function Home() {
       </section>
       <section className="border-b mb-20 pb-[4.375rem]">
         <SectionTag content="Categories" />
-        <div className="mb-[3.750rem]">
-          <SectionTitle title="Browse By Category" />
+        <div>
+          <SectionTitle content="Browse By Category" />
         </div>
-        <BrowseByCategorySlider />
+        <div className="xl:-mr-6">
+          <BrowseByCategorySlider />
+        </div>
+      </section>
+      <section>
+        <SectionTag content="This Month" />
+        <div className="flex justify-between">
+          <SectionTitle content="Best Selling Products" />
+          <button className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 py-2 px-6 text-sm font-medium mb-16 rounded md:text-base lg:py-4 lg:px-12 ">View All</button>
+        </div>
+        <div className="mb-36 xl:-mr-6">
+          <BestSellingSlider />
+        </div>
       </section>
     </main>
   )
