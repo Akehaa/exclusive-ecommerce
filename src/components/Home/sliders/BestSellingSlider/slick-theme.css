@@ -1,14 +1,6 @@
 @charset 'UTF-8';
 /* Slider */
-/* .slick-slide .slide-focus {
 
-    background: transparent;
-}
-.slick-center .slide-focus {
-
-    background: #DB4444;
-    color: #FAFAFA;
-} */
 /* Icons */
 /* @font-face
 {
@@ -28,8 +20,8 @@
 
     position: absolute;
     top: 0;
-    left: 0;
-    margin-left: 0;
+    left: 28px;
+    margin-left: 87%;
 
     display: block;
 

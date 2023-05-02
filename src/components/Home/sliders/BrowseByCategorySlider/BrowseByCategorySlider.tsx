@@ -17,8 +17,6 @@ import { SiNintendo3Ds } from 'react-icons/si'
 import Link from "next/link";
 
 const settings: Settings = {
-  centerPadding: "0px",
-  centerMode: true,
   dots: false,
   arrows: false,
   infinite: true,
@@ -53,48 +51,50 @@ export function BrowseByCategorySlider() {
 
   return (
     <div>
-      <div className="flex justify-end gap-2 pb-[2.5rem] -mt-[4.4rem]  md:pb-[3.1rem]">
-        <button className="bg-[#ecebeb] p-3 rounded-full w-9 h-9 md:w-12 md:h-12" onClick={() => slider?.current?.slickPrev()}><HiArrowLeft size="auto" /></button>
-        <button className="bg-[#ecebeb] p-3 rounded-full w-9 h-9 md:w-12 md:h-12" onClick={() => slider?.current?.slickNext()}><HiArrowRight size="auto" /></button>
+      <div className="flex justify-end gap-2 mb-[3.750rem] -mt-[2rem] md:-mt-[2.6rem] xl:-mt-0">
+        {/* @ts-ignore: slickPrev library type*/}
+        <button onClick={() => slider?.current?.slickPrev()} className="bg-[#ecebeb] p-3 rounded-full w-9 h-9 md:w-12 md:h-12 xl:hidden" ><HiArrowLeft size="auto" /></button>
+        {/* @ts-ignore: slickNext library type */}
+        <button onClick={() => slider?.current?.slickNext()} className="bg-[#ecebeb] p-3 rounded-full w-9 h-9 md:w-12 md:h-12 xl:hidden"><HiArrowRight size="auto" /></button>
       </div>
       <Slider ref={slider} {...settings}>
         <Link href="#">
-          <div className="flex flex-col items-center justify-center gap-4 border rounded-md h-36 slide-focus">
+          <div className="flex flex-col items-center justify-center gap-4 border rounded-md h-36 hover:bg-exclusive-secondary hover:text-exclusive-text-1">
             <TfiMobile size={56} />
             <span>Phones</span>
           </div>
         </Link>
 
         <Link href="#">
-          <div className="flex flex-col items-center justify-center gap-4 border rounded-md h-36 slide-focus">
+          <div className="flex flex-col items-center justify-center gap-4 border rounded-md h-36 hover:bg-exclusive-secondary hover:text-exclusive-text-1">
             <SlScreenDesktop size={56} />
             <span>Computers</span>
           </div>
         </Link>
 
         <Link href="#">
-          <div className="flex flex-col items-center justify-center gap-4 border rounded-md h-36 slide-focus">
+          <div className="flex flex-col items-center justify-center gap-4 border rounded-md h-36 hover:bg-exclusive-secondary hover:text-exclusive-text-1">
             <IoWatchOutline size={56} />
             <span>SmartWatch</span>
           </div>
         </Link>
 
         <Link href="#">
-          <div className="flex flex-col items-center justify-center gap-4 border rounded-md h-36 slide-focus">
+          <div className="flex flex-col items-center justify-center gap-4 border rounded-md h-36 hover:bg-exclusive-secondary hover:text-exclusive-text-1">
             <AiOutlineCamera size={56} />
             <span>Camera</span>
           </div>
         </Link>
 
         <Link href="#">
-          <div className="flex flex-col items-center justify-center gap-4 border rounded-md h-36 slide-focus">
+          <div className="flex flex-col items-center justify-center gap-4 border rounded-md h-36 hover:bg-exclusive-secondary hover:text-exclusive-text-1">
             <FiHeadphones size={56} />
             <span>HeadPhones</span>
           </div>
         </Link>
 
         <Link href="#">
-          <div className="flex flex-col items-center justify-center gap-4 border rounded-md h-36 slide-focus">
+          <div className="flex flex-col items-center justify-center gap-4 border rounded-md h-36 hover:bg-exclusive-secondary hover:text-exclusive-text-1">
             <SiNintendo3Ds size={56} />
             <span>Gaming</span>
           </div>
