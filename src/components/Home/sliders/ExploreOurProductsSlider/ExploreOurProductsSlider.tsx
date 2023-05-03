@@ -4,92 +4,92 @@ import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "./slick-theme.css";
 
-
 import { useRef } from "react";
 import { HiArrowRight } from 'react-icons/hi'
 import { HiArrowLeft } from 'react-icons/hi'
+
 import { ProductCard } from "@/src/components/product/ProductCard";
 
 const settings: Settings = {
   dots: false,
   arrows: false,
   infinite: false,
-  speed: 550,
-  slidesToShow: 5.5,
   swipeToSlide: true,
-  slidesToScroll: 1,
+  speed: 550,
+  slidesToShow: 4,
+  rows: 2,
   responsive: [
-    {
-      breakpoint: 2500,
-      settings: {
-        slidesToShow: 4.4,
-      },
-    },
     {
       breakpoint: 1600,
       settings: {
-        slidesToShow: 3.3,
+        slidesToShow: 3,
       },
     },
     {
       breakpoint: 1200,
       settings: {
-        slidesToShow: 2.5,
+        slidesToShow: 2,
       },
     },
     {
       breakpoint: 800,
       settings: {
-        slidesToShow: 2.4,
+        slidesToShow: 2,
       },
     },
     {
       breakpoint: 500,
       settings: {
-        slidesToShow: 1.5,
+        slidesToShow: 1.4,
       },
     },
   ]
 };
 
-
-export function FlashSalesSlider() {
+export function ExploreOurProductsSlider() {
   const slider = useRef(null);
 
   return (
     <div>
-      <div className="flex justify-end mr-6 gap-2 pb-[2.5rem] -mt-[4.4rem] md:mr-[5%] md:pb-[3.1rem] md:-mt-[5rem] lg:mr-[10%] 3xl:mr-[11%]">
-        {/* @ts-ignore: slickPrev library type*/} 
-        <button className="bg-[#ecebeb] p-3 rounded-full w-9 h-9 md:w-12 md:h-12" onClick={() => slider?.current?.slickPrev()}><HiArrowLeft size="auto" /></button>
+      <div className="flex justify-end gap-2 mb-[3.750rem] -mt-[2rem] md:-mt-[2.6rem] xl:-mt-0 mr-8">
+        {/* @ts-ignore: slickPrev library type*/}
+        <button onClick={() => slider?.current?.slickPrev()} className="bg-[#ecebeb] p-3 rounded-full w-9 h-9 md:w-12 md:h-12" ><HiArrowLeft size="auto" /></button>
         {/* @ts-ignore: slickNext library type */}
-        <button className="bg-[#ecebeb] p-3 rounded-full w-9 h-9 md:w-12 md:h-12" onClick={() => slider?.current?.slickNext()}><HiArrowRight size="auto" /></button>
+        <button onClick={() => slider?.current?.slickNext()} className="bg-[#ecebeb] p-3 rounded-full w-9 h-9 md:w-12 md:h-12"><HiArrowRight size="auto" /></button>
       </div>
       <Slider ref={slider} {...settings}>
-        <div>
+        <div className="mb-[3.750rem]">
           <ProductCard />
         </div>
-        <div>
+        <div className="mb-[3.750rem]">
           <ProductCard />
         </div>
-        <div>
+        <div className="mb-[3.750rem]">
           <ProductCard />
         </div>
-        <div>
+        <div className="mb-[3.750rem]">
           <ProductCard />
         </div>
-        <div>
+        <div className="mb-[3.750rem]">
           <ProductCard />
         </div>
-        <div>
+        <div className="mb-[3.750rem]">
           <ProductCard />
         </div>
-        <div>
+        <div className="mb-[3.750rem]">
           <ProductCard />
         </div>
-        <div>
+        <div className="mb-[3.750rem]">
+          <ProductCard />
+        </div>
+        <div className="mb-[3.750rem]">
+          <ProductCard />
+        </div>
+        <div className="mb-[3.750rem]">
           <ProductCard />
         </div>
       </Slider>
     </div>
-  );
-};
+
+  )
+}

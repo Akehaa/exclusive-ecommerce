@@ -13,6 +13,7 @@ import { BestSellingSlider } from "../components/Home/sliders/BestSellingSlider/
 import { BrowseByCategorySlider } from "../components/Home/sliders/BrowseByCategorySlider/BrowseByCategorySlider";
 import { Carousel } from "../components/Home/sliders/Carousel/Carousel";
 import { FlashSalesSlider } from "../components/Home/sliders/FlashSalesSlider/FlashSalesSlider";
+import { ExploreOurProductsSlider } from "../components/Home/sliders/ExploreOurProductsSlider/ExploreOurProductsSlider";
 
 
 
@@ -59,7 +60,7 @@ export default function Home() {
         <div className="mb-36 xl:-mr-6">
           <BestSellingSlider />
         </div>
-        <div className="bg-black flex flex-col mb-[4.375rem] md:flex-row 2xl:justify-center gap-60">
+        <div className="bg-black flex flex-col mb-[4.375rem] md:flex-row 2xl:justify-center 2xl:gap-60 3xl:gap-96">
           <div className="flex flex-col mx-auto md:items-start md:ml-14 2xl:mx-0">
             <span className="text-exclusive-primary-1 mt-[4.375rem] mb-8 font-semibold">Categories</span>
             <h3 className="text-exclusive-text-1 mb-8 font-inter font-semibold text-4xl md:text-3xl lg:text-4xl xl:text-5xl ">Enhance Your<br /> Music Experience</h3>
@@ -69,6 +70,18 @@ export default function Home() {
           <div className="mx-auto my-auto 2xl:mx-0">
             <Image className="mb-11 px-4 md:mb-0 md:w-[350px] lg:w-[435px] xl:w-[568px]" src={JBL} width={568} height={0} alt="" />
           </div>
+        </div>
+      </section>
+      <section className="mb-36">
+        <div>
+          <SectionTag content="Our Products" />
+          <SectionTitle content="Explore Our Products" />
+        </div>
+        <div className="xl:-mr-6">
+          <ExploreOurProductsSlider />
+        </div>
+        <div className="flex justify-center">
+          <button className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium mb-16 py-4 px-12 rounded md:text-base">View All Products</button>
         </div>
       </section>
     </main>
