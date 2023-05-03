@@ -20,9 +20,10 @@ const settings: Settings = {
   dots: false,
   arrows: false,
   infinite: true,
+  swipeToSlide: true,
   speed: 550,
   slidesToShow: 6,
-  swipeToSlide: true,
+  
   slidesToScroll: 1,
   responsive: [
     {

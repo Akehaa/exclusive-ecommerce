@@ -22,19 +22,19 @@ const settings: Settings = {
     {
       breakpoint: 2500,
       settings: {
-        slidesToShow: 4.5,
+        slidesToShow: 4.4,
       },
     },
     {
       breakpoint: 1600,
       settings: {
-        slidesToShow: 3.5,
+        slidesToShow: 3.3,
       },
     },
     {
       breakpoint: 1200,
       settings: {
-        slidesToShow: 2.8,
+        slidesToShow: 2.5,
       },
     },
     {
@@ -58,7 +58,7 @@ export function FlashSalesSlider() {
 
   return (
     <div>
-      <div className="flex justify-end mr-6 gap-2 pb-[2.5rem] -mt-[4.4rem] md:mr-[5%] md:pb-[3.1rem] md:-mt-[5rem] lg:mr-[9%]">
+      <div className="flex justify-end mr-6 gap-2 pb-[2.5rem] -mt-[4.4rem] md:mr-[5%] md:pb-[3.1rem] md:-mt-[5rem] lg:mr-[10%] 3xl:mr-[11%]">
         {/* @ts-ignore: slickPrev library type*/} 
         <button className="bg-[#ecebeb] p-3 rounded-full w-9 h-9 md:w-12 md:h-12" onClick={() => slider?.current?.slickPrev()}><HiArrowLeft size="auto" /></button>
         {/* @ts-ignore: slickNext library type */}
