@@ -5,7 +5,6 @@ import Image from "next/image";
 
 import JBL from "@/public/home/bestSelling/JBL.svg"
 
-
 import { NavigationBar } from "../components/Home/NavigationBar";
 import { SectionTag } from "../components/Home/SectionTag";
 import { SectionTitle } from "../components/Home/SectionTitle";
@@ -14,11 +13,9 @@ import { BrowseByCategorySlider } from "../components/Home/sliders/BrowseByCateg
 import { Carousel } from "../components/Home/sliders/Carousel/Carousel";
 import { FlashSalesSlider } from "../components/Home/sliders/FlashSalesSlider/FlashSalesSlider";
 import { ExploreOurProductsSlider } from "../components/Home/sliders/ExploreOurProductsSlider/ExploreOurProductsSlider";
-
-
+import { NewArrival } from "../components/Home/NewArrival";
 
 export default function Home() {
-
   return (
     <main className="w-11/12 lg:w-5/6 mx-auto ">
       <section className="mb-32 grid justify-start grid-cols-[auto_65%] md:grid-cols-[auto_85%] lg:grid-cols-[auto_70%] xl:grid-cols-[auto_78%] 2xl:grid-cols-[auto_84%] 3xl:grid-cols-[auto_87%]">
@@ -82,6 +79,15 @@ export default function Home() {
         </div>
         <div className="flex justify-center">
           <button className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium mb-16 py-4 px-12 rounded md:text-base">View All Products</button>
+        </div>
+      </section>
+      <section>
+        <div className="mb-[3.750rem]">
+          <SectionTag content="Featured" />
+          <SectionTitle content="New Arrival" />
+        </div>
+        <div>
+          <NewArrival />
         </div>
       </section>
     </main>
