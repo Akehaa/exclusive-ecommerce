@@ -86,7 +86,7 @@ export default function Home() {
           <SectionTag content="Featured" />
           <SectionTitle content="New Arrival" />
         </div>
-        <div>
+        <div className="flex">
           <NewArrival />
         </div>
       </section>
