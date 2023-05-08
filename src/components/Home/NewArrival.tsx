@@ -27,29 +27,29 @@ export function NewArrival() {
               <Link href="#" className="w-fit font-medium underline-offset-4 underline">Shop Now</Link>
             </div>
           </div>
-          <Image src={womensCollections} width={570} height={0} alt="" className="bg-[#0C0C0C] pl-28 rounded lg:pl-20 "/>
+          <Image src={womensCollections} width={570} height={0} alt="" className="bg-[#0C0C0C] pl-28 rounded lg:pl-20 " />
         </div>
 
         <div className="flex gap-8 w-full h-full">
           <div>
-          <div className="absolute left-8 mt-16 md:relative md:mt-0 md:left-4">
-            <div className="flex flex-col gap-2 text-exclusive-text-1 md:absolute md:w-max md:mt-[7.6rem] xl:mt-32 2xl:mt-[8.9rem] ">
-              <span className="font-inter font-semibold xl:text-2xl">Speakers</span>
-              <span className="text-xs xl:text-sm">Amazon <br/> wireless speakers</span>
-              <Link href="#" className="w-fit text-sm font-medium underline-offset-4 underline lg:text-base">Shop Now</Link>
+            <div className="absolute left-8 mt-16 md:relative md:mt-0 md:left-4">
+              <div className="flex flex-col gap-2 text-exclusive-text-1 md:absolute md:w-max md:mt-[7.6rem] xl:mt-32 2xl:mt-[8.9rem] ">
+                <span className="font-inter font-semibold xl:text-2xl">Speakers</span>
+                <span className="text-xs xl:text-sm">Amazon <br /> wireless speakers</span>
+                <Link href="#" className="w-fit text-sm font-medium underline-offset-4 underline lg:text-base">Shop Now</Link>
+              </div>
             </div>
-          </div>
-            <Image src={amazonSpeakers} width={240} height={0} alt="" className="bg-[#0C0C0C] w-full h-full rounded md:mt-0 p-5 lg:p-8 " />
+            <Image src={amazonSpeakers} width={240} height={0} alt="" className="bg-gradient-to-br from-black via-[#3a3a3a] to-black w-full h-full rounded md:mt-0 p-5 lg:p-8 " />
           </div>
           <div>
-          <div className="absolute ml-2 mt-16 md:relative md:mt-0 md:left-4">
-            <div className="flex flex-col gap-2 text-exclusive-text-1 md:absolute md:w-max md:mt-[7.6rem] xl:mt-32 2xl:mt-[8.9rem] ">
-              <span className="font-inter font-semibold xl:text-2xl">Perfume</span>
-              <span className="text-xs xl:text-sm">GUCCI <br/> INTENSE OUD EDP</span>
-              <Link href="#" className="w-fit text-sm font-medium underline-offset-4 underline lg:text-base">Shop Now</Link>
+            <div className="absolute ml-2 mt-16 md:relative md:mt-0 md:left-4">
+              <div className="flex flex-col gap-2 text-exclusive-text-1 md:absolute md:w-max md:mt-[7.6rem] xl:mt-32 2xl:mt-[8.9rem] ">
+                <span className="font-inter font-semibold xl:text-2xl">Perfume</span>
+                <span className="text-xs xl:text-sm">GUCCI <br /> INTENSE OUD EDP</span>
+                <Link href="#" className="w-fit text-sm font-medium underline-offset-4 underline lg:text-base">Shop Now</Link>
+              </div>
             </div>
-          </div>
-            <Image src={gucciPerfume} width={240} height={0} alt="" className="bg-[#0C0C0C] w-full h-full rounded md:mt-0 p-5 lg:p-8" />
+            <Image src={gucciPerfume} width={240} height={0} alt="" className="bg-gradient-to-br from-black via-[#3a3a3a] to-black w-full h-full rounded md:mt-0 p-5 lg:p-8" />
           </div>
         </div>
       </div>

@@ -19,6 +19,8 @@ import services from '@/public/home/newArrival/botton/services.svg'
 import services2 from '@/public/home/newArrival/botton/services2.svg'
 import services3 from '@/public/home/newArrival/botton/services3.svg'
 
+import { HiArrowUp } from "react-icons/hi";
+
 export default function Home() {
   return (
     <main className="w-11/12 lg:w-5/6 mx-auto ">
@@ -61,15 +63,15 @@ export default function Home() {
         <div className="mb-36 xl:-mr-6">
           <BestSellingSlider />
         </div>
-        <div className="bg-black flex flex-col mb-[4.375rem] md:flex-row 2xl:justify-center 2xl:gap-60 3xl:gap-96">
+        <div className="bg-[#010101] flex flex-col mb-[4.375rem] md:flex-row 2xl:justify-center 2xl:gap-20 3xl:gap-96">
           <div className="flex flex-col mx-auto md:items-start md:ml-14 2xl:mx-0">
             <span className="text-exclusive-primary-1 mt-[4.375rem] mb-8 font-semibold">Categories</span>
             <h3 className="text-exclusive-text-1 mb-8 font-inter font-semibold text-4xl md:text-3xl lg:text-4xl xl:text-5xl ">Enhance Your<br /> Music Experience</h3>
             <span className="text-exclusive-text-1 mb-8 text-center">Countdown</span>
             <Link href="#" className="text-exclusive-text-2 bg-exclusive-primary-1 hover:opacity-80 mb-[4.375rem] py-4 px-12 mx-auto rounded md:mx-0">Buy now!</Link>
           </div>
-          <div className="mx-auto my-auto 2xl:mx-0">
-            <Image className="mb-11 px-4 md:mb-0 md:w-[350px] lg:w-[435px] xl:w-[568px]" src={JBL} width={568} height={0} alt="" />
+          <div className="mx-auto my-auto bg-[url('../../public/home/whiteShadow.svg')] bg-center bg-[length:270px_250px] bg-no-repeat md:bg-[length:330px_330px] lg:bg-[length:450px_450px] xl:bg-[length:580px_580px] 2xl:mx-0 2xl:bg-[length:700px_800px]">
+            <Image className="mb-0 p-16 md:mb-0 md:ml-4 md:w-[550px] md:p-20 lg:w-[680px] xl:w-[768px]" src={JBL} width={768} height={0} alt="" />
           </div>
         </div>
       </section>
@@ -94,23 +96,28 @@ export default function Home() {
           <NewArrival />
         </div>
       </section>
-      <section className="flex flex-col justify-center gap-20 items-center mb-36 lg:flex-row lg:gap-8 xl:gap-[5.5rem]">
+      <section className="flex flex-col justify-center gap-20 items-center mb-16 lg:flex-row lg:gap-8 xl:gap-[5.5rem]">
         <div className="flex flex-col items-center">
-          <Image src={services} width={100} height={0} alt="" className="mb-6"/>
+          <Image src={services} width={100} height={0} alt="" className="mb-6" />
           <span className="mb-2 font-semibold text-xl">FREE AND FAST DELIVERY</span>
           <span className="text-sm">Free delivery for all orders over $140</span>
         </div>
         <div className="flex flex-col items-center">
-          <Image src={services2} width={100} height={0} alt="" className="mb-6"/>
+          <Image src={services2} width={100} height={0} alt="" className="mb-6" />
           <span className="mb-2 font-semibold text-xl">24/7 CUSTOMER SERVICE</span>
           <span className="text-sm">Friendly 24/7 customer support</span>
         </div>
         <div className="flex flex-col items-center">
-          <Image src={services3} width={100} height={0} alt="" className="mb-6"/>
+          <Image src={services3} width={100} height={0} alt="" className="mb-6" />
           <span className="mb-2 font-semibold text-xl">MONEY BACK GUARANTEE</span>
           <span className="text-sm">We reurn money within 30 days</span>
         </div>
       </section>
+      <div className="flex justify-end mb-8">
+        <Link href="#" className="bg-[#ecebeb] p-3 rounded-full w-12 h-12" aria-label="go to the top">
+          <HiArrowUp size="auto" />
+        </Link>
+      </div>
     </main>
   )
 }
