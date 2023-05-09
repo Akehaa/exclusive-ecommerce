@@ -20,7 +20,7 @@ import services2 from '@/public/home/newArrival/botton/services2.svg'
 import services3 from '@/public/home/newArrival/botton/services3.svg'
 
 import { HiArrowUp } from "react-icons/hi";
-import { Timer } from "../utils/Timer";
+import { FlashSalesTimer } from "../utils/FlashSalesTimer";
 
 export default function Home() {
   const time = new Date();
@@ -41,7 +41,7 @@ export default function Home() {
         <div className="flex flex-col gap-8 mb-10 md:flex-row lg:gap-24">
           <SectionTitle content="Flash Sales" />
           <div className="mb-12 md:-mt-4">
-            <Timer expiryTimestamp={time} />
+            <FlashSalesTimer expiryTimestamp={time} />
           </div>
         </div>
         <div className="mb-16 -mr-6 md:-mr-10 lg:-mr-20 xl:-mr-28 2xl:-mr-40 3xl:-mr-56">
