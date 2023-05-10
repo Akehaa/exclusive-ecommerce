@@ -21,10 +21,14 @@ import services3 from '@/public/home/newArrival/botton/services3.svg'
 
 import { HiArrowUp } from "react-icons/hi";
 import { FlashSalesTimer } from "../utils/FlashSalesTimer";
+import { BestSellingProductsTimer } from "../utils/BestSellingProductsTimer";
 
 export default function Home() {
-  const time = new Date();
-  time.setSeconds(time.getSeconds() + 8639999); // 99 days timer
+  const flashSalesTime = new Date();
+  flashSalesTime.setSeconds(flashSalesTime.getSeconds() + 8639999); // 99 days timer
+
+  const bestSellingProductsTime = new Date();
+  bestSellingProductsTime.setSeconds(bestSellingProductsTime.getSeconds() + 8639999); // 99 days timer
 
   return (
     <main className="w-11/12 lg:w-5/6 mx-auto ">
@@ -38,10 +42,10 @@ export default function Home() {
       </section>
       <section className="border-b mb-20">
         <SectionTag content="Today's" />
-        <div className="flex flex-col gap-8 mb-10 md:flex-row lg:gap-24">
+        <div className="flex flex-col gap-8 mb-8 md:flex-row lg:gap-24">
           <SectionTitle content="Flash Sales" />
-          <div className="mb-12 md:-mt-4">
-            <FlashSalesTimer expiryTimestamp={time} />
+          <div className="mb-12 md:-mt-4 md:mb-0">
+            <FlashSalesTimer expiryTimestamp={flashSalesTime} />
           </div>
         </div>
         <div className="mb-16 -mr-6 md:-mr-10 lg:-mr-20 xl:-mr-28 2xl:-mr-40 3xl:-mr-56">
@@ -73,8 +77,8 @@ export default function Home() {
           <div className="flex flex-col mx-auto md:items-start md:ml-14 2xl:mx-0">
             <span className="text-exclusive-primary-1 mt-[4.375rem] mb-8 font-semibold">Categories</span>
             <h3 className="text-exclusive-text-1 mb-8 font-inter font-semibold text-4xl md:text-3xl lg:text-4xl xl:text-5xl ">Enhance Your<br /> Music Experience</h3>
-            <span className="text-exclusive-text-1 mb-8 text-center">Countdown</span>
-            <Link href="#" className="text-exclusive-text-2 bg-exclusive-primary-1 hover:opacity-80 mb-[4.375rem] py-4 px-12 mx-auto rounded md:mx-0">Buy now!</Link>
+            <BestSellingProductsTimer expiryTimestamp={bestSellingProductsTime} />
+            <Link href="#" className="mt-10 text-exclusive-text-2 bg-exclusive-primary-1 hover:opacity-80 mb-[4.375rem] py-4 px-12 duration-200 mx-auto rounded md:mx-0">Buy now!</Link>
           </div>
           <div className="mx-auto my-auto bg-[url('../../public/home/whiteShadow.svg')] bg-center bg-[length:270px_250px] bg-no-repeat md:bg-[length:330px_330px] lg:bg-[length:450px_450px] xl:bg-[length:580px_580px] 2xl:mx-0 2xl:bg-[length:700px_800px]">
             <Image className="mb-0 p-16 md:mb-0 md:ml-4 md:w-[550px] md:p-20 lg:w-[680px] xl:w-[768px]" src={JBL} width={768} height={0} alt="" />
@@ -120,8 +124,8 @@ export default function Home() {
         </div>
       </section>
       <div className="flex justify-end mb-8">
-        <Link href="#" className="bg-[#ecebeb] p-3 rounded-full w-12 h-12" aria-label="go to the top">
-          <HiArrowUp size="auto" />
+        <Link href="#" className="bg-[#ecebeb] p-3 rounded-full w-12 h-12" aria-label="back to the top">
+          <HiArrowUp size={24} />
         </Link>
       </div>
     </main>
