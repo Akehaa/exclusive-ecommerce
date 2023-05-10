@@ -9,18 +9,34 @@ import { ProductRating } from "./ProductRating";
 
 
 export function ProductCard() {
+  const discount = true;
+  const discountAmout = 30;
+  const newProduct = false;
+  const productPrice = 400;
+
+  function priceWithDiscount() {
+    if (discount) {
+      return productPrice - (productPrice * discountAmout / 100)
+    }
+  }
+
   return (
     <div>
       <div className="flex justify-between h-[250px] -mb-[250px]">
         <div className="mt-2 ml-2 md:mt-3 md:ml-3">
-          <span className="bg-exclusive-secondary text-exclusive-text-1 text-xs py-1 px-3 rounded">-30%</span>
+          {discount
+            ? <span className="bg-exclusive-secondary text-exclusive-text-1 text-xs py-1 px-3 rounded">-{discountAmout}%</span>
+            : null}
+          {newProduct
+            ? <span className="bg-exclusive-primary-1 text-exclusive-text-2 text-xs py-1 px-3 ml-2 rounded">NEW</span>
+            : null}
         </div>
         <div className="flex flex-col gap-2 mt-2 mr-2 md:mt-3 md:mr-3">
-          <button className="bg-exclusive-background p-2 w-9 lg:w-10 rounded-full">
-            <VscHeart size='auto' />
+          <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full">
+            <VscHeart size={20} />
           </button>
-          <button className="bg-exclusive-background p-2 w-9 lg:w-10 rounded-full" >
-            <FiEye size='auto' />
+          <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full" >
+            <FiEye size={20} />
           </button>
         </div>
       </div>
@@ -31,7 +47,7 @@ export function ProductCard() {
           width={190}
           height={0}
           quality={100}
-          className=" w-[11rem]  px-4 -mt-6  md:px-0 md:-mb-[0.42rem] lg:w-52 lg:-mb-[1.475rem] ">
+          className=" w-[11rem] h-auto  px-4 -mt-6  md:px-0 md:-mb-[0.42rem] lg:w-52 lg:-mb-[1.475rem] ">
         </Image>
         <footer className="w-full h-[15.630rem] overflow-hidden">
           <span
@@ -44,10 +60,13 @@ export function ProductCard() {
         <div className="flex">
           <Link href="#" className="font-medium line-clamp-4">IPS LCD Gaming Monitor</Link>
         </div>
-        <div className="flex gap-3">
-          <span className="text-exclusive-secondary">$280</span>
-          <span className="opacity-60 line-through">$400</span>
-        </div>
+        {discount
+          ? <div className="flex gap-3">
+            <span className="text-exclusive-secondary">${priceWithDiscount()}</span>
+            <span className="opacity-60 line-through">${productPrice}</span>
+          </div>
+          : <span className="text-exclusive-secondary">${productPrice}</span>
+        }
         <ProductRating />
       </div>
     </div>
