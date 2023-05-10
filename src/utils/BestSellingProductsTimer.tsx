@@ -22,10 +22,10 @@ export function BestSellingProductsTimer({ expiryTimestamp }) {
         <span className="text-xs">Hours</span>
       </div>
 
-      <div className="bg-exclusive-background flex flex-col items-center rounded-full mt-1 p-3">
+      <div className="bg-exclusive-background flex flex-col items-center rounded-full mt-1 p-2">
         {minutes < 10
-          ? <span className="font-semibold text-sm md:text-base">0{minutes}</span>
-          : <span className="font-semibold text-sm md:text-base">{minutes}</span>
+          ? <span className="font-semibold text-sm md:text-base mt-1">0{minutes}</span>
+          : <span className="font-semibold text-sm md:text-base mt-1">{minutes}</span>
         }
         <span className="text-xs">Minutes</span>
       </div>

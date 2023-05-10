@@ -124,7 +124,7 @@ export default function Home() {
         </div>
       </section>
       <div className="flex justify-end mb-8">
-        <Link href="#" className="bg-[#ecebeb] p-3 rounded-full w-12 h-12" aria-label="go to the top">
+        <Link href="#" className="bg-[#ecebeb] p-3 rounded-full w-12 h-12" aria-label="back to the top">
           <HiArrowUp size="auto" />
         </Link>
       </div>
