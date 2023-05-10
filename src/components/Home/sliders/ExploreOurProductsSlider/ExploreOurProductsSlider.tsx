@@ -51,7 +51,7 @@ export function ExploreOurProductsSlider() {
 
   return (
     <div>
-      <div className="flex justify-end gap-2 mb-[3.750rem] -mt-[2rem] md:-mt-[2.6rem] xl:-mt-0 mr-8">
+      <div className="flex justify-end gap-2 mr-8 mb-[3.750rem] -mt-[2rem] md:-mt-[2.6rem]">
         {/* @ts-ignore: slickPrev library type*/}
         <button onClick={() => slider?.current?.slickPrev()} className="bg-[#ecebeb] p-3 rounded-full w-9 h-9 md:w-12 md:h-12" ><HiArrowLeft size="auto" /></button>
         {/* @ts-ignore: slickNext library type */}

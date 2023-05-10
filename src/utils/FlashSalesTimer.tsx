@@ -1,6 +1,6 @@
 import { useTimer } from "react-timer-hook";
 
- {/* @ts-ignore: slickPrev library type*/}
+ {/* @ts-ignore: expiryTimestamp library type*/}
 export function FlashSalesTimer({ expiryTimestamp }) {
   const { seconds, minutes, hours, days } = useTimer({ expiryTimestamp });
 
