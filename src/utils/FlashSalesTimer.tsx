@@ -2,8 +2,15 @@
 
 import { useTimer } from "react-timer-hook";
 
+function getTime(){
+  const time = new Date();
+  time.setSeconds(time.getSeconds() + 8639999); // 99 days timer
+
+  return time
+}
+
  {/* @ts-ignore: expiryTimestamp library type*/}
-export function FlashSalesTimer({ expiryTimestamp }) {
+export function FlashSalesTimer({ expiryTimestamp = getTime() }) {
   const { seconds, minutes, hours, days } = useTimer({ expiryTimestamp });
 
   return (
