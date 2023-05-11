@@ -1,3 +1,5 @@
+'use client';
+
 import { useTimer } from "react-timer-hook";
 
 {/* @ts-ignore: expiryTimestamp library type*/ }
