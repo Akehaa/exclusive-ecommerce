@@ -17,8 +17,8 @@ export function FlashSalesTimer({ expiryTimestamp = getTime() }) {
     <div>
       <div className="flex gap-8">
         <span className="text-xs font-medium mr-2">Days</span>
-        <span className="text-xs font-medium ml-2">Minutes</span>
-        <span className="text-xs font-medium">Hours</span>
+        <span className="text-xs font-medium ml-2">Hours</span>
+        <span className="text-xs font-medium">Minutes</span>
         <span className="text-xs font-medium ml-2">Seconds</span>
       </div>
       <div className="flex gap-3">

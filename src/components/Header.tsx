@@ -40,7 +40,7 @@ export function Header() {
                 <Link href="#" className='hover:underline underline-offset-[5px] decoration-gray-800'>About</Link>
               </li>
               <li>
-                <Link href="#" className='hover:underline underline-offset-[5px] decoration-gray-800'>Sign Up</Link>
+                <Link href="/sign-up" className='hover:underline underline-offset-[5px] decoration-gray-800'>Sign Up</Link>
               </li>
             </ul>
           </div>
