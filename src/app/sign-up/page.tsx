@@ -14,8 +14,8 @@ export default function page() {
         <h2 className="font-inter font-medium text-4xl mb-6">Create an account</h2>
         <span className="mb-12">Enter your details below</span>
         <input type="text" name="" id="name" placeholder="Name" className="bg-transparent border-b border-[#a5a5a5] w-full mb-10 py-1" />
-        <input type="text" name="" id="emailAndPhone" placeholder="Email of Phone Number" className="bg-transparent border-b border-[#a5a5a5] w-full mb-10 py-1" />
-        <input type="text" name="" id="password" placeholder="Password" className="bg-transparent border-b border-[#a5a5a5] w-full mb-10 py-1" />
+        <input type="text" name="" id="emailOrPhone" placeholder="Email or Phone Number" className="bg-transparent border-b border-[#a5a5a5] w-full mb-10 py-1" />
+        <input type="password" name="" id="password" placeholder="Password" className="bg-transparent border-b border-[#a5a5a5] w-full mb-10 py-1" />
         <button className="mb-4 bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 w-full rounded text-exclusive-text-1 py-4">Create Account</button>
         <button className="mb-8 flex gap-4 border border-[#a5a5a5] w-full rounded justify-center items-center">
           <FcGoogle size={28} />
