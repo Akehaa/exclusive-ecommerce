@@ -6,6 +6,11 @@ import { CiShop } from 'react-icons/ci'
 import { CiDollar } from 'react-icons/ci'
 import { AiOutlineShopping } from 'react-icons/ai'
 import { TbMoneybag } from 'react-icons/tb'
+import { StaffSlider } from "@/src/components/about/slider/StaffSlider";
+
+import services from '@/public/home/newArrival/botton/services.svg'
+import services2 from '@/public/home/newArrival/botton/services2.svg'
+import services3 from '@/public/home/newArrival/botton/services3.svg'
 
 export default function page() {
   return (
@@ -35,36 +40,55 @@ export default function page() {
         </div>
       </div>
       <div className="flex flex-col justify-center gap-8 mb-36 md:flex-row md:w-5/6 md:mx-auto md:flex-wrap lg:flex-nowrap">
-        <div className="flex flex-col items-center outline outline-1 outline-black/20 rounded w-[270px] h-[230px] mx-auto py-8 hover:bg-exclusive-secondary hover:text-white hover:outline-none group lg:mb-0 lg:w-full lg:h-auto">
+        <div className="flex flex-col items-center outline outline-1 outline-black/20 rounded w-[270px] h-[230px] mx-auto py-8 hover:bg-exclusive-secondary hover:text-white hover:outline-none group duration-200 lg:mb-0 lg:w-full lg:h-auto">
           <span className="mb-6 bg-black/20 p-2 rounded-full group-hover:bg-white/40">
             <CiShop size={40} className="bg-black p-1 rounded-full text-white group-hover:bg-white group-hover:text-exclusive-text-2" />
           </span>
           <span className="font-inter font-bold text-3xl">10.5k </span>
           <span className="text-sm text-center 2xl:text-base">Sallers active in our site</span>
         </div>
-        <div className="flex flex-col items-center outline outline-1 outline-black/20 rounded w-[270px] h-[230px] mx-auto py-8 hover:bg-exclusive-secondary hover:text-white hover:outline-none group lg:w-full lg:h-auto ">
+        <div className="flex flex-col items-center outline outline-1 outline-black/20 rounded w-[270px] h-[230px] mx-auto py-8 hover:bg-exclusive-secondary hover:text-white hover:outline-none group duration-200 lg:w-full lg:h-auto ">
           <span className="mb-6 bg-black/20 p-2 rounded-full group-hover:bg-white/40">
             <CiDollar size={40} className="bg-black p-1 rounded-full text-white group-hover:bg-white group-hover:text-exclusive-text-2" />
           </span>
           <span className="font-inter font-bold text-3xl">33k</span>
           <span className="text-sm text-center 2xl:text-base">Monthly Product Sale</span>
         </div>
-        <div className="flex flex-col items-center outline outline-1 outline-black/20 rounded w-[270px] h-[230px] mx-auto py-8 hover:bg-exclusive-secondary hover:text-white hover:outline-none group lg:mb-0 lg:w-full lg:h-auto">
+        <div className="flex flex-col items-center outline outline-1 outline-black/20 rounded w-[270px] h-[230px] mx-auto py-8 hover:bg-exclusive-secondary hover:text-white hover:outline-none group duration-200 lg:mb-0 lg:w-full lg:h-auto">
           <span className="mb-6 bg-black/20 p-2 rounded-full group-hover:bg-white/40">
             <AiOutlineShopping size={40} className="bg-black p-1 rounded-full text-white group-hover:bg-white group-hover:text-exclusive-text-2" />
           </span>
           <span className="font-inter font-bold text-3xl">45.5k</span>
           <span className="text-sm text-center 2xl:text-base">Customer active in our site</span>
         </div>
-        <div className="flex flex-col items-center outline outline-1 outline-black/20 rounded w-[270px] h-[230px] mx-auto py-8 hover:bg-exclusive-secondary hover:text-white hover:outline-none group lg:w-full lg:h-auto">
+        <div className="flex flex-col items-center outline outline-1 outline-black/20 rounded w-[270px] h-[230px] mx-auto py-8 hover:bg-exclusive-secondary hover:text-white hover:outline-none group duration-200 lg:w-full lg:h-auto">
           <span className="mb-6 bg-black/20 p-2 rounded-full group-hover:bg-white/40">
             <TbMoneybag size={40} className="bg-black p-1 rounded-full text-white group-hover:bg-white group-hover:text-exclusive-text-2" />
           </span>
           <span className="font-inter font-bold text-3xl">25k</span>
           <span className="text-sm text-center 2xl:text-base">Anual gross sale in our site</span>
         </div>
-
       </div>
+      <div className="w-5/6 mx-auto mb-48">
+        <StaffSlider />
+      </div>
+      <section className="flex flex-col justify-center gap-20 items-center mb-32 lg:flex-row lg:gap-8 xl:gap-[5.5rem]">
+        <div className="flex flex-col items-center">
+          <Image src={services} width={100} height={0} alt="" className="mb-6" />
+          <span className="mb-2 font-semibold text-xl">FREE AND FAST DELIVERY</span>
+          <span className="text-sm">Free delivery for all orders over $140</span>
+        </div>
+        <div className="flex flex-col items-center">
+          <Image src={services2} width={100} height={0} alt="" className="mb-6" />
+          <span className="mb-2 font-semibold text-xl">24/7 CUSTOMER SERVICE</span>
+          <span className="text-sm">Friendly 24/7 customer support</span>
+        </div>
+        <div className="flex flex-col items-center">
+          <Image src={services3} width={100} height={0} alt="" className="mb-6" />
+          <span className="mb-2 font-semibold text-xl">MONEY BACK GUARANTEE</span>
+          <span className="text-sm">We reurn money within 30 days</span>
+        </div>
+      </section>
     </>
   )
 }

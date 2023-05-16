@@ -28,7 +28,7 @@ export default function Home() {
           <NavigationBar />
         </aside>
         <div className="mx-4 mt-4 lg:ml-8 lg:mt-8">
-          <Carousel />
+        <Carousel />
         </div>
       </section>
       <section className="border-b mb-20">

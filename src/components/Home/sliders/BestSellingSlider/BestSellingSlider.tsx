@@ -2,7 +2,7 @@
 
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
-import "./slick-theme.css";
+import "./BestSellingSlider.css";
 
 import { ProductCard } from "@/src/components/product/ProductCard";
 
