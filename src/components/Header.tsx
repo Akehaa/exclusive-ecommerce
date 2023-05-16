@@ -37,7 +37,7 @@ export function Header() {
                 <Link href="/contact" className='hover:underline underline-offset-[5px] decoration-gray-800'>Contact</Link>
               </li>
               <li>
-                <Link href="#" className='hover:underline underline-offset-[5px] decoration-gray-800'>About</Link>
+                <Link href="/about" className='hover:underline underline-offset-[5px] decoration-gray-800'>About</Link>
               </li>
               <li>
                 <Link href="/sign-up" className='hover:underline underline-offset-[5px] decoration-gray-800'>Sign Up</Link>
