@@ -35,28 +35,28 @@ export default function page() {
         </div>
       </div>
       <div className="flex flex-col justify-center gap-8 mb-36 lg:flex-row lg:w-5/6 lg:mx-auto 3xl:w-11/12">
-        <div className="flex flex-col items-center border border-black/20 rounded w-fit mx-auto p-8 hover:bg-exclusive-secondary hover:text-white group lg:mb-0">
+        <div className="flex flex-col items-center border border-black/20 rounded w-fit mx-auto p-8 hover:bg-exclusive-secondary hover:text-white hover:border-none group lg:mb-0">
           <span className="mb-6 bg-black/20 p-2 rounded-full group-hover:bg-white/40">
             <CiShop size={40} className="bg-black p-1 rounded-full text-white group-hover:bg-white group-hover:text-exclusive-text-2" />
           </span>
           <span className="font-inter font-bold text-3xl">10.5k </span>
           <span className="text-sm text-center 2xl:text-base">Sallers active in our site</span>
         </div>
-        <div className="flex flex-col items-center border border-black/20 rounded w-fit mx-auto p-8 hover:bg-exclusive-secondary hover:text-white group ">
+        <div className="flex flex-col items-center border border-black/20 rounded w-fit mx-auto p-8 hover:bg-exclusive-secondary hover:text-white hover:border-none group ">
           <span className="mb-6 bg-black/20 p-2 rounded-full group-hover:bg-white/40">
             <CiDollar size={40} className="bg-black p-1 rounded-full text-white group-hover:bg-white group-hover:text-exclusive-text-2" />
           </span>
           <span className="font-inter font-bold text-3xl">33k</span>
           <span className="text-sm text-center 2xl:text-base">Mopnthly Produduct Sale</span>
         </div>
-        <div className="flex flex-col items-center border border-black/20 rounded w-fit mx-auto p-8 hover:bg-exclusive-secondary hover:text-white group  lg:mb-0">
+        <div className="flex flex-col items-center border border-black/20 rounded w-fit mx-auto p-8 hover:bg-exclusive-secondary hover:text-white hover:border-none group  lg:mb-0">
           <span className="mb-6 bg-black/20 p-2 rounded-full group-hover:bg-white/40">
             <AiOutlineShopping size={40} className="bg-black p-1 rounded-full text-white group-hover:bg-white group-hover:text-exclusive-text-2" />
           </span>
           <span className="font-inter font-bold text-3xl">45.5k</span>
           <span className="text-sm text-center 2xl:text-base">Customer active in our site</span>
         </div>
-        <div className="flex flex-col items-center border border-black/20 rounded w-fit mx-auto p-8 hover:bg-exclusive-secondary hover:text-white group ">
+        <div className="flex flex-col items-center border border-black/20 rounded w-fit mx-auto p-8 hover:bg-exclusive-secondary hover:text-white hover:border-none group  ">
           <span className="mb-6 bg-black/20 p-2 rounded-full group-hover:bg-white/40">
             <TbMoneybag size={40} className="bg-black p-1 rounded-full text-white group-hover:bg-white group-hover:text-exclusive-text-2" />
           </span>
