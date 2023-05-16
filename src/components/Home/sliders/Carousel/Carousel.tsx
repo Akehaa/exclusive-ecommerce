@@ -2,7 +2,7 @@
 
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
-import "./slick-theme.css"
+import "./Carousel.css"
 import { Iphone14 } from "./IPhone14";
 
 const settings: Settings = {
@@ -23,19 +23,19 @@ export function Carousel() {
     <div>
       <Slider {...settings}>
         <div>
-          <h3><Iphone14 /></h3>
+          <Iphone14 />
         </div>
         <div>
-          <h3><Iphone14 /></h3>
+          <Iphone14 />
         </div>
         <div>
-          <h3><Iphone14 /></h3>
+          <Iphone14 />
         </div>
         <div>
-          <h3><Iphone14 /></h3>
+          <Iphone14 />
         </div>
         <div>
-          <h3><Iphone14 /></h3>
+          <Iphone14 />
         </div>
       </Slider>
     </div>

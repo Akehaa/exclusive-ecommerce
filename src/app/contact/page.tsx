@@ -5,7 +5,7 @@ import { AiOutlineMail } from 'react-icons/ai'
 export default function page() {
   return (
     <>
-      <div className="flex gap-3 mt-20 mb-20 text-sm w-5/6 mx-auto">
+      <div className="flex gap-3 mt-10 mb-10 text-sm w-5/6 mx-auto lg:mt-20 lg:mb-20">
         <Link href="#" className="opacity-50">
           Home
         </Link>

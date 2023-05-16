@@ -2,7 +2,7 @@
 
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
-import "./slick-theme.css";
+import "./ExploreOurProductsSlider.css";
 
 import { useRef } from "react";
 import { HiArrowRight } from 'react-icons/hi'
