@@ -1,14 +1,15 @@
+'use client';
+
 import Image from "next/image";
 import GamingMonitor from '@/public/home/products/gaming_monitor.svg'
 
-import { FiEye } from 'react-icons/fi'
-import { VscHeart } from 'react-icons/vsc'
+import { BsTrash3 } from 'react-icons/bs'
 
 import Link from "next/link";
-import { ProductRating } from "./ProductRating";
+import { ProductRating } from "../product/ProductRating";
+import { FiEye } from "react-icons/fi";
 
-
-export function ProductCard() {
+export function WishListProductCard({ justForYou }: { justForYou: boolean }) {
   const discount = true;
   const discountAmout = 30;
   const newProduct = false;
@@ -32,12 +33,13 @@ export function ProductCard() {
             : null}
         </div>
         <div className="flex flex-col gap-2 mt-2 mr-2 md:mt-3 md:mr-3">
-          <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full">
-            <VscHeart size={20} />
-          </button>
-          <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full" >
-            <FiEye size={20} />
-          </button>
+          {justForYou
+            ? <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full">
+              <FiEye size={20} />
+            </button>
+            : <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full" >
+              <BsTrash3 size={20} />
+            </button>}
         </div>
       </div>
       <div className="bg-[#ecebeb] flex flex-col items-center mb-4 rounded pt-[3.775rem] h-[13rem] md:h-[15.630rem] group ">
@@ -51,7 +53,7 @@ export function ProductCard() {
         </Image>
         <footer className="w-full h-[15.630rem] overflow-hidden">
           <button
-            className="w-full text-exclusive-text-1 bg-black flex justify-center cursor-pointer rounded-b py-1 font-medium transform translate-y-[110%] opacity-0 group-hover:translate-y-[0%] group-hover:opacity-100 transition-all ease-in-out duration-200 mt-1 md:py-2 md:mt-[0.85rem] lg:mt-[0.01rem] ">
+            className="w-full text-exclusive-text-1 bg-black flex justify-center rounded-b py-1 font-medium transform translate-y-[110%] opacity-0 group-hover:translate-y-[0%] group-hover:opacity-100 transition-all ease-in-out duration-200 mt-1 md:py-2 md:mt-[0.85rem] lg:mt-[0.01rem] ">
             Add To Cart
           </button>
         </footer>

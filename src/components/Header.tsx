@@ -58,7 +58,7 @@ export function Header() {
             </button>
           </div>
           <div className='flex gap-4'>
-            <Link href="#" aria-label='Wishlist' >
+            <Link href="/wishlist" aria-label='Wishlist' >
               <VscHeart size={23} />
             </Link>
             <Link href="#" aria-label='Cart'>
