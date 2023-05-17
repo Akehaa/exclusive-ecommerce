@@ -4,10 +4,11 @@ import Image from "next/image";
 import GamingMonitor from '@/public/home/products/gaming_monitor.svg'
 
 import { BsTrash3 } from 'react-icons/bs'
+import { FiEye } from "react-icons/fi";
 
 import Link from "next/link";
 import { ProductRating } from "../product/ProductRating";
-import { FiEye } from "react-icons/fi";
+
 
 export function WishListProductCard({ justForYou }: { justForYou: boolean }) {
   const discount = true;
@@ -49,11 +50,10 @@ export function WishListProductCard({ justForYou }: { justForYou: boolean }) {
           width={190}
           height={0}
           quality={100}
-          className=" w-[11rem] h-auto  px-4 -mt-6  md:px-0 md:-mb-[0.42rem] lg:w-52 lg:-mb-[1.475rem] ">
+          className=" w-[11rem] h-auto px-4 -mt-6 md:px-0 md:-mb-[0.42rem] lg:w-52 lg:-mb-[1.475rem] ">
         </Image>
         <footer className="w-full h-[15.630rem] overflow-hidden">
-          <button
-            className="w-full text-exclusive-text-1 bg-black flex justify-center rounded-b py-1 font-medium transform translate-y-[110%] opacity-0 group-hover:translate-y-[0%] group-hover:opacity-100 transition-all ease-in-out duration-200 mt-1 md:py-2 md:mt-[0.85rem] lg:mt-[0.01rem] ">
+          <button className="w-full text-exclusive-text-1 bg-black flex justify-center rounded-b py-1 font-medium transform translate-y-[110%] opacity-0 group-hover:translate-y-[0%] group-hover:opacity-100 transition-all ease-in-out duration-200 mt-1 md:py-2 md:mt-[0.85rem] lg:mt-[0.01rem] ">
             Add To Cart
           </button>
         </footer>

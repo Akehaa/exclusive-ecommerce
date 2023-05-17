@@ -51,7 +51,7 @@ export default function Home() {
         <div>
           <SectionTitle content="Browse By Category" />
         </div>
-        <div className="xl:-mr-6">
+        <div className="xl:-mr-7">
           <BrowseByCategorySlider />
         </div>
       </section>
@@ -61,7 +61,7 @@ export default function Home() {
           <SectionTitle content="Best Selling Products" />
           <button className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 py-2 px-6 text-sm font-medium mb-16 rounded md:text-base lg:py-4 lg:px-12 ">View All</button>
         </div>
-        <div className="mb-36 xl:-mr-6">
+        <div className="mb-36 xl:-mr-7">
           <BestSellingSlider />
         </div>
         <div className="bg-[#010101] flex flex-col mb-[4.375rem] md:flex-row 2xl:justify-center 2xl:gap-20 3xl:gap-96">
@@ -81,7 +81,7 @@ export default function Home() {
           <SectionTag content="Our Products" />
           <SectionTitle content="Explore Our Products" />
         </div>
-        <div className="xl:-mr-6">
+        <div className="xl:-mr-7">
           <ExploreOurProductsSlider />
         </div>
         <div className="flex justify-center">

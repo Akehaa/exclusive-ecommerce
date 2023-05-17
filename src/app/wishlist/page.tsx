@@ -30,7 +30,9 @@ export default function page() {
           </div>
           <button className="font-medium py-4 border border-black/40 rounded px-6 md:px-12">See All</button>
         </header>
-        <JustForYouSlider />
+        <div className="xl:-mr-6">
+          <JustForYouSlider />
+        </div>
       </div>
     </section>
   )

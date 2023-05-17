@@ -31,16 +31,16 @@ export function Header() {
           <div>
             <ul className='flex gap-3 items-center text-sm lg:text-lg xl:gap-6 2xl:gap-12'>
               <li>
-                <Link href="#" className='hover:underline underline-offset-[5px] decoration-gray-800'>Home</Link>
+                <Link href="#" className='hover:underline underline-offset-[5px] decoration-black/50'>Home</Link>
               </li>
               <li>
-                <Link href="/contact" className='hover:underline underline-offset-[5px] decoration-gray-800'>Contact</Link>
+                <Link href="/contact" className='hover:underline underline-offset-[5px] decoration-black/50'>Contact</Link>
               </li>
               <li>
-                <Link href="/about" className='hover:underline underline-offset-[5px] decoration-gray-800'>About</Link>
+                <Link href="/about" className='hover:underline underline-offset-[5px] decoration-black/50'>About</Link>
               </li>
               <li>
-                <Link href="/sign-up" className='hover:underline underline-offset-[5px] decoration-gray-800'>Sign Up</Link>
+                <Link href="/sign-up" className='hover:underline underline-offset-[5px] decoration-black/50'>Sign Up</Link>
               </li>
             </ul>
           </div>
@@ -61,7 +61,7 @@ export function Header() {
             <Link href="/wishlist" aria-label='Wishlist' >
               <VscHeart size={23} />
             </Link>
-            <Link href="#" aria-label='Cart'>
+            <Link href="/cart" aria-label='Cart'>
               <FiShoppingCart size={23} />
             </Link>
           </div>
