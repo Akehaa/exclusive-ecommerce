@@ -32,7 +32,7 @@ export function ProductCard() {
             : null}
         </div>
         <div className="flex flex-col gap-2 mt-2 mr-2 md:mt-3 md:mr-3">
-          <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full">
+          <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full " aria-label="add to wishlist" title="add to wishlist">
             <VscHeart size={20} />
           </button>
           <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full" >

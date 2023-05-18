@@ -27,7 +27,7 @@ export function WishListProductCard({ justForYou }: { justForYou: boolean }) {
       <div className="flex justify-between h-[250px] -mb-[250px]">
         <div className="mt-2 ml-2 md:mt-3 md:ml-3">
           {discount
-            ? <span className="bg-exclusive-secondary text-exclusive-text-1 text-xs py-1 px-3 rounded">-{discountAmout}%</span>
+            ? <span className="bg-exclusive-secondary text-exclusive-text-1 text-xs py-1 px-3 rounded" aria-label="discount" title="discount">-{discountAmout}%</span>
             : null}
           {newProduct
             ? <span className="bg-exclusive-primary-1 text-exclusive-text-2 text-xs py-1 px-3 ml-2 rounded">NEW</span>
@@ -38,7 +38,7 @@ export function WishListProductCard({ justForYou }: { justForYou: boolean }) {
             ? <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full">
               <FiEye size={20} />
             </button>
-            : <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full" >
+            : <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full" aria-label="remove from wishlist" title="remove from wishlist" >
               <BsTrash3 size={20} />
             </button>}
         </div>
