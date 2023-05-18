@@ -16,9 +16,9 @@ export function StaffMemberCard(props: { name: string, role: string, src: string
         <span>{props.role}</span>
       </div>
       <div className="flex gap-4 items-start w-full">
-        <Link href={props.twitter} target="_blank"><RiTwitterLine size={24} /></Link>
-        <Link href={props.instagram} target="_blank"><RiInstagramLine size={24} /></Link>
-        <Link href={props.linkedin} target="_blank"><RiLinkedinLine size={24} /></Link>
+        <Link href={props.twitter} target="_blank" title="twitter"><RiTwitterLine size={24} /></Link>
+        <Link href={props.instagram} target="_blank" title="instagram"><RiInstagramLine size={24} /></Link>
+        <Link href={props.linkedin} target="_blank" title="linkedin"><RiLinkedinLine size={24} /></Link>
       </div>
     </div>
   )

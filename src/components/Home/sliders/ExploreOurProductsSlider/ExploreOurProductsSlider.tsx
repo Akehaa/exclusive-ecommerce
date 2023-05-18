@@ -16,9 +16,15 @@ const settings: Settings = {
   infinite: false,
   swipeToSlide: true,
   speed: 550,
-  slidesToShow: 4,
+  slidesToShow: 5,
   rows: 2,
   responsive: [
+    {
+      breakpoint: 2000,
+      settings: {
+        slidesToShow: 4,
+      },
+    },
     {
       breakpoint: 1600,
       settings: {
@@ -58,6 +64,12 @@ export function ExploreOurProductsSlider() {
         <button onClick={() => slider?.current?.slickNext()}><HiArrowRight size={23} className="bg-[#ecebeb] p-3 rounded-full w-9 h-9 md:w-12 md:h-12" /></button>
       </div>
       <Slider ref={slider} {...settings}>
+        <div className="mb-[3.750rem]">
+          <ProductCard />
+        </div>
+        <div className="mb-[3.750rem]">
+          <ProductCard />
+        </div>
         <div className="mb-[3.750rem]">
           <ProductCard />
         </div>

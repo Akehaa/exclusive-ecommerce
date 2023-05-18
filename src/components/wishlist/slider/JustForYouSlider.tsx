@@ -2,9 +2,9 @@
 
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
-import "./BestSellingSlider.css";
+import "./JustForYouSlider.css";
 
-import { ProductCard } from "@/src/components/product/ProductCard";
+import { WishListProductCard } from "../WishListProductCard";
 
 const settings: Settings = {
   dots: false,
@@ -28,12 +28,6 @@ const settings: Settings = {
       },
     },
     {
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 2.4,
-      },
-    },
-    {
       breakpoint: 800,
       settings: {
         slidesToShow: 2,
@@ -42,33 +36,33 @@ const settings: Settings = {
     {
       breakpoint: 500,
       settings: {
-        slidesToShow: 1.4,
+        slidesToShow: 1,
       },
     },
   ]
 };
 
-export function BestSellingSlider(){
+export function JustForYouSlider(){
   return (
     <div>
       <Slider {...settings}>
         <div>
-          <ProductCard />
+         <WishListProductCard justForYou={true}/>
         </div>
         <div>
-          <ProductCard />
+         <WishListProductCard justForYou={true}/>
         </div>
         <div>
-          <ProductCard />
+         <WishListProductCard justForYou={true}/>
         </div>
         <div>
-          <ProductCard />
+         <WishListProductCard justForYou={true}/>
         </div>
         <div>
-          <ProductCard />
+         <WishListProductCard justForYou={true}/>
         </div>
         <div>
-          <ProductCard />
+         <WishListProductCard justForYou={true}/>
         </div>
       </Slider>
     </div>

@@ -35,7 +35,7 @@ export default function page() {
             Launced in 2015, Exclusive is South Asia’s premier online shopping makterplace with an active presense in Bangladesh. Supported by wide range of tailored marketing, data and service solutions, Exclusive has 10,500 sallers and 300 brands and serves 3 millioons customers across the region.
           </p>
           <p className="text-sm lg:text-base">
-            Exclusive has more than 1 Million products to offer, growing at a very fast. Exclusive offers a diverse assotment in categories ranging  from consumer.
+            Exclusive has more than 1 Million products to offer, growing at a very fast pace. Exclusive offers a diverse assotment in categories ranging from consumer.
           </p>
         </div>
       </div>
