@@ -28,7 +28,7 @@ export default function Home() {
           <NavigationBar />
         </aside>
         <div className="mx-4 mt-4 lg:ml-8 lg:mt-8">
-        <Carousel />
+          <Carousel />
         </div>
       </section>
       <section className="border-b mb-20">
@@ -36,7 +36,7 @@ export default function Home() {
         <div className="flex flex-col gap-8 mb-8 md:flex-row lg:gap-24">
           <SectionTitle content="Flash Sales" />
           <div className="mb-12 md:-mt-4 md:mb-0">
-              <FlashSalesTimer/>
+            <FlashSalesTimer />
           </div>
         </div>
         <div className="mb-16 -mr-6 md:-mr-10 lg:-mr-20 xl:-mr-28 2xl:-mr-40 3xl:-mr-56">
@@ -68,7 +68,7 @@ export default function Home() {
           <div className="flex flex-col mx-auto md:items-start md:ml-14 2xl:mx-0">
             <span className="text-exclusive-primary-1 mt-[4.375rem] mb-8 font-semibold">Categories</span>
             <h3 className="text-exclusive-text-1 mb-8 font-inter font-semibold text-4xl md:text-3xl lg:text-4xl xl:text-5xl ">Enhance Your<br /> Music Experience</h3>
-            <BestSellingProductsTimer/>
+            <BestSellingProductsTimer />
             <Link href="#" className="mt-10 text-exclusive-text-2 bg-exclusive-primary-1 hover:opacity-80 mb-[4.375rem] py-4 px-12 duration-200 mx-auto rounded md:mx-0">Buy now!</Link>
           </div>
           <div className="mx-auto my-auto bg-[url('../../public/home/whiteShadow.svg')] bg-center bg-[length:270px_250px] bg-no-repeat md:bg-[length:330px_330px] lg:bg-[length:450px_450px] xl:bg-[length:580px_580px] 2xl:mx-0 2xl:bg-[length:700px_800px]">
