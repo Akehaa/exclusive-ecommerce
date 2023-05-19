@@ -40,7 +40,7 @@ export default function page() {
             <span>$1750</span>
           </div>
           <div className="flex w-max mx-auto">
-            <button className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover h-fit duration-200 text-exclusive-text-1 py-4 px-12 text-sm font-medium rounded md:text-base ">Procees to checkout</button>
+            <Link href="/cart/checkout" className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover h-fit duration-200 text-exclusive-text-1 py-4 px-12 text-sm font-medium rounded md:text-base">Proceed to checkout</Link>
           </div>
         </div>
       </div>
