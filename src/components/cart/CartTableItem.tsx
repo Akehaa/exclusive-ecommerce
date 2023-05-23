@@ -24,10 +24,10 @@ export function CartTableItem() {
   }
 
   return (
-    <tr className="border flex mb-10 items-center">
-      <td className="relative py-6 pl-10 w-full flex flex-col gap-2 items-start xl:flex-row xl:gap-5 xl:items-center ">
+    <tr className="border flex mb-10 items-center gap-6 pl-4 md:gap-0 md:pl-0">
+      <td className="relative py-6 pl-4 w-full flex flex-col gap-2 items-start md:pl-10 xl:flex-row xl:gap-5 xl:items-center ">
         <Image src={GamingMonitor} width={54} alt="" />
-        <button className="absolute top-[1.370rem] left-[2.075rem]" aria-label="remove from cart" title="remove from cart">
+        <button className="absolute left-[0.650rem] md:top-[1.370rem] md:left-[2.075rem]" aria-label="remove from cart" title="remove from cart">
           <IoClose size={20} className="text-exclusive-text-1 bg-exclusive-secondary rounded-full"/>
         </button>
         <Link href="/cart" className="line-clamp-5 hover:underline">LCD Monitor</Link>
