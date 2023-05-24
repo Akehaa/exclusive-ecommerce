@@ -12,7 +12,7 @@ export function CartTable() {
           <td className="md:py-6 md:w-full">
             Price
           </td>
-          <td className="md:py-6 md:w-full ">
+          <td className="pr-6 md:py-6 md:w-full 2xl:pr-10 ">
             Quantity
           </td>
           <td className="md:w-full md:py-6 md:pr-16 md:text-right">
