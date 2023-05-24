@@ -55,9 +55,8 @@ export default function page() {
       </div>
       <section className="w-full pl-4 mx-auto lg:w-5/6 lg:pl-0">
         <div className='grid grid-cols-[36%_64%] mt-20 mb-36 md:grid-cols-[26%_74%] xl:grid-cols-[18%_42%_auto] 2xl:grid-cols-[15%_45%_auto] 3xl:grid-cols-[12%_48%_auto]'>
-          <Slider
-            asNavFor={nav1}
-            ref={(slider2) => setNav2(slider2)}
+           {/*@ts-ignore*/}
+          <Slider asNavFor={nav1} ref={(slider2) => setNav2(slider2)}
             slidesToShow={3.99}
             verticalSwiping={true}
             swipeToSlide={true}
@@ -68,25 +67,26 @@ export default function page() {
             dots={false}
           >
             <div className='w-[180px] bg-[#f3f3f3] rounded'>
-              <Image src={GamingMonitor} alt='' width={121} height={114} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
+              <Image src={GamingMonitor} alt='' width={121} height={135} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
             </div>
             <div className='w-[170px] bg-[#f3f3f3] rounded'>
-              <Image src={GamingMonitor} alt='' width={121} height={114} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
+              <Image src={GamingMonitor} alt='' width={121} height={135} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
             </div>
             <div className='w-[170px] bg-[#f3f3f3] rounded'>
-              <Image src={GamingMonitor} alt='' width={121} height={114} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
+              <Image src={GamingMonitor} alt='' width={121} height={135} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
             </div>
             <div className='w-[170px] bg-[#f3f3f3] rounded'>
-              <Image src={GamingMonitor} alt='' width={121} height={114} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
+              <Image src={GamingMonitor} alt='' width={121} height={135} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
             </div>
             <div className='w-[170px] bg-[#f3f3f3] rounded'>
-              <Image src={GamingMonitor} alt='' width={121} height={114} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
+              <Image src={GamingMonitor} alt='' width={121} height={135} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
             </div>
             <div className='w-[170px] bg-[#f3f3f3] rounded'>
-              <Image src={GamingMonitor} alt='' width={121} height={114} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
+              <Image src={GamingMonitor} alt='' width={121} height={135} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
             </div>
 
           </Slider>
+          {/*@ts-ignore*/}
           <Slider asNavFor={nav2} ref={(slider1) => setNav1(slider1)}
             arrows={false}
             dots={false}
