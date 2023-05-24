@@ -52,43 +52,35 @@ const settings: Settings = {
   ]
 };
 
+export interface ProductsProps {
+  products: {
+    id: string;
+    name: string;
+    imageUrl: string;
+    price: number;
+  }[]
+}
 
-export function FlashSalesSlider() {
+
+export function FlashSalesSlider({ products }: ProductsProps) {
   const slider = useRef(null);
 
   return (
     <div>
       <div className="flex justify-end mr-6 gap-2 pb-[2.5rem] -mt-[4.4rem] md:mr-[5%] md:pb-[3.1rem] md:-mt-[5rem] lg:mr-[10%] 3xl:mr-[11%]">
-        {/* @ts-ignore: slickPrev library type*/} 
-        <button onClick={() => slider?.current?.slickPrev()}><HiArrowLeft size={23} className="bg-[#ecebeb] p-3 rounded-full w-9 h-9 md:w-12 md:h-12"/></button>
+        {/* @ts-ignore: slickPrev library type*/}
+        <button onClick={() => slider?.current?.slickPrev()}><HiArrowLeft size={23} className="bg-[#ecebeb] p-3 rounded-full w-9 h-9 md:w-12 md:h-12" /></button>
         {/* @ts-ignore: slickNext library type */}
         <button onClick={() => slider?.current?.slickNext()}><HiArrowRight size={23} className="bg-[#ecebeb] p-3 rounded-full w-9 h-9 md:w-12 md:h-12" /></button>
       </div>
       <Slider ref={slider} {...settings}>
-        <div>
-          <ProductCard />
-        </div>
-        <div>
-          <ProductCard />
-        </div>
-        <div>
-          <ProductCard />
-        </div>
-        <div>
-          <ProductCard />
-        </div>
-        <div>
-          <ProductCard />
-        </div>
-        <div>
-          <ProductCard />
-        </div>
-        <div>
-          <ProductCard />
-        </div>
-        <div>
-          <ProductCard />
-        </div>
+        {products.map(product => {
+          return (
+            <div key={product.id}>
+              <ProductCard id={product.id} name={product.name} imageUrl={product.imageUrl} price={product.price} />
+            </div>
+          )
+        })}
       </Slider>
     </div>
   );

@@ -19,8 +19,26 @@ import JBL from "@/public/home/bestSelling/JBL.svg"
 import { HiArrowUp } from "react-icons/hi";
 import { FlashSalesTimer } from "../utils/FlashSalesTimer";
 import { BestSellingProductsTimer } from "../utils/BestSellingProductsTimer";
+import { stripe } from "../lib/stripe";
+import Stripe from "stripe";
 
-export default function Home() {
+export default async function Home() {
+
+  const response = await stripe.products.list({
+    expand: ['data.default_price']
+  })
+
+  const products = response.data.map(product => {
+    const price = product.default_price as Stripe.Price
+
+    return {
+      id: product.id,
+      name: product.name,
+      imageUrl: product.images,
+      price: price.unit_amount! / 100,
+    }
+  }).sort(() => 0.5 - Math.random())
+
   return (
     <main className="w-11/12 lg:w-5/6 mx-auto ">
       <section className="mb-32 grid justify-start grid-cols-[auto_65%] md:grid-cols-[auto_85%] lg:grid-cols-[auto_70%] xl:grid-cols-[auto_78%] 2xl:grid-cols-[auto_84%] 3xl:grid-cols-[auto_87%]">
@@ -40,7 +58,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mb-16 -mr-6 md:-mr-10 lg:-mr-20 xl:-mr-28 2xl:-mr-40 3xl:-mr-56">
-          <FlashSalesSlider />
+          <FlashSalesSlider products={products}/>
         </div>
         <div className="flex justify-center">
           <button className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium mb-16 py-4 px-12 rounded md:text-base">View All Products</button>
@@ -62,7 +80,7 @@ export default function Home() {
           <button className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 py-2 px-6 text-sm font-medium mb-16 rounded md:text-base lg:py-4 lg:px-12 ">View All</button>
         </div>
         <div className="mb-36 xl:-mr-7">
-          <BestSellingSlider />
+          <BestSellingSlider products={products}/>
         </div>
         <div className="bg-[#010101] flex flex-col mb-[4.375rem] md:flex-row 2xl:justify-center 2xl:gap-20 3xl:gap-96">
           <div className="flex flex-col mx-auto md:items-start md:ml-14 2xl:mx-0">
@@ -82,7 +100,7 @@ export default function Home() {
           <SectionTitle content="Explore Our Products" />
         </div>
         <div className="xl:-mr-7">
-          <ExploreOurProductsSlider />
+          <ExploreOurProductsSlider products={products} />
         </div>
         <div className="flex justify-center">
           <button className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium mb-16 py-4 px-12 rounded md:text-base">View All Products</button>
