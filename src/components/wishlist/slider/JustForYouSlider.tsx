@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "./JustForYouSlider.css";
 
 import { WishListProductCard } from "../WishListProductCard";
+import { ProductsProps } from "@/src/app/page";
 
 const settings: Settings = {
   dots: false,
@@ -42,28 +43,15 @@ const settings: Settings = {
   ]
 };
 
-export function JustForYouSlider(){
+export function JustForYouSlider({ products }: ProductsProps) {
   return (
     <div>
       <Slider {...settings}>
-        <div>
-         <WishListProductCard justForYou={true}/>
-        </div>
-        <div>
-         <WishListProductCard justForYou={true}/>
-        </div>
-        <div>
-         <WishListProductCard justForYou={true}/>
-        </div>
-        <div>
-         <WishListProductCard justForYou={true}/>
-        </div>
-        <div>
-         <WishListProductCard justForYou={true}/>
-        </div>
-        <div>
-         <WishListProductCard justForYou={true}/>
-        </div>
+        {products.map(product => {
+          return (
+            <WishListProductCard key={product.id} justForYou={true} id={product.id} name={product.name} imageUrl={product.imageUrl} price={product.price} />
+          )
+        })}
       </Slider>
     </div>
   )

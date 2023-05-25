@@ -7,7 +7,7 @@ import Link from "next/link";
 import { ProductRating } from "./ProductRating";
 
 
-interface ProductCardProps {
+export interface ProductCardProps {
   id: string;
   name: string;
   imageUrl: string;
@@ -52,7 +52,7 @@ export function ProductCard({ id, name, imageUrl, price }: ProductCardProps) {
           width={130}
           height={190}
           quality={100}
-          className="w-auto max-h-[190px] px-4 my-auto ">
+          className="w-[220px] max-h-[190px] px-4 my-auto lg:w-[230px] 2xl:w-[240px] ">
         </Image>
         <footer className="w-full overflow-hidden">
           <button

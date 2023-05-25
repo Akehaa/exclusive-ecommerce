@@ -18,7 +18,7 @@ export default function page() {
           name=""
           id="name"
           placeholder="Name"
-          className="bg-transparent border-b border-[#a5a5a5] w-full mb-10 py-1"
+          className="bg-transparent border-b border-[#a5a5a5] w-full mb-10 py-1 focus:outline-none"
           required
         />
         <input
@@ -26,7 +26,7 @@ export default function page() {
           name=""
           id="emailOrPhone"
           placeholder="Email or Phone Number"
-          className="bg-transparent border-b border-[#a5a5a5] w-full mb-10 py-1"
+          className="bg-transparent border-b border-[#a5a5a5] w-full mb-10 py-1 focus:outline-none"
           required
         />
         <input
@@ -34,7 +34,7 @@ export default function page() {
           name=""
           id="password"
           placeholder="Password"
-          className="bg-transparent border-b border-[#a5a5a5] w-full mb-10 py-1"
+          className="bg-transparent border-b border-[#a5a5a5] w-full mb-10 py-1 focus:outline-none"
           required />
         <button className="mb-4 bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 w-full rounded text-exclusive-text-1 py-4">Create Account</button>
         <button type="submit" className="mb-8 flex gap-4 border border-[#a5a5a5] w-full rounded justify-center items-center">

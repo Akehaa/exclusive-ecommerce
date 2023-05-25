@@ -16,7 +16,7 @@ export default function page() {
           name=""
           id="emailOrPhone"
           placeholder="Email or Phone Number"
-          className="bg-transparent border-b border-[#a5a5a5] w-full mb-10 py-1"
+          className="bg-transparent border-b border-[#a5a5a5] w-full mb-10 py-1 focus:outline-none"
           required
         />
         <input
@@ -24,7 +24,7 @@ export default function page() {
           name=""
           id="password"
           placeholder="Password"
-          className="bg-transparent border-b border-[#a5a5a5] w-full mb-10 py-1"
+          className="bg-transparent border-b border-[#a5a5a5] w-full mb-10 py-1 focus:outline-none"
           required />
         <div className="flex w-full justify-between items-center">
           <button type="submit" className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 rounded text-exclusive-text-1 py-4 px-12">Log in</button>

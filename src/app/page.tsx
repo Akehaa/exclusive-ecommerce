@@ -22,6 +22,15 @@ import { BestSellingProductsTimer } from "../utils/BestSellingProductsTimer";
 import { stripe } from "../lib/stripe";
 import Stripe from "stripe";
 
+export interface ProductsProps {
+  products: {
+    id: string;
+    name: string;
+    imageUrl: string;
+    price: number;
+  }[]
+}
+
 export default async function Home() {
 
   const response = await stripe.products.list({
@@ -61,7 +70,7 @@ export default async function Home() {
           <FlashSalesSlider products={products}/>
         </div>
         <div className="flex justify-center">
-          <button className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium mb-16 py-4 px-12 rounded md:text-base">View All Products</button>
+          <Link href="/products" className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium mb-16 py-4 px-12 rounded md:text-base">View All Products</Link>
         </div>
       </section>
       <section className="border-b mb-20 pb-[4.375rem]">
@@ -77,7 +86,7 @@ export default async function Home() {
         <SectionTag content="This Month" />
         <div className="flex justify-between">
           <SectionTitle content="Best Selling Products" />
-          <button className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 py-2 px-6 text-sm font-medium mb-16 rounded md:text-base lg:py-4 lg:px-12 ">View All</button>
+          <Link href="/products" className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 py-2 px-6 text-sm font-medium mb-16 rounded md:text-base lg:py-4 lg:px-12 ">View All</Link>
         </div>
         <div className="mb-36 xl:-mr-7">
           <BestSellingSlider products={products}/>
@@ -103,7 +112,7 @@ export default async function Home() {
           <ExploreOurProductsSlider products={products} />
         </div>
         <div className="flex justify-center">
-          <button className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium mb-16 py-4 px-12 rounded md:text-base">View All Products</button>
+          <Link href="/products" className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium mb-16 py-4 px-12 rounded md:text-base">View All Products</Link>
         </div>
       </section>
       <section>

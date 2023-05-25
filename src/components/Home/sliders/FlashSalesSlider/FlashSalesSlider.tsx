@@ -9,6 +9,7 @@ import { useRef } from "react";
 import { HiArrowRight } from 'react-icons/hi'
 import { HiArrowLeft } from 'react-icons/hi'
 import { ProductCard } from "@/src/components/product/ProductCard";
+import { ProductsProps } from "@/src/app/page";
 
 const settings: Settings = {
   dots: false,
@@ -51,16 +52,6 @@ const settings: Settings = {
     },
   ]
 };
-
-export interface ProductsProps {
-  products: {
-    id: string;
-    name: string;
-    imageUrl: string;
-    price: number;
-  }[]
-}
-
 
 export function FlashSalesSlider({ products }: ProductsProps) {
   const slider = useRef(null);

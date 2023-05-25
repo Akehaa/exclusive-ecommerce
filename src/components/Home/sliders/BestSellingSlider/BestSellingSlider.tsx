@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "./BestSellingSlider.css";
 
 import { ProductCard } from "@/src/components/product/ProductCard";
-import { ProductsProps } from "../FlashSalesSlider/FlashSalesSlider";
+import { ProductsProps } from "@/src/app/page";
 
 const settings: Settings = {
   dots: false,
