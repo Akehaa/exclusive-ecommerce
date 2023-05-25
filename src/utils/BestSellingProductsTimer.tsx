@@ -9,7 +9,6 @@ function getTime(){
   return time
 }
 
-{/* @ts-ignore: expiryTimestamp library type*/ }
 export function BestSellingProductsTimer({ expiryTimestamp = getTime() }) {
   const { seconds, minutes, hours, days } = useTimer({ expiryTimestamp });
 

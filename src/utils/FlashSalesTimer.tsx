@@ -9,7 +9,6 @@ function getTime(){
   return time
 }
 
- {/* @ts-ignore: expiryTimestamp library type*/}
 export function FlashSalesTimer({ expiryTimestamp = getTime() }) {
   const { seconds, minutes, hours, days } = useTimer({ expiryTimestamp });
 
@@ -18,8 +17,8 @@ export function FlashSalesTimer({ expiryTimestamp = getTime() }) {
       <div className="flex gap-8">
         <span className="text-xs font-medium mr-2">Days</span>
         <span className="text-xs font-medium ml-2">Hours</span>
-        <span className="text-xs font-medium">Minutes</span>
-        <span className="text-xs font-medium ml-2">Seconds</span>
+        <span className="text-xs font-medium ml-1">Minutes</span>
+        <span className="text-xs font-medium">Seconds</span>
       </div>
       <div className="flex gap-3">
         <div className="flex flex-col">

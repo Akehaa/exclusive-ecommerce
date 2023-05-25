@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "./BestSellingSlider.css";
 
 import { ProductCard } from "@/src/components/product/ProductCard";
-import { ProductsProps } from "../FlashSalesSlider/FlashSalesSlider";
+import { ProductsProps } from "@/src/app/page";
 
 const settings: Settings = {
   dots: false,
@@ -56,7 +56,7 @@ export function BestSellingSlider({ products }: ProductsProps) {
         {products.map(product => {
           return (
             <div key={product.id} >
-              <ProductCard id={product.id} name={product.name} imageUrl={product.imageUrl} price={product.price} />
+              <ProductCard {...product} />
             </div>
           )
         })}

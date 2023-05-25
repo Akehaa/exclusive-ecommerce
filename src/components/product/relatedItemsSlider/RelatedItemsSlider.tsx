@@ -4,6 +4,7 @@ import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "./RelatedItemsSlider.css";
 import { ProductCard } from "../ProductCard";
+import { ProductsProps } from "@/src/app/page";
 
 const settings: Settings = {
   dots: false,
@@ -41,28 +42,17 @@ const settings: Settings = {
   ]
 };
 
-export function RelatedItemsSlider() {
+export function RelatedItemsSlider({ products }: ProductsProps) {
   return (
     <div>
       <Slider {...settings}>
-        <div>
-          <ProductCard />
-        </div>
-        <div>
-          <ProductCard />
-        </div>
-        <div>
-          <ProductCard />
-        </div>
-        <div>
-          <ProductCard />
-        </div>
-        <div>
-          <ProductCard />
-        </div>
-        <div>
-          <ProductCard />
-        </div>
+        {products.map(product => {
+          return (
+            <div key={product.id}>
+              <ProductCard {...product} />
+            </div>
+          )
+        })}
       </Slider>
     </div>
   )

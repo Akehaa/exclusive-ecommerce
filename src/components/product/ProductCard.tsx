@@ -7,10 +7,10 @@ import Link from "next/link";
 import { ProductRating } from "./ProductRating";
 
 
-interface ProductCardProps {
+export interface ProductCardProps {
   id: string;
   name: string;
-  imageUrl: string;
+  imageUrl: string[] | string;
   price: number;
 }
 
@@ -36,7 +36,7 @@ export function ProductCard({ id, name, imageUrl, price }: ProductCardProps) {
             ? <span className="bg-exclusive-primary-1 text-exclusive-text-2 text-xs py-1 px-3 ml-2 rounded">NEW</span>
             : null}
         </div>
-        <div className="flex flex-col gap-2 mt-2 mr-2 md:mt-3 md:mr-3">
+        <div className="flex flex-col h-fit gap-2 mt-2 mr-2 md:mt-3 md:mr-3">
           <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full " aria-label="add to wishlist" title="add to wishlist">
             <VscHeart size={20} />
           </button>
@@ -45,14 +45,14 @@ export function ProductCard({ id, name, imageUrl, price }: ProductCardProps) {
           </button>
         </div>
       </div>
-      <div className="bg-[#ecebeb] flex flex-col items-center mb-4 rounded pt-[3.775rem] h-[19rem] group ">
+      <Link href={`/products/${id}`} className="bg-[#ecebeb] flex flex-col items-center mb-4 rounded pt-[3.775rem] h-[19rem] group focus:outline-none ">
         <Image
           src={imageUrl?.[0]}
           alt={name}
           width={130}
           height={190}
           quality={100}
-          className="w-auto max-h-[190px] px-4 my-auto ">
+          className="w-[220px] max-h-[190px] px-4 my-auto lg:w-[230px] 2xl:w-[240px] ">
         </Image>
         <footer className="w-full overflow-hidden">
           <button
@@ -60,7 +60,7 @@ export function ProductCard({ id, name, imageUrl, price }: ProductCardProps) {
             Add To Cart
           </button>
         </footer>
-      </div>
+      </Link>
       <div className="flex flex-col gap-2">
         <div className="flex">
           <Link href="#" className="font-medium line-clamp-4">{name}</Link>
