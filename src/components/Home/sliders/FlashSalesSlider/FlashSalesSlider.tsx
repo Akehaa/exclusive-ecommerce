@@ -4,7 +4,6 @@ import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "./slick-theme.css";
 
-
 import { useRef } from "react";
 import { HiArrowRight } from 'react-icons/hi'
 import { HiArrowLeft } from 'react-icons/hi'
@@ -68,7 +67,7 @@ export function FlashSalesSlider({ products }: ProductsProps) {
         {products.map(product => {
           return (
             <div key={product.id}>
-              <ProductCard id={product.id} name={product.name} imageUrl={product.imageUrl} price={product.price} />
+              <ProductCard {...product} />
             </div>
           )
         })}

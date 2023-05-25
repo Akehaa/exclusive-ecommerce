@@ -56,7 +56,7 @@ export function BestSellingSlider({ products }: ProductsProps) {
         {products.map(product => {
           return (
             <div key={product.id} >
-              <ProductCard id={product.id} name={product.name} imageUrl={product.imageUrl} price={product.price} />
+              <ProductCard {...product} />
             </div>
           )
         })}

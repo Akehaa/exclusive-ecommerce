@@ -68,7 +68,7 @@ export function ExploreOurProductsSlider({ products }: ProductsProps) {
         {products.map(product => {
           return (
             <div className="mb-[3.750rem] " key={product.id}>
-              <ProductCard id={product.id} name={product.name} imageUrl={product.imageUrl} price={product.price} />
+              <ProductCard {...product} />
             </div>
           )
         })}

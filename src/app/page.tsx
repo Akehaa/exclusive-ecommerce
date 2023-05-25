@@ -26,7 +26,7 @@ export interface ProductsProps {
   products: {
     id: string;
     name: string;
-    imageUrl: string;
+    imageUrl: string[] | string;
     price: number;
   }[]
 }
@@ -67,7 +67,7 @@ export default async function Home() {
           </div>
         </div>
         <div className="mb-16 -mr-6 md:-mr-10 lg:-mr-20 xl:-mr-28 2xl:-mr-40 3xl:-mr-56">
-          <FlashSalesSlider products={products}/>
+          <FlashSalesSlider products={products} />
         </div>
         <div className="flex justify-center">
           <Link href="/products" className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium mb-16 py-4 px-12 rounded md:text-base">View All Products</Link>
@@ -89,7 +89,7 @@ export default async function Home() {
           <Link href="/products" className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 py-2 px-6 text-sm font-medium mb-16 rounded md:text-base lg:py-4 lg:px-12 ">View All</Link>
         </div>
         <div className="mb-36 xl:-mr-7">
-          <BestSellingSlider products={products}/>
+          <BestSellingSlider products={products} />
         </div>
         <div className="bg-[#010101] flex flex-col mb-[4.375rem] md:flex-row 2xl:justify-center 2xl:gap-20 3xl:gap-96">
           <div className="flex flex-col mx-auto md:items-start md:ml-14 2xl:mx-0">

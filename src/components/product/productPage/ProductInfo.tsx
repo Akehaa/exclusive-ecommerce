@@ -14,8 +14,8 @@ import { TbRefresh, TbTruckDelivery } from 'react-icons/tb';
 import { ProductRating } from '@/src/components/product/ProductRating';
 
 export function ProductInfo() {
-  const [nav1, setNav1] = useState();
-  const [nav2, setNav2] = useState();
+  const [nav1, setNav1] = useState<Slider | undefined>();
+  const [nav2, setNav2] = useState<Slider | undefined>();
   const inStock = true;
   const hasSizes = false;
 
@@ -36,8 +36,7 @@ export function ProductInfo() {
   return (
     <section className="w-full pl-4 mx-auto lg:w-5/6 lg:pl-0">
       <div className='grid grid-cols-[36%_64%] mt-20 mb-36 md:grid-cols-[26%_74%] xl:grid-cols-[18%_42%_auto] 2xl:grid-cols-[15%_45%_auto] 3xl:grid-cols-[12%_48%_auto]'>
-        {/*@ts-ignore*/}
-        <Slider asNavFor={nav1} ref={(slider2) => setNav2(slider2)}
+        <Slider asNavFor={nav1} ref={(slider2) => setNav2(slider2 as Slider)}
           slidesToShow={3.99}
           verticalSwiping={true}
           swipeToSlide={true}
@@ -67,8 +66,8 @@ export function ProductInfo() {
           </div>
 
         </Slider>
-        {/*@ts-ignore*/}
-        <Slider asNavFor={nav2} ref={(slider1) => setNav1(slider1)}
+
+        <Slider asNavFor={nav2} ref={(slider1) => setNav1(slider1 as Slider)}
           arrows={false}
           dots={false}
           slidesToShow={0.99}

@@ -2,7 +2,6 @@
 
 import { ProductsProps } from "@/src/app/page";
 import { ProductCard } from "@/src/components/product/ProductCard";
-import Link from "next/link";
 
 export function AllProducts({ products }: ProductsProps) {
   return (

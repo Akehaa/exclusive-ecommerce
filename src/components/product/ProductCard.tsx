@@ -10,7 +10,7 @@ import { ProductRating } from "./ProductRating";
 export interface ProductCardProps {
   id: string;
   name: string;
-  imageUrl: string;
+  imageUrl: string[] | string;
   price: number;
 }
 
@@ -36,7 +36,7 @@ export function ProductCard({ id, name, imageUrl, price }: ProductCardProps) {
             ? <span className="bg-exclusive-primary-1 text-exclusive-text-2 text-xs py-1 px-3 ml-2 rounded">NEW</span>
             : null}
         </div>
-        <div className="flex flex-col gap-2 mt-2 mr-2 md:mt-3 md:mr-3">
+        <div className="flex flex-col h-fit gap-2 mt-2 mr-2 md:mt-3 md:mr-3">
           <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full " aria-label="add to wishlist" title="add to wishlist">
             <VscHeart size={20} />
           </button>

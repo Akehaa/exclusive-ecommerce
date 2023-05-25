@@ -32,13 +32,7 @@ export default async function page() {
             {products.map(product => {
               return (
                 <li className="w-full" key={product.id}>
-                  <WishListProductCard
-                    justForYou={false}
-                    id={product.id}
-                    name={product.name}
-                    imageUrl={product.imageUrl}
-                    price={product.price}
-                  />
+                  <WishListProductCard justForYou={false} {...product} />
                 </li>
               )
             })}
