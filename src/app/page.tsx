@@ -44,6 +44,7 @@ export default async function Home() {
       id: product.id,
       name: product.name,
       imageUrl: product.images,
+
       price: price.unit_amount! / 100,
     }
   }).sort(() => 0.5 - Math.random())

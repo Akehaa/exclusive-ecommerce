@@ -48,7 +48,7 @@ export function WishListProductCard({ id, name, imageUrl, price, justForYou }: W
             </button>}
         </div>
       </div>
-      <div className="bg-[#ecebeb] flex flex-col items-center mb-4 rounded pt-[3.775rem] h-[19rem] group ">
+      <div className="bg-[#ecebeb] flex flex-col items-center mb-4 rounded pt-[3.775rem] h-[19rem] group focus:outline-none ">
         <Image
           src={imageUrl?.[0]}
           alt={name}

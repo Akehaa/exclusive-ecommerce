@@ -45,7 +45,7 @@ export function ProductCard({ id, name, imageUrl, price }: ProductCardProps) {
           </button>
         </div>
       </div>
-      <div className="bg-[#ecebeb] flex flex-col items-center mb-4 rounded pt-[3.775rem] h-[19rem] group ">
+      <Link href={`/products/${id}`} className="bg-[#ecebeb] flex flex-col items-center mb-4 rounded pt-[3.775rem] h-[19rem] group focus:outline-none ">
         <Image
           src={imageUrl?.[0]}
           alt={name}
@@ -60,7 +60,7 @@ export function ProductCard({ id, name, imageUrl, price }: ProductCardProps) {
             Add To Cart
           </button>
         </footer>
-      </div>
+      </Link>
       <div className="flex flex-col gap-2">
         <div className="flex">
           <Link href="#" className="font-medium line-clamp-4">{name}</Link>

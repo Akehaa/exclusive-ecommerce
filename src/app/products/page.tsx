@@ -17,10 +17,6 @@ export default async function page() {
       price: price.unit_amount! / 100,
     }
   }).sort(() => 0.5 - Math.random())
-  
-  return (
-    <>
-      <AllProducts products={products} />
-    </>
-  )
+
+  return  <AllProducts products={products} />
 }

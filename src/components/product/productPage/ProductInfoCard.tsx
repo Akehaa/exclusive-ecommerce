@@ -12,8 +12,18 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import { VscHeart } from 'react-icons/vsc'
 import { TbRefresh, TbTruckDelivery } from 'react-icons/tb';
 import { ProductRating } from '@/src/components/product/ProductRating';
+import { ProductCardProps } from '../ProductCard';
 
-export function ProductInfo() {
+export interface ProductInfoProps {
+  productInfo: {
+    name: string;
+    description: string;
+    imageUrl: string[] | string;
+    price: number;
+  }
+}
+
+export function ProductInfoCard({ productInfo }: ProductInfoProps) {
   const [nav1, setNav1] = useState<Slider | undefined>();
   const [nav2, setNav2] = useState<Slider | undefined>();
   const inStock = true;
@@ -46,25 +56,21 @@ export function ProductInfo() {
           arrows={false}
           dots={false}
         >
-          <div className='w-[180px] bg-[#f3f3f3] rounded'>
+          <div className='w-[170px] bg-[#f3f3f3] rounded focus:outline-none '>
             <Image src={GamingMonitor} alt='' width={121} height={135} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
           </div>
-          <div className='w-[170px] bg-[#f3f3f3] rounded'>
+          <div className='w-[170px] bg-[#f3f3f3] rounded focus:outline-none'>
             <Image src={GamingMonitor} alt='' width={121} height={135} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
           </div>
-          <div className='w-[170px] bg-[#f3f3f3] rounded'>
+          <div className='w-[170px] bg-[#f3f3f3] rounded focus:outline-none'>
             <Image src={GamingMonitor} alt='' width={121} height={135} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
           </div>
-          <div className='w-[170px] bg-[#f3f3f3] rounded'>
+          <div className='w-[170px] bg-[#f3f3f3] rounded focus:outline-none'>
             <Image src={GamingMonitor} alt='' width={121} height={135} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
           </div>
-          <div className='w-[170px] bg-[#f3f3f3] rounded'>
+          <div className='w-[170px] bg-[#f3f3f3] rounded focus:outline-none'>
             <Image src={GamingMonitor} alt='' width={121} height={135} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
           </div>
-          <div className='w-[170px] bg-[#f3f3f3] rounded'>
-            <Image src={GamingMonitor} alt='' width={121} height={135} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
-          </div>
-
         </Slider>
 
         <Slider asNavFor={nav2} ref={(slider1) => setNav1(slider1 as Slider)}
@@ -72,27 +78,27 @@ export function ProductInfo() {
           dots={false}
           slidesToShow={0.99}
         >
-          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px]'>
+          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none'>
             <Image src={GamingMonitor} alt='' width={446} height={315} quality={100} className='mx-auto h-full w-auto my-auto' />
           </div>
-          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px]' >
+          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none' >
             <Image src={GamingMonitor} alt='' width={446} height={315} quality={100} className='mx-auto h-full w-auto my-auto' />
           </div>
-          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px]'>
+          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none'>
             <Image src={GamingMonitor} alt='' width={446} height={315} quality={100} className='mx-auto h-full w-auto my-auto' />
           </div>
-          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px]' >
+          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none' >
             <Image src={GamingMonitor} alt='' width={446} height={315} quality={100} className='mx-auto h-full w-auto my-auto' />
           </div>
-          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px]'>
+          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none'>
             <Image src={GamingMonitor} alt='' width={446} height={315} quality={100} className='mx-auto h-full w-auto my-auto' />
           </div>
-          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px]' >
+          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none' >
             <Image src={GamingMonitor} alt='' width={446} height={315} quality={100} className='mx-auto h-full w-auto my-auto' />
           </div>
         </Slider>
         <div className='flex flex-col w-screen mt-20 pr-10 lg:w-[845px] xl:mt-0 xl:pr-0 xl:w-auto xl:ml-10 2xl:ml-[70px] 2xl:pr-4'>
-          <h2 className='font-inter font-semibold text-2xl mb-3'>IPS LCD Gaming Monitor</h2>
+          <h2 className='font-inter font-semibold text-2xl mb-3'>{productInfo.name}</h2>
           <div className='flex mb-3'>
             <ProductRating />
             {inStock
@@ -100,10 +106,10 @@ export function ProductInfo() {
               : <span className='-ml-16 text-red-400'><span className='text-exclusive-text-2'>|</span> Out of stock</span>}
           </div>
           <div className='mb-6'>
-            <span className='font-inter text-2xl'>$192.00</span>
+            <span className='font-inter text-2xl'>${productInfo.price}</span>
           </div>
           <div className='border-b border-black/40 pb-6 mb-6'>
-            <p className='text-sm'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime a beatae minus officia ipsum suscipit magni dolorum, ipsa voluptatibus cupiditate.</p>
+            <p className='text-sm'>{productInfo.description}</p>
           </div>
           {
             hasSizes

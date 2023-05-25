@@ -1,14 +1,21 @@
 import Link from 'next/link';
 import { SectionTag } from '@/src/components/Home/SectionTag';
 import { RelatedItemsSlider } from '@/src/components/product/relatedItemsSlider/RelatedItemsSlider';
-import { ProductInfo } from '@/src/components/product/productPage/ProductInfo';
+import { ProductInfoCard } from '@/src/components/product/productPage/ProductInfoCard';
 import { stripe } from '@/src/lib/stripe';
 import Stripe from 'stripe';
 
-export default async function page() {
+interface ParamsProps {
+  params: {
+    id: string
+  }
+}
+
+export default async function page({ params }: ParamsProps) {
   const response = await stripe.products.list({
     expand: ['data.default_price']
   })
+
 
   const products = response.data.map(product => {
     const price = product.default_price as Stripe.Price
@@ -17,9 +24,12 @@ export default async function page() {
       id: product.id,
       name: product.name,
       imageUrl: product.images,
+      description: product.description,
       price: price.unit_amount! / 100,
     }
   }).sort(() => 0.5 - Math.random())
+
+  const productInfo = products.find(product => product.id === params.id)
 
   return (
     <>
@@ -37,10 +47,10 @@ export default async function page() {
           /
         </span>
         <span className="font-medium cursor-default">
-          ProductName
+          {productInfo?.name}
         </span>
       </div>
-      <ProductInfo />
+      <ProductInfoCard productInfo={productInfo} />
       <section className='w-11/12 mx-auto lg:w-5/6 mb-36'>
         <div className='mb-16'>
           <SectionTag content="Related Item" />

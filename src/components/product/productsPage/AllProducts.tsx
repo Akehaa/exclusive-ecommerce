@@ -8,7 +8,7 @@ export function AllProducts({ products }: ProductsProps) {
     <main className="w-5/6 mx-auto grid grid-cols gap-10 mt-20 mb-36 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 ">
       {products.map(product => {
         return (
-          <ProductCard key={product.id} id={product.id} name={product.name} imageUrl={product.imageUrl} price={product.price} />
+          <ProductCard key={product.id} {...product} />
         )
       })}
     </main>
