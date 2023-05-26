@@ -4,9 +4,10 @@ import Link from 'next/link'
 
 import { VscHeart } from 'react-icons/vsc'
 import { FiShoppingCart } from 'react-icons/fi'
-import { HiMagnifyingGlass } from 'react-icons/hi2'
+import { Search } from './Search'
 
-export function Header() {
+export async function Header() {
+
   return (
     <header className="flex flex-col flex-wrap border-b border-opacity-30 border-black">
       <section className="bg-black text-exclusive-text-1 text-sm text-center py-3 px-3 ">
@@ -46,17 +47,7 @@ export function Header() {
           </div>
         </div>
         <div className='flex gap-6 mx-4 items-center justify-center md:justify-between'>
-          <div className='flex items-center md:mr-6'>
-            <input
-              type="text"
-              alt='Search for products'
-              placeholder='What are you looking for?'
-              className='text-xs bg-[#eeeeee] rounded py-2 w-60 pl-5'
-            />
-            <button aria-label='Search'>
-              <HiMagnifyingGlass size={23} className='-ml-[2.16rem]' />
-            </button>
-          </div>
+          <Search/>
           <div className='flex gap-4'>
             <Link href="/wishlist" aria-label='Wishlist' >
               <VscHeart size={23} />
