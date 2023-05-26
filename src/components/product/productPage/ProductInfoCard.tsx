@@ -12,7 +12,6 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import { VscHeart } from 'react-icons/vsc'
 import { TbRefresh, TbTruckDelivery } from 'react-icons/tb';
 import { ProductRating } from '@/src/components/product/ProductRating';
-import { ProductCardProps } from '../ProductCard';
 
 export interface ProductInfoProps {
   productInfo: {
@@ -28,9 +27,15 @@ export function ProductInfoCard({ productInfo }: ProductInfoProps) {
   const [nav2, setNav2] = useState<Slider | undefined>();
   const inStock = true;
   const hasSizes = false;
+  const discountAmout = 20;
+  const discount = true;
 
 
   const [counter, setCounter] = useState(1);
+
+  function priceWithoutDiscount() {
+    return productInfo.price + (productInfo.price * discountAmout / 100)
+  }
 
   function increase() {
     if (counter < 99) {
@@ -45,7 +50,7 @@ export function ProductInfoCard({ productInfo }: ProductInfoProps) {
 
   return (
     <section className="w-full pl-4 mx-auto lg:w-5/6 lg:pl-0">
-      <div className='grid grid-cols-[36%_64%] mt-20 mb-36 md:grid-cols-[26%_74%] xl:grid-cols-[18%_42%_auto] 2xl:grid-cols-[15%_45%_auto] 3xl:grid-cols-[12%_48%_auto]'>
+      <div className='grid grid-cols-[36%_64%] mt-20 mb-36 md:grid-cols-[26%_74%] 2xl:grid-cols-[15%_45%_auto] 3xl:grid-cols-[12%_48%_auto]'>
         <Slider asNavFor={nav1} ref={(slider2) => setNav2(slider2 as Slider)}
           slidesToShow={3.99}
           verticalSwiping={true}
@@ -56,20 +61,20 @@ export function ProductInfoCard({ productInfo }: ProductInfoProps) {
           arrows={false}
           dots={false}
         >
-          <div className='w-[170px] bg-[#f3f3f3] rounded focus:outline-none '>
-            <Image src={GamingMonitor} alt='' width={121} height={135} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
+          <div className='w-[170px] bg-[#f3f3f3] rounded focus:outline-none h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px]'>
+            <Image src={productInfo.imageUrl?.[0]} alt='' width={121} height={135} quality={100} className='w-auto h-full p-4 mx-auto' />
           </div>
-          <div className='w-[170px] bg-[#f3f3f3] rounded focus:outline-none'>
-            <Image src={GamingMonitor} alt='' width={121} height={135} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
+          <div className='w-[170px] bg-[#f3f3f3] rounded focus:outline-none h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px]'>
+            <Image src={productInfo.imageUrl?.[0]} alt='' width={121} height={135} quality={100} className='w-auto h-full p-4 mx-auto' />
           </div>
-          <div className='w-[170px] bg-[#f3f3f3] rounded focus:outline-none'>
-            <Image src={GamingMonitor} alt='' width={121} height={135} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
+          <div className='w-[170px] bg-[#f3f3f3] rounded focus:outline-none h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px]'>
+            <Image src={productInfo.imageUrl?.[0]} alt='' width={121} height={135} quality={100} className='w-auto h-full p-4 mx-auto' />
           </div>
-          <div className='w-[170px] bg-[#f3f3f3] rounded focus:outline-none'>
-            <Image src={GamingMonitor} alt='' width={121} height={135} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
+          <div className='w-[170px] bg-[#f3f3f3] rounded focus:outline-none h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px]'>
+            <Image src={productInfo.imageUrl?.[0]} alt='' width={121} height={135} quality={100} className='w-auto h-full p-4 mx-auto' />
           </div>
-          <div className='w-[170px] bg-[#f3f3f3] rounded focus:outline-none'>
-            <Image src={GamingMonitor} alt='' width={121} height={135} quality={100} className='mx-auto h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px] w-auto my-auto' />
+          <div className='w-[170px] bg-[#f3f3f3] rounded focus:outline-none h-[71px] md:h-[115px] xl:h-[139.8px] 2xl:h-[134.8px]'>
+            <Image src={productInfo.imageUrl?.[0]} alt='' width={121} height={135} quality={100} className='w-auto h-full p-4 mx-auto' />
           </div>
         </Slider>
 
@@ -79,25 +84,32 @@ export function ProductInfoCard({ productInfo }: ProductInfoProps) {
           slidesToShow={0.99}
         >
           <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none'>
-            <Image src={GamingMonitor} alt='' width={446} height={315} quality={100} className='mx-auto h-full w-auto my-auto' />
-          </div>
-          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none' >
-            <Image src={GamingMonitor} alt='' width={446} height={315} quality={100} className='mx-auto h-full w-auto my-auto' />
-          </div>
-          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none'>
-            <Image src={GamingMonitor} alt='' width={446} height={315} quality={100} className='mx-auto h-full w-auto my-auto' />
-          </div>
-          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none' >
-            <Image src={GamingMonitor} alt='' width={446} height={315} quality={100} className='mx-auto h-full w-auto my-auto' />
+            <div className='w-full h-full flex items-center justify-center'>
+              <Image src={productInfo.imageUrl?.[0]} alt='' width={800} height={600} quality={100} className='w-auto p-2 md:h-[315px] md:p-6' />
+            </div>
           </div>
           <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none'>
-            <Image src={GamingMonitor} alt='' width={446} height={315} quality={100} className='mx-auto h-full w-auto my-auto' />
+            <div className='w-full h-full flex items-center justify-center'>
+              <Image src={productInfo.imageUrl?.[0]} alt='' width={800} height={600} quality={100} className='w-auto p-2 md:h-[315px] md:p-6' />
+            </div>
           </div>
-          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none' >
-            <Image src={GamingMonitor} alt='' width={446} height={315} quality={100} className='mx-auto h-full w-auto my-auto' />
+          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none'>
+            <div className='w-full h-full flex items-center justify-center'>
+              <Image src={productInfo.imageUrl?.[0]} alt='' width={800} height={600} quality={100} className='w-auto p-2 md:h-[315px] md:p-6' />
+            </div>
+          </div>
+          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none'>
+            <div className='w-full h-full flex items-center justify-center'>
+              <Image src={productInfo.imageUrl?.[0]} alt='' width={800} height={600} quality={100} className='w-auto p-2 md:h-[315px] md:p-6' />
+            </div>
+          </div>
+          <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none'>
+            <div className='w-full h-full flex items-center justify-center'>
+              <Image src={productInfo.imageUrl?.[0]} alt='' width={800} height={600} quality={100} className='w-auto p-2 md:h-[315px] md:p-6' />
+            </div>
           </div>
         </Slider>
-        <div className='flex flex-col w-screen mt-20 pr-10 lg:w-[845px] xl:mt-0 xl:pr-0 xl:w-auto xl:ml-10 2xl:ml-[70px] 2xl:pr-4'>
+        <div className='flex flex-col w-screen mt-20 pr-10 lg:w-[845px] 2xl:mt-0 2xl:w-auto 2xl:ml-[70px] 2xl:pr-4'>
           <h2 className='font-inter font-semibold text-2xl mb-3'>{productInfo.name}</h2>
           <div className='flex mb-3'>
             <ProductRating />
@@ -105,9 +117,14 @@ export function ProductInfoCard({ productInfo }: ProductInfoProps) {
               ? <span className='-ml-16 text-green-400'><span className='text-exclusive-text-2'>|</span> In Stock</span>
               : <span className='-ml-16 text-red-400'><span className='text-exclusive-text-2'>|</span> Out of stock</span>}
           </div>
-          <div className='mb-6'>
-            <span className='font-inter text-2xl'>${productInfo.price}</span>
-          </div>
+          {discount
+            ? <div className='mb-6 flex gap-4'>
+              <span className='font-inter text-2xl text-exclusive-secondary'>${productInfo.price}</span>
+              <span className='font-inter text-2xl opacity-60 line-through'>${priceWithoutDiscount()}</span>
+            </div>
+            : <div className='mb-6 '>
+              <span className='font-inter text-2xl'>${priceWithoutDiscount()}</span>
+            </div>}
           <div className='border-b border-black/40 pb-6 mb-6'>
             <p className='text-sm'>{productInfo.description}</p>
           </div>
