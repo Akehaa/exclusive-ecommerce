@@ -5,7 +5,6 @@ import './slick-theme.css';
 
 import { useState } from 'react';
 import Slider from 'react-slick';
-import GamingMonitor from '@/public/home/products/gaming_monitor.svg'
 import Image from 'next/image';
 
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
@@ -13,10 +12,10 @@ import { VscHeart } from 'react-icons/vsc'
 import { TbRefresh, TbTruckDelivery } from 'react-icons/tb';
 import { ProductRating } from '@/src/components/product/ProductRating';
 
-export interface ProductInfoProps {
+interface ProductInfoProps {
   productInfo: {
     name: string;
-    description: string;
+    description: string | null;
     imageUrl: string[] | string;
     price: number;
   }
