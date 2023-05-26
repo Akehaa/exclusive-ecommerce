@@ -8,15 +8,15 @@ import { HiMagnifyingGlass } from 'react-icons/hi2'
 
 export function Header() {
   return (
-    <header className="flex flex-col flex-wrap border-b-[1px] border-opacity-30 border-black">
+    <header className="flex flex-col flex-wrap border-b border-opacity-30 border-black">
       <section className="bg-black text-exclusive-text-1 text-sm text-center py-3 px-3 ">
         <span className='pr-2 '>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</span>
         <Link href="#" className='font-semibold underline underline-offset-2'>ShopNow</Link>
       </section>
 
-      <section className='flex flex-col items-center gap-4 mt-[2.938rem] mb-[1.438rem] md:flex-row md:justify-between md:mx-auto lg:w-5/6' >
-        <div className='flex justify-center flex-wrap mb-4 md:mb-0 '>
-          <h1 className='mr-3 lg:mr-8 xl:mr-32 2xl:mr-48'>
+      <section className='flex flex-col items-center gap-4 mt-12 mb-6 lg:flex-row lg:justify-between lg:mx-auto lg:w-5/6' >
+        <div className='flex flex-col justify-center flex-wrap mb-4 md:mb-0 md:flex-row'>
+          <h1 className='mx-auto mb-6 md:mb-2 md:mr-4 lg:mt-1 lg:mr-8 xl:mr-32 2xl:mr-48'>
             <Link href="#">
               <Image
                 src={Exclusive}

@@ -84,27 +84,27 @@ export function ProductInfoCard({ productInfo }: ProductInfoProps) {
         >
           <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none'>
             <div className='w-full h-full flex items-center justify-center'>
-              <Image src={productInfo.imageUrl?.[0]} alt='' width={800} height={600} quality={100} className='w-auto p-2 md:h-[315px] md:p-6' />
+              <Image src={productInfo.imageUrl?.[0]} alt='' width={800} height={600} quality={100} className='w-auto h-auto p-2 md:h-[315px] md:p-6' />
             </div>
           </div>
           <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none'>
             <div className='w-full h-full flex items-center justify-center'>
-              <Image src={productInfo.imageUrl?.[0]} alt='' width={800} height={600} quality={100} className='w-auto p-2 md:h-[315px] md:p-6' />
+              <Image src={productInfo.imageUrl?.[0]} alt='' width={800} height={600} quality={100} className='w-auto h-auto p-2 md:h-[315px] md:p-6' />
             </div>
           </div>
           <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none'>
             <div className='w-full h-full flex items-center justify-center'>
-              <Image src={productInfo.imageUrl?.[0]} alt='' width={800} height={600} quality={100} className='w-auto p-2 md:h-[315px] md:p-6' />
+              <Image src={productInfo.imageUrl?.[0]} alt='' width={800} height={600} quality={100} className='w-auto h-auto p-2 md:h-[315px] md:p-6' />
             </div>
           </div>
           <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none'>
             <div className='w-full h-full flex items-center justify-center'>
-              <Image src={productInfo.imageUrl?.[0]} alt='' width={800} height={600} quality={100} className='w-auto p-2 md:h-[315px] md:p-6' />
+              <Image src={productInfo.imageUrl?.[0]} alt='' width={800} height={600} quality={100} className='w-auto h-auto p-2 md:h-[315px] md:p-6' />
             </div>
           </div>
           <div className='w-[170px] bg-[#f3f3f3] rounded h-[312px] md:h-[488px] xl:h-[587px] 2xl:h-[567px] focus:outline-none'>
             <div className='w-full h-full flex items-center justify-center'>
-              <Image src={productInfo.imageUrl?.[0]} alt='' width={800} height={600} quality={100} className='w-auto p-2 md:h-[315px] md:p-6' />
+              <Image src={productInfo.imageUrl?.[0]} alt='' width={800} height={600} quality={100} className='w-auto h-auto p-2 md:h-[315px] md:p-6' />
             </div>
           </div>
         </Slider>

@@ -8,7 +8,7 @@ export default function page() {
   return (
     <div className="flex flex-col lg:mt-16 lg:mb-16 lg:flex-row">
       <div className="mb-16 lg:mb-0 lg:w-[50%] xl:flex-1 2xl:flex-none">
-        <Image src={shop_blue_background} width={1000} height={800} alt="" quality={100} priority />
+        <Image src={shop_blue_background} width={1000} height={800} alt="" quality={100} />
       </div>
       <form className="flex flex-col items-center mb-16 mx-7 md:mx-20 lg:items-start lg:justify-center 2xl:mx-auto">
         <h2 className="font-inter font-medium text-4xl mb-6">Create an account</h2>
