@@ -7,7 +7,7 @@ import Stripe from 'stripe';
 
 interface ParamsProps {
   params: {
-    id: string
+    id: string;
   }
 }
 
@@ -50,7 +50,7 @@ export default async function page({ params }: ParamsProps) {
           {productInfo?.name}
         </span>
       </div>
-      <ProductInfoCard productInfo={productInfo} />
+      <ProductInfoCard productInfo={productInfo!} />
       <section className='w-11/12 mx-auto lg:w-5/6 mb-36'>
         <div className='mb-16'>
           <SectionTag content="Related Item" />

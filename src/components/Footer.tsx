@@ -49,9 +49,9 @@ export function Footer() {
         <div className='flex flex-col mb-6 lg:mb-0'>
           <h3 className='mb-6 font-medium text-xl'>Account</h3>
           <Link href="#" className='mb-4'>My Account</Link>
-          <Link href="#" className='mb-4' >Login / Register</Link>
-          <Link href="#" className='mb-4'>Cart</Link>
-          <Link href="#" className='mb-4'>Wishlist</Link>
+          <Link href="/log-in" className='mb-4' >Login / Register</Link>
+          <Link href="/cart" className='mb-4'>Cart</Link>
+          <Link href="/wishlist" className='mb-4'>Wishlist</Link>
           <Link href="#" className='mb-4'>Shop</Link>
         </div>
 
@@ -60,7 +60,7 @@ export function Footer() {
           <Link href="#" className='mb-4'>Privacy Policy</Link>
           <Link href="#" className='mb-4'>Terms Of Use</Link>
           <Link href="#" className='mb-4'>FAQ</Link>
-          <Link href="#" className='mb-4'>Contact</Link>
+          <Link href="/contact" className='mb-4'>Contact</Link>
         </div>
 
         <div className='flex flex-col lg:mb-0'>

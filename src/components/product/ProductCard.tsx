@@ -19,7 +19,7 @@ export function ProductCard({ id, name, imageUrl, price }: ProductCardProps) {
   const discountAmout = 20;
   const newProduct = true;
 
-  function priceWithDiscount() {
+  function priceWithoutDiscount() {
     if (discount) {
       return price + (price * discountAmout / 100)
     }
@@ -45,22 +45,24 @@ export function ProductCard({ id, name, imageUrl, price }: ProductCardProps) {
           </button>
         </div>
       </div>
-      <Link href={`/products/${id}`} className="bg-[#ecebeb] flex flex-col items-center mb-4 rounded pt-[3.775rem] h-[19rem] group focus:outline-none ">
-        <Image
-          src={imageUrl?.[0]}
-          alt={name}
-          width={130}
-          height={190}
-          quality={100}
-          className="w-[220px] max-h-[190px] px-4 my-auto lg:w-[230px] 2xl:w-[240px] ">
-        </Image>
+      <div className="bg-[#ecebeb] flex flex-col items-center mb-4 rounded pt-[3.775rem] h-[19rem] group focus:outline-none ">
+        <Link href={`/products/${id}`} className="h-[82%] mx-auto flex items-center justify-center" >
+          <Image
+            src={imageUrl?.[0]}
+            alt={name}
+            width={130}
+            height={190}
+            quality={100}
+            className="w-[220px] max-h-[190px] px-4 my-auto lg:w-[230px] 2xl:w-[240px] ">
+          </Image>
+        </Link>
         <footer className="w-full overflow-hidden">
           <button
             className="w-full text-exclusive-text-1 bg-black flex justify-center cursor-pointer rounded-b py-1 font-medium transform translate-y-[110%] opacity-0 group-hover:translate-y-[0%] group-hover:opacity-100 transition-all ease-in-out duration-200 mt-1 md:py-2 ">
             Add To Cart
           </button>
         </footer>
-      </Link>
+      </div>
       <div className="flex flex-col gap-2">
         <div className="flex">
           <Link href="#" className="font-medium line-clamp-4">{name}</Link>
@@ -68,7 +70,7 @@ export function ProductCard({ id, name, imageUrl, price }: ProductCardProps) {
         {discount
           ? <div className="flex gap-3">
             <span className="text-exclusive-secondary">${price}</span>
-            <span className="opacity-60 line-through">${priceWithDiscount()}</span>
+            <span className="opacity-60 line-through">${priceWithoutDiscount()}</span>
           </div>
           : <span className="text-exclusive-secondary">${price}</span>
         }
