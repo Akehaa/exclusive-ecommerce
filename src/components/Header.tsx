@@ -2,12 +2,10 @@ import Image from 'next/image'
 import Exclusive from '@/public/header/logo-header.svg'
 import Link from 'next/link'
 
-import { VscHeart } from 'react-icons/vsc'
-import { FiShoppingCart } from 'react-icons/fi'
 import { Search } from './Search'
+import { WishlistAndCart } from './header/WishlistAndCart'
 
 export async function Header() {
-
   return (
     <header className="flex flex-col flex-wrap border-b border-opacity-30 border-black">
       <section className="bg-black text-exclusive-text-1 text-sm text-center py-3 px-3 ">
@@ -47,15 +45,8 @@ export async function Header() {
           </div>
         </div>
         <div className='flex gap-6 mx-4 items-center justify-center md:justify-between'>
-          <Search/>
-          <div className='flex gap-4'>
-            <Link href="/wishlist" aria-label='Wishlist' >
-              <VscHeart size={23} />
-            </Link>
-            <Link href="/cart" aria-label='Cart'>
-              <FiShoppingCart size={23} />
-            </Link>
-          </div>
+          <Search />
+          <WishlistAndCart />
         </div>
       </section>
     </header>

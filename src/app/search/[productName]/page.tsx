@@ -22,6 +22,7 @@ export default async function page({ params }: ParamsProps) {
       imageUrl: product.images,
       description: product.description,
       price: price.unit_amount! / 100,
+      defaultPriceId: price.id,
     }
   })
 
@@ -39,7 +40,7 @@ export default async function page({ params }: ParamsProps) {
     <div>
       {findedProducts()
         ? <div className="flex items-center justify-center my-10 md:my-20 xl:my-40 2xl:my-60 3xl:my-96">
-          <span className="font-medium cursor-default md:text-3xl">Sorry, no product was found.</span>
+          <span className="font-medium cursor-default md:text-3xl">Sorry, no products were found.</span>
         </div>
         : <div className="w-5/6 mx-auto grid grid-cols gap-10 mt-20 mb-36 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5">
           {filteredProductsByName.map(filteredProductByName => {

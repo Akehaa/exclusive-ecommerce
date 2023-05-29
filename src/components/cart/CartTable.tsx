@@ -1,6 +1,11 @@
+"use client";
+
+import { CartContext } from "@/src/app/context/CartContextProvider";
 import { CartTableItem } from "./CartTableItem";
+import { useContext } from 'react'
 
 export function CartTable() {
+  const { cartItems } = useContext(CartContext)
 
   return (
     <table className="w-5/6 mx-auto text-xs 2xl:text-base">
@@ -19,9 +24,11 @@ export function CartTable() {
             Subtotal
           </td>
         </tr>
-        <CartTableItem />
-        <CartTableItem />
-        <CartTableItem />
+        {cartItems.map(item => {
+          return (
+            <CartTableItem key={item.id} id={item.id} name={item.name} imageUrl={item.imageURL} price={item.price} defaultPriceId={item.defaultPriceId} />
+          )
+        })}
       </tbody>
     </table>
   )
