@@ -1,25 +1,29 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { useContext } from 'react'
 
 import { FiEye } from 'react-icons/fi'
-
-import Link from "next/link";
 import { ProductRating } from "../product/ProductRating";
 import { BsTrash3 } from "react-icons/bs";
+import { CartContext } from "@/src/app/context/CartContextProvider";
 
 export interface WishListProductCardProps {
   justForYou: boolean,
   id: string,
   name: string,
-  imageUrl: string[] | string,
+  imageUrl: string,
   price: number,
+  defaultPriceId: string,
 }
 
-export function WishListProductCard({ id, name, imageUrl, price, justForYou }: WishListProductCardProps) {
+export function WishListProductCard({ id, name, imageUrl, price, justForYou, defaultPriceId }: WishListProductCardProps) {
   const discount = true;
   const discountAmout = 20;
   const newProduct = true;
+
+  const { handleAddItemOnCart } = useContext(CartContext)
 
   function priceWithoutDiscount() {
     if (discount) {
@@ -49,19 +53,21 @@ export function WishListProductCard({ id, name, imageUrl, price, justForYou }: W
         </div>
       </div>
       <div className="bg-[#ecebeb] flex flex-col items-center mb-4 rounded pt-[3.775rem] h-[19rem] group focus:outline-none ">
-      <Link href={`/products/${id}`} className="h-[82%] mx-auto flex items-center justify-center" >
+        <Link href={`/products/${id}`} className="h-[82%] mx-auto flex items-center justify-center focus:outline-none focus:border-none" >
           <Image
             src={imageUrl?.[0]}
             alt={name}
             width={130}
             height={190}
             quality={100}
-            className="w-[220px] max-h-[190px] px-4 my-auto lg:w-[230px] 2xl:w-[240px] ">
+            className="focus:outline-none focus:border-none w-[220px] max-h-[190px] px-4 my-auto lg:w-[230px] 2xl:w-[240px] ">
           </Image>
         </Link>
         <footer className="w-full overflow-hidden">
           <button
-            className="w-full text-exclusive-text-1 bg-black flex justify-center cursor-pointer rounded-b py-1 font-medium transform translate-y-[110%] opacity-0 group-hover:translate-y-[0%] group-hover:opacity-100 transition-all ease-in-out duration-200 mt-1 md:py-2 ">
+            className="w-full text-exclusive-text-1 bg-black flex justify-center cursor-pointer rounded-b py-1 font-medium transform translate-y-[110%] opacity-0 group-hover:translate-y-[0%] group-hover:opacity-100 transition-all ease-in-out duration-200 mt-1 md:py-2 "
+            onClick={() => handleAddItemOnCart(id, name, imageUrl, price, defaultPriceId)}
+          >
             Add To Cart
           </button>
         </footer>

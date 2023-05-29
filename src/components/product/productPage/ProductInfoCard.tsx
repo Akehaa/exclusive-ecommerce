@@ -3,27 +3,33 @@
 import 'slick-carousel/slick/slick.css';
 import './slick-theme.css';
 
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
+import { CartContext } from '@/src/app/context/CartContextProvider';
 
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import { VscHeart } from 'react-icons/vsc'
 import { TbRefresh, TbTruckDelivery } from 'react-icons/tb';
 import { ProductRating } from '@/src/components/product/ProductRating';
 
+
 interface ProductInfoProps {
   productInfo: {
+    id: string;
     name: string;
     description: string | null;
     imageUrl: string[] | string;
     price: number;
+    defaultPriceId: string,
   }
 }
 
 export function ProductInfoCard({ productInfo }: ProductInfoProps) {
   const [nav1, setNav1] = useState<Slider | undefined>();
   const [nav2, setNav2] = useState<Slider | undefined>();
+  const { handleAddItemOnCart } = useContext(CartContext);
+
   const inStock = true;
   const hasSizes = false;
   const discountAmout = 20;
@@ -228,11 +234,13 @@ export function ProductInfoCard({ productInfo }: ProductInfoProps) {
                 type='submit'
                 form='sizesForm'
                 className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium py-[0.55rem] px-6 rounded md:text-base lg:px-11 xl:px-12"
+                onClick={() => handleAddItemOnCart(productInfo.id, productInfo.name, productInfo.imageUrl[0], productInfo.price, productInfo.defaultPriceId)}
               >
                 Buy Now
               </button>
               : <button
                 className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium py-[0.55rem] px-6 rounded md:text-base lg:px-11 xl:px-12"
+                onClick={() => handleAddItemOnCart(productInfo.id, productInfo.name, productInfo.imageUrl[0], productInfo.price, productInfo.defaultPriceId)}
               >
                 Buy Now
               </button>

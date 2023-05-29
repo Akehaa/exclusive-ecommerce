@@ -6,9 +6,10 @@ interface FilteredProductByName {
   filteredProductByName: {
     id: string;
     name: string;
-    imageUrl: string[];
+    imageUrl: string | string[];
     description: string | null;
     price: number;
+    defaultPriceId: string,
   }
 }
 
