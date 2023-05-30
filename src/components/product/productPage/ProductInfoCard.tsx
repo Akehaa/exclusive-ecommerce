@@ -35,21 +35,20 @@ export function ProductInfoCard({ productInfo }: ProductInfoProps) {
   const discountAmout = 20;
   const discount = true;
 
-
-  const [counter, setCounter] = useState(1);
+  const [quantity, setQuantity] = useState(1);
 
   function priceWithoutDiscount() {
     return productInfo.price + (productInfo.price * discountAmout / 100)
   }
 
   function increase() {
-    if (counter < 99) {
-      setCounter(counter + 1)
+    if (quantity < 99) {
+      setQuantity(quantity + 1)
     }
   }
   function decrease() {
-    if (counter > 1) {
-      setCounter(counter - 1)
+    if (quantity > 1) {
+      setQuantity(quantity - 1)
     }
   }
 
@@ -224,7 +223,7 @@ export function ProductInfoCard({ productInfo }: ProductInfoProps) {
               <button className='px-2 py-2 hover:bg-exclusive-secondary rounded-s hover:text-exclusive-text-1' onClick={decrease}>
                 <AiOutlineMinus size={24} />
               </button>
-              <span className='py-2 border-l border-r border-black/40 w-14 text-center font md:w-16 2xl:w-20'>{counter}</span>
+              <span className='py-2 border-l border-r border-black/40 w-14 text-center font md:w-16 2xl:w-20'>{quantity}</span>
               <button className='px-2 py-2 hover:bg-exclusive-secondary rounded-e hover:text-exclusive-text-1' onClick={increase}>
                 <AiOutlinePlus size={24} />
               </button>
@@ -234,13 +233,13 @@ export function ProductInfoCard({ productInfo }: ProductInfoProps) {
                 type='submit'
                 form='sizesForm'
                 className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium py-[0.55rem] px-6 rounded md:text-base lg:px-11 xl:px-12"
-                onClick={() => handleAddItemOnCart(productInfo.id, productInfo.name, productInfo.imageUrl[0], productInfo.price, productInfo.defaultPriceId)}
+                onClick={() => handleAddItemOnCart(productInfo.id, productInfo.name, productInfo.imageUrl[0], productInfo.price, productInfo.defaultPriceId, quantity)}
               >
                 Buy Now
               </button>
               : <button
                 className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium py-[0.55rem] px-6 rounded md:text-base lg:px-11 xl:px-12"
-                onClick={() => handleAddItemOnCart(productInfo.id, productInfo.name, productInfo.imageUrl[0], productInfo.price, productInfo.defaultPriceId)}
+                onClick={() => handleAddItemOnCart(productInfo.id, productInfo.name, productInfo.imageUrl[0], productInfo.price, productInfo.defaultPriceId, quantity)}
               >
                 Buy Now
               </button>

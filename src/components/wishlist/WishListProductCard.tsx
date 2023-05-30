@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 
 import { FiEye } from 'react-icons/fi'
 import { ProductRating } from "../product/ProductRating";
@@ -19,15 +19,15 @@ export interface WishListProductCardProps {
 }
 
 export function WishListProductCard({ id, name, imageUrl, price, justForYou, defaultPriceId }: WishListProductCardProps) {
-  const discount = true;
-  const discountAmout = 20;
-  const newProduct = true;
-
+  const [discount, setDiscount] = useState(true)
+  const [discountAmount, setDiscountAmout] = useState(20)
+  const [newProduct, setNewProduct] = useState(true)
+  const [quantity, setQuantity] = useState(1)
   const { handleAddItemOnCart } = useContext(CartContext)
 
   function priceWithoutDiscount() {
     if (discount) {
-      return price + (price * discountAmout / 100)
+      return price + (price * discountAmount / 100)
     }
   }
 
@@ -36,7 +36,7 @@ export function WishListProductCard({ id, name, imageUrl, price, justForYou, def
       <div className="flex justify-between h-[250px] -mb-[250px]">
         <div className="mt-2 ml-2 md:mt-3 md:ml-3">
           {discount
-            ? <span className="bg-exclusive-secondary text-exclusive-text-1 text-xs py-1 px-3 rounded">-{discountAmout}%</span>
+            ? <span className="bg-exclusive-secondary text-exclusive-text-1 text-xs py-1 px-3 rounded">-{discountAmount}%</span>
             : null}
           {newProduct
             ? <span className="bg-exclusive-primary-1 text-exclusive-text-2 text-xs py-1 px-3 ml-2 rounded">NEW</span>
@@ -66,7 +66,7 @@ export function WishListProductCard({ id, name, imageUrl, price, justForYou, def
         <footer className="w-full overflow-hidden">
           <button
             className="w-full text-exclusive-text-1 bg-black flex justify-center cursor-pointer rounded-b py-1 font-medium transform translate-y-[110%] opacity-0 group-hover:translate-y-[0%] group-hover:opacity-100 transition-all ease-in-out duration-200 mt-1 md:py-2 "
-            onClick={() => handleAddItemOnCart(id, name, imageUrl, price, defaultPriceId)}
+            onClick={() => handleAddItemOnCart(id, name, imageUrl, price, defaultPriceId, quantity)}
           >
             Add To Cart
           </button>
