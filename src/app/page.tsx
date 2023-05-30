@@ -28,6 +28,7 @@ export interface ProductsProps {
     name: string;
     imageUrl: string[] | string;
     price: number;
+    defaultPriceId: string;
   }[]
 }
 
