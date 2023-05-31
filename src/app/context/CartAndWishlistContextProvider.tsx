@@ -1,8 +1,9 @@
 'use client';
 
+import { Item } from '@radix-ui/react-navigation-menu';
 import { createContext, ReactNode, useState, Dispatch, SetStateAction } from 'react'
 
-interface CartProviderProps {
+interface CartAndWishlistProviderProps {
   children: ReactNode
 }
 
@@ -11,24 +12,37 @@ export interface CartItem {
   name: string,
   imageURL: string,
   price: number,
-  quantity: number,
+  quantity?: number,
 }
 
-interface CartItemContext {
+export interface WishlistItem {
+  id: string,
+  name: string,
+  imageURL: string,
+  price: number,
+}
+
+interface CartAndWishlistItemContext {
   cartItems: CartItem[],
   setCartItems: Dispatch<SetStateAction<CartItem[]>>,
   cartQuantity: number,
+  wishlistItems: WishlistItem[],
   handleAddItemOnCart: (id: string, name: string, imageURL: string, price: number, quantity: number) => void,
   increaseItemQuantity: (id: string) => void
   decreaseItemQuantity: (id: string) => void
   getItemQuantity: (id: string) => number,
-  removeFromCart: (name: string) => void,
+  removeFromCart: (id: string) => void,
+  handleAddItemOnWishlist: (id: string, name: string, imageURL: string, price: number) => void,
+  removeFromWishlist: (id: string) => void,
+  verifyItemOnWishlist: (id: string) => boolean | undefined,
+  handleMoveItemsFromWishlistToCart: () => void,
 }
 
-export const CartContext = createContext({} as CartItemContext);
+export const CartAndWishlistContext = createContext({} as CartAndWishlistItemContext);
 
-export function CartProvider({ children }: CartProviderProps) {
+export function CartAndWishlistProvider({ children }: CartAndWishlistProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
+  const [wishlistItems, setWishlistItems] = useState<WishlistItem[]>([])
 
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity! + quantity, 0
@@ -57,7 +71,7 @@ export function CartProvider({ children }: CartProviderProps) {
       } else {
         return currentItem.map(item => {
           if (item.id === id) {
-            return { ...item, quantity: item.quantity + 1 }
+            return { ...item, quantity: item.quantity! + 1 }
           } else {
             return item
           }
@@ -73,7 +87,7 @@ export function CartProvider({ children }: CartProviderProps) {
       } else {
         return currentItem.map(item => {
           if (item.id === id) {
-            return { ...item, quantity: item.quantity - 1 }
+            return { ...item, quantity: item.quantity! - 1 }
           } else {
             return item
           }
@@ -92,8 +106,43 @@ export function CartProvider({ children }: CartProviderProps) {
     })
   }
 
+
+  function handleAddItemOnWishlist(id: string, name: string, imageURL: string, price: number) {
+    setWishlistItems(currentItem => {
+      if (currentItem.find(item => item.name === name) == null) {
+        return [...currentItem, { id, name, imageURL, price, quantity: 1 }]
+      } else {
+        return currentItem.map(item => {
+          if (item.name === name) {
+            return { ...item }
+          } else {
+            return item
+          }
+        })
+      }
+    })
+  }
+
+  function removeFromWishlist(id: string) {
+    setWishlistItems(currentItem => {
+      return currentItem.filter(item => item.id !== id)
+    })
+  }
+
+  function verifyItemOnWishlist(id: string) {
+    if (wishlistItems.length >= 1) {
+      return wishlistItems.some(currentItem => currentItem.id === id)
+    }
+  }
+
+  function handleMoveItemsFromWishlistToCart() {
+    setCartItems(cartItems.concat(wishlistItems))
+    setWishlistItems([])
+  }
+
+
   return (
-    <CartContext.Provider
+    <CartAndWishlistContext.Provider
       value={{
         cartItems,
         setCartItems,
@@ -103,9 +152,14 @@ export function CartProvider({ children }: CartProviderProps) {
         decreaseItemQuantity,
         getItemQuantity,
         removeFromCart,
+        handleAddItemOnWishlist,
+        removeFromWishlist,
+        wishlistItems,
+        verifyItemOnWishlist,
+        handleMoveItemsFromWishlistToCart,
       }}
     >
       {children}
-    </CartContext.Provider>
+    </CartAndWishlistContext.Provider>
   )
 }

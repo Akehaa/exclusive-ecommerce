@@ -1,6 +1,6 @@
 "use client";
 
-import { CartContext } from "@/src/app/context/CartContextProvider";
+import { CartAndWishlistContext } from "@/src/app/context/CartAndWishlistContextProvider";
 import Image from "next/image";
 import { useContext } from "react";
 
@@ -12,7 +12,7 @@ interface ItemProps {
 }
 
 export function ItemOnCheckout({ id, name, imageUrl, price }: ItemProps) {
-  const { getItemQuantity } = useContext(CartContext)
+  const { getItemQuantity } = useContext(CartAndWishlistContext)
 
   return (
     <div className="flex items-center justify-between mb-8">

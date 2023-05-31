@@ -6,12 +6,12 @@ import './slick-theme.css';
 import { useState, useContext } from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
-import { CartContext } from '@/src/app/context/CartContextProvider';
 
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import { VscHeart } from 'react-icons/vsc'
 import { TbRefresh, TbTruckDelivery } from 'react-icons/tb';
 import { ProductRating } from '@/src/components/product/ProductRating';
+import { CartAndWishlistContext } from '@/src/app/context/CartAndWishlistContextProvider';
 
 
 interface ProductInfoProps {
@@ -27,7 +27,7 @@ interface ProductInfoProps {
 export function ProductInfoCard({ productInfo }: ProductInfoProps) {
   const [nav1, setNav1] = useState<Slider | undefined>();
   const [nav2, setNav2] = useState<Slider | undefined>();
-  const { handleAddItemOnCart } = useContext(CartContext);
+  const { handleAddItemOnCart, handleAddItemOnWishlist, verifyItemOnWishlist, removeFromWishlist } = useContext(CartAndWishlistContext);
   const [quantity, setQuantity] = useState(1);
 
   const inStock = true;
@@ -244,9 +244,21 @@ export function ProductInfoCard({ productInfo }: ProductInfoProps) {
                 Buy Now
               </button>
             }
-            <button className='border p-[0.55rem] rounded border-black/40'>
-              <VscHeart size={20} />
-            </button>
+            {verifyItemOnWishlist(productInfo.id)
+              ?
+              <button
+                className='border p-[0.55rem] rounded border-black/40 bg-red-500'
+                onClick={() => removeFromWishlist(productInfo.id)}
+              >
+                <VscHeart size={20} />
+              </button>
+              : <button
+                className='border p-[0.55rem] rounded border-black/40'
+                onClick={() => handleAddItemOnWishlist(productInfo.id, productInfo.name, productInfo.imageUrl?.[0], productInfo.price)}
+              >
+                <VscHeart size={20} />
+              </button>
+            }
           </div>
           <div className='w-[19.4rem] md:w-[20.4rem] mt-10 lg:w-[23rem] xl:w-[23.5rem] 2xl:w-[24.5rem]'>
             <div className='flex items-center gap-4 p-4 w-full border border-black/40 rounded-t'>

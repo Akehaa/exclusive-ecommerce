@@ -7,13 +7,13 @@ import { useContext, useState } from 'react'
 import { FiEye } from 'react-icons/fi'
 import { ProductRating } from "../product/ProductRating";
 import { BsTrash3 } from "react-icons/bs";
-import { CartContext } from "@/src/app/context/CartContextProvider";
+import { CartAndWishlistContext } from "@/src/app/context/CartAndWishlistContextProvider";
 
 export interface WishListProductCardProps {
   justForYou: boolean,
   id: string,
   name: string,
-  imageUrl: string[],
+  imageUrl: string,
   price: number,
 }
 
@@ -22,7 +22,7 @@ export function WishListProductCard({ id, name, imageUrl, price, justForYou }: W
   const [discountAmount, setDiscountAmout] = useState(20)
   const [newProduct, setNewProduct] = useState(true)
   const [quantity, setQuantity] = useState(1)
-  const { handleAddItemOnCart } = useContext(CartContext)
+  const { handleAddItemOnCart, removeFromWishlist } = useContext(CartAndWishlistContext)
 
   function priceWithoutDiscount() {
     if (discount) {
@@ -46,7 +46,7 @@ export function WishListProductCard({ id, name, imageUrl, price, justForYou }: W
             ? <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full">
               <FiEye size={20} />
             </button>
-            : <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full" aria-label="remove from wishlist" title="remove from wishlist" >
+            : <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full" aria-label="remove from wishlist" title="remove from wishlist" onClick={() => removeFromWishlist(id)} >
               <BsTrash3 size={20} />
             </button>}
         </div>
@@ -54,7 +54,7 @@ export function WishListProductCard({ id, name, imageUrl, price, justForYou }: W
       <div className="bg-[#ecebeb] flex flex-col items-center mb-4 rounded pt-[3.775rem] h-[19rem] group focus:outline-none ">
         <Link href={`/products/${id}`} className="h-[82%] mx-auto flex items-center justify-center focus:outline-none focus:border-none" >
           <Image
-            src={imageUrl?.[0]}
+            src={imageUrl}
             alt={name}
             width={130}
             height={190}
@@ -65,7 +65,7 @@ export function WishListProductCard({ id, name, imageUrl, price, justForYou }: W
         <footer className="w-full overflow-hidden">
           <button
             className="w-full text-exclusive-text-1 bg-black flex justify-center cursor-pointer rounded-b py-1 font-medium transform translate-y-[110%] opacity-0 group-hover:translate-y-[0%] group-hover:opacity-100 transition-all ease-in-out duration-200 mt-1 md:py-2 "
-            onClick={() => handleAddItemOnCart(id, name, imageUrl?.[0], price, quantity)}
+            onClick={() => handleAddItemOnCart(id, name, imageUrl, price, quantity)}
           >
             Add To Cart
           </button>

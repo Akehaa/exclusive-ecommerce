@@ -1,11 +1,11 @@
 "use client";
 
-import { CartContext } from "@/src/app/context/CartContextProvider";
+import { CartAndWishlistContext } from "@/src/app/context/CartAndWishlistContextProvider";
 import { useContext } from "react";
 import { ItemOnCheckout } from "./ItemOnCheckout";
 
 export function ShowCheckoutData() {
-  const { cartItems } = useContext(CartContext)
+  const { cartItems } = useContext(CartAndWishlistContext)
 
   const getTotalPrice = () => {
     return (
@@ -51,7 +51,7 @@ export function ShowCheckoutData() {
           ? <button className="bg-exclusive-secondary h-fit text-exclusive-text-1 py-4 px-12 text-sm font-medium mb-16 rounded md:text-base lg:w-[50%] 2xl:w-60 opacity-50 cursor-not-allowed">Apply Coupon</button>
           : <button className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover h-fit duration-200 text-exclusive-text-1 py-4 px-12 text-sm font-medium mb-16 rounded md:text-base lg:w-[50%] 2xl:w-60">Apply Coupon</button>
         }
-        
+
       </div>
       {cartItems.length < 1
         ? <button className="bg-exclusive-secondary h-fit text-exclusive-text-1 py-4 px-12 text-sm font-medium mb-16 rounded md:text-base opacity-50 cursor-not-allowed ">Proceed to Payment</button>

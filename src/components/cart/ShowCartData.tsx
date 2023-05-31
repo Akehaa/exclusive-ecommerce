@@ -1,11 +1,12 @@
 "use client";
 
 import { useContext } from 'react'
-import { CartContext } from "@/src/app/context/CartContextProvider"
+
 import Link from 'next/link'
+import { CartAndWishlistContext } from '@/src/app/context/CartAndWishlistContextProvider';
 
 export function ShowCartData() {
-  const { cartItems } = useContext(CartContext)
+  const { cartItems } = useContext(CartAndWishlistContext)
 
   const getTotalPrice = () => {
     return (

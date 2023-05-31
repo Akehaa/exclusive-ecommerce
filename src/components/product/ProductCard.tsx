@@ -8,7 +8,7 @@ import { VscHeart } from 'react-icons/vsc'
 
 import Link from "next/link";
 import { ProductRating } from "./ProductRating";
-import { CartContext } from "@/src/app/context/CartContextProvider";
+import { CartAndWishlistContext } from "@/src/app/context/CartAndWishlistContextProvider";
 
 export interface ProductCardProps {
   id: string;
@@ -22,15 +22,13 @@ export function ProductCard({ id, name, imageUrl, price }: ProductCardProps) {
   const [discountAmount, setDiscountAmout] = useState(20)
   const [newProduct, setNewProduct] = useState(true)
   const [quantity, setQuantity] = useState(1)
-
-  const { handleAddItemOnCart } = useContext(CartContext)
+  const { handleAddItemOnCart, handleAddItemOnWishlist, removeFromWishlist, verifyItemOnWishlist } = useContext(CartAndWishlistContext)
 
   function priceWithoutDiscount() {
     if (discount) {
       return price + (price * discountAmount / 100)
     }
   }
-
 
   return (
     <div>
@@ -44,9 +42,26 @@ export function ProductCard({ id, name, imageUrl, price }: ProductCardProps) {
             : null}
         </div>
         <div className="flex flex-col h-fit gap-2 mt-2 mr-2 md:mt-3 md:mr-3">
-          <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full " aria-label="add to wishlist" title="add to wishlist">
-            <VscHeart size={20} />
-          </button>
+          {verifyItemOnWishlist(id)
+            ?
+            <button
+              className="bg-red-500 p-2 h-auto w-9 rounded-full "
+              aria-label="add to wishlist"
+              title="add to wishlist"
+              onClick={() => removeFromWishlist(id)}
+            >
+              <VscHeart size={20} />
+            </button>
+            :
+            <button
+              className="bg-exclusive-background p-2 h-auto w-9 rounded-full "
+              aria-label="add to wishlist"
+              title="add to wishlist"
+              onClick={() => handleAddItemOnWishlist(id, name, imageUrl?.[0], price)}
+            >
+              <VscHeart size={20} />
+            </button>
+          }
           <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full" >
             <FiEye size={20} />
           </button>

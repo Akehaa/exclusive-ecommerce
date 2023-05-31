@@ -6,7 +6,7 @@ import { IoClose } from "react-icons/io5";
 
 import Image from "next/image";
 import Link from "next/link";
-import { CartContext } from "@/src/app/context/CartContextProvider";
+import { CartAndWishlistContext } from "@/src/app/context/CartAndWishlistContextProvider";
 
 interface ItemProps {
   id: string;
@@ -17,7 +17,7 @@ interface ItemProps {
 }
 
 export function CartTableItem({ id, name, imageUrl, price }: ItemProps) {
-  const { getItemQuantity, increaseItemQuantity, decreaseItemQuantity, removeFromCart } = useContext(CartContext)
+  const { getItemQuantity, increaseItemQuantity, decreaseItemQuantity, removeFromCart } = useContext(CartAndWishlistContext)
 
   return (
     <tr className="border flex mb-10 items-center gap-6 pl-4 md:gap-0 md:pl-0">

@@ -2,8 +2,8 @@ import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
-import { CartProvider } from './context/CartContextProvider'
 import { Metadata } from 'next'
+import { CartAndWishlistProvider } from './context/CartAndWishlistContextProvider'
 
 export const metadata: Metadata = {
   title: {
@@ -37,11 +37,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable} font-poppins overflow-x-hidden`}>
       <body className='overflow-x-hidden'>
-        <CartProvider>
+        <CartAndWishlistProvider>
           <Header />
           {children}
           <Footer />
-        </CartProvider>
+        </CartAndWishlistProvider>
       </body>
     </html>
   )
