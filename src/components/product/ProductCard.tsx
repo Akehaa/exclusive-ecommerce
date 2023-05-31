@@ -8,30 +8,27 @@ import { VscHeart } from 'react-icons/vsc'
 
 import Link from "next/link";
 import { ProductRating } from "./ProductRating";
-import { CartContext } from "@/src/app/context/CartContextProvider";
+import { CartAndWishlistContext } from "@/src/app/context/CartAndWishlistContextProvider";
 
 export interface ProductCardProps {
   id: string;
   name: string;
   imageUrl: string | string[];
   price: number;
-  defaultPriceId: string,
 }
 
-export function ProductCard({ id, name, imageUrl, price, defaultPriceId }: ProductCardProps) {
+export function ProductCard({ id, name, imageUrl, price }: ProductCardProps) {
   const [discount, setDiscount] = useState(true)
   const [discountAmount, setDiscountAmout] = useState(20)
   const [newProduct, setNewProduct] = useState(true)
   const [quantity, setQuantity] = useState(1)
-
-  const { handleAddItemOnCart } = useContext(CartContext)
+  const { handleAddItemOnCart, handleAddItemOnWishlist, removeFromWishlist, verifyItemOnWishlist } = useContext(CartAndWishlistContext)
 
   function priceWithoutDiscount() {
     if (discount) {
       return price + (price * discountAmount / 100)
     }
   }
-
 
   return (
     <div>
@@ -45,9 +42,26 @@ export function ProductCard({ id, name, imageUrl, price, defaultPriceId }: Produ
             : null}
         </div>
         <div className="flex flex-col h-fit gap-2 mt-2 mr-2 md:mt-3 md:mr-3">
-          <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full " aria-label="add to wishlist" title="add to wishlist">
-            <VscHeart size={20} />
-          </button>
+          {verifyItemOnWishlist(id)
+            ?
+            <button
+              className="bg-red-500 p-2 h-auto w-9 rounded-full "
+              aria-label="add to wishlist"
+              title="add to wishlist"
+              onClick={() => removeFromWishlist(id)}
+            >
+              <VscHeart size={20} />
+            </button>
+            :
+            <button
+              className="bg-exclusive-background p-2 h-auto w-9 rounded-full "
+              aria-label="add to wishlist"
+              title="add to wishlist"
+              onClick={() => handleAddItemOnWishlist(id, name, imageUrl?.[0], price)}
+            >
+              <VscHeart size={20} />
+            </button>
+          }
           <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full" >
             <FiEye size={20} />
           </button>
@@ -67,7 +81,7 @@ export function ProductCard({ id, name, imageUrl, price, defaultPriceId }: Produ
         <footer className="w-full overflow-hidden">
           <button
             className="w-full text-exclusive-text-1 bg-black flex justify-center cursor-pointer rounded-b py-1 font-medium transform translate-y-[110%] opacity-0 group-hover:translate-y-[0%] group-hover:opacity-100 transition-all ease-in-out duration-200 mt-1 md:py-2 "
-            onClick={() => handleAddItemOnCart(id, name, imageUrl?.[0], price, defaultPriceId, quantity)}
+            onClick={() => handleAddItemOnCart(id, name, imageUrl?.[0], price, quantity)}
           >
             Add To Cart
           </button>

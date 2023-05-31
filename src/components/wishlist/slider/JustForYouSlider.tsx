@@ -49,7 +49,7 @@ export function JustForYouSlider({ products }: ProductsProps) {
       <Slider {...settings}>
         {products.map(product => {
           return (
-            <WishListProductCard key={product.id} justForYou={true} id={product.id} name={product.name} imageUrl={product.imageUrl} price={product.price} />
+            <WishListProductCard key={product.id} justForYou={true} id={product.id} name={product.name} imageUrl={product.imageUrl?.[0]} price={product.price} />
           )
         })}
       </Slider>

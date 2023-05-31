@@ -1,11 +1,11 @@
 "use client";
 
-import { CartContext } from "@/src/app/context/CartContextProvider";
+import { CartAndWishlistContext } from "@/src/app/context/CartAndWishlistContextProvider";
 import { CartTableItem } from "./CartTableItem";
 import { useContext } from 'react'
 
 export function CartTable() {
-  const { cartItems } = useContext(CartContext)
+  const { cartItems } = useContext(CartAndWishlistContext)
 
   return (
     <table className="w-5/6 mx-auto text-xs 2xl:text-base">
@@ -26,7 +26,7 @@ export function CartTable() {
         </tr>
         {cartItems.map(item => {
           return (
-            <CartTableItem key={item.id} id={item.id} name={item.name} imageUrl={item.imageURL} price={item.price} defaultPriceId={item.defaultPriceId} quantity={item.quantity} />
+            <CartTableItem key={item.id} id={item.id} name={item.name} imageUrl={item.imageURL} price={item.price} quantity={item.quantity} />
           )
         })}
       </tbody>

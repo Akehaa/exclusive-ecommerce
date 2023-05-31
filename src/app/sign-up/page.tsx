@@ -1,8 +1,8 @@
 import shop_blue_background from "@/public/signup-login/shop-blue-background.svg"
+import { FcGoogle } from 'react-icons/fc'
+
 import Image from "next/image"
 import Link from "next/link"
-
-import { FcGoogle } from 'react-icons/fc'
 
 export default function page() {
   return (
