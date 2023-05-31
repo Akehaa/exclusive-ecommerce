@@ -17,7 +17,6 @@ export default async function page() {
       name: product.name,
       imageUrl: product.images,
       price: price.unit_amount! / 100,
-      defaultPriceId: price.id,
     }
   }).sort(() => 0.5 - Math.random())
 
@@ -26,7 +25,7 @@ export default async function page() {
       <div className="mb-20">
         <header className="flex justify-between mt-20 mb-16 items-center">
           <span className="text-xl">Wishlist (4)</span>
-          <button className="font-medium py-4 border border-black/40 rounded px-6 md:px-12">Move All To Bag</button>
+          <button className="font-medium py-4 border border-black/40 rounded px-6 md:px-12">Move All To Cart</button>
         </header>
         <div>
           <ul className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-4 xl:gap-8 2xl:grid-cols-4 3xl:grid-cols-5">

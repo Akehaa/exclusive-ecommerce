@@ -21,7 +21,6 @@ interface ProductInfoProps {
     description: string | null;
     imageUrl: string[] | string;
     price: number;
-    defaultPriceId: string,
   }
 }
 
@@ -29,16 +28,17 @@ export function ProductInfoCard({ productInfo }: ProductInfoProps) {
   const [nav1, setNav1] = useState<Slider | undefined>();
   const [nav2, setNav2] = useState<Slider | undefined>();
   const { handleAddItemOnCart } = useContext(CartContext);
+  const [quantity, setQuantity] = useState(1);
 
   const inStock = true;
   const hasSizes = false;
-  const discountAmout = 20;
+  const discountAmount = 20;
   const discount = true;
 
-  const [quantity, setQuantity] = useState(1);
+
 
   function priceWithoutDiscount() {
-    return productInfo.price + (productInfo.price * discountAmout / 100)
+    return productInfo.price + (productInfo.price * discountAmount / 100)
   }
 
   function increase() {
@@ -233,13 +233,13 @@ export function ProductInfoCard({ productInfo }: ProductInfoProps) {
                 type='submit'
                 form='sizesForm'
                 className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium py-[0.55rem] px-6 rounded md:text-base lg:px-11 xl:px-12"
-                onClick={() => handleAddItemOnCart(productInfo.id, productInfo.name, productInfo.imageUrl[0], productInfo.price, productInfo.defaultPriceId, quantity)}
+                onClick={() => handleAddItemOnCart(productInfo.id, productInfo.name, productInfo.imageUrl[0], productInfo.price, quantity)}
               >
                 Buy Now
               </button>
               : <button
                 className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium py-[0.55rem] px-6 rounded md:text-base lg:px-11 xl:px-12"
-                onClick={() => handleAddItemOnCart(productInfo.id, productInfo.name, productInfo.imageUrl[0], productInfo.price, productInfo.defaultPriceId, quantity)}
+                onClick={() => handleAddItemOnCart(productInfo.id, productInfo.name, productInfo.imageUrl[0], productInfo.price, quantity)}
               >
                 Buy Now
               </button>

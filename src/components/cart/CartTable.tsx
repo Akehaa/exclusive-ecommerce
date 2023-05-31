@@ -26,7 +26,7 @@ export function CartTable() {
         </tr>
         {cartItems.map(item => {
           return (
-            <CartTableItem key={item.id} id={item.id} name={item.name} imageUrl={item.imageURL} price={item.price} defaultPriceId={item.defaultPriceId} quantity={item.quantity} />
+            <CartTableItem key={item.id} id={item.id} name={item.name} imageUrl={item.imageURL} price={item.price} quantity={item.quantity} />
           )
         })}
       </tbody>

@@ -7,19 +7,18 @@ interface CartProviderProps {
 }
 
 export interface CartItem {
-  id: string;
-  name: string;
-  imageURL: string;
-  price: string;
-  quantity: number;
-  defaultPriceId?: string;
+  id: string,
+  name: string,
+  imageURL: string,
+  price: number,
+  quantity: number,
 }
 
 interface CartItemContext {
   cartItems: CartItem[],
   setCartItems: Dispatch<SetStateAction<CartItem[]>>,
   cartQuantity: number,
-  handleAddItemOnCart: (id: string, name: string, imageURL: string, price: number, defaultPriceId: string, quantity: number) => void,
+  handleAddItemOnCart: (id: string, name: string, imageURL: string, price: number, quantity: number) => void,
   increaseItemQuantity: (id: string) => void
   decreaseItemQuantity: (id: string) => void
   getItemQuantity: (id: string) => number,
@@ -35,29 +34,19 @@ export function CartProvider({ children }: CartProviderProps) {
     (quantity, item) => item.quantity! + quantity, 0
   )
 
-  function handleAddItemOnCart(id: string, name: string, imageURL: string, price: number, defaultPriceId: string, quantity: number) {
+  function handleAddItemOnCart(id: string, name: string, imageURL: string, price: number, quantity: number) {
     setCartItems(currentItem => {
       if (currentItem.find(item => item.name === name) == null) {
-        return [...currentItem, { id, name, imageURL, price, defaultPriceId, quantity }]
+        return [...currentItem, { id, name, imageURL, price, quantity }]
       } else {
         return currentItem.map(item => {
           if (item.name === name) {
-            return { ...item, quantity: item.quantity! + 1 }
+            return { ...item, quantity: item.quantity! + quantity }
           } else {
             return item
           }
         })
       }
-    })
-  }
-
-  function getItemQuantity(id: string) {
-    return cartItems.find(item => item.id === id)?.quantity || 0
-  }
-
-  function removeFromCart(id: string) {
-    setCartItems(currentItem => {
-      return currentItem.filter(item => item.id !== id)
     })
   }
 
@@ -90,6 +79,16 @@ export function CartProvider({ children }: CartProviderProps) {
           }
         })
       }
+    })
+  }
+
+  function getItemQuantity(id: string) {
+    return cartItems.find(item => item.id === id)?.quantity || 0
+  }
+
+  function removeFromCart(id: string) {
+    setCartItems(currentItem => {
+      return currentItem.filter(item => item.id !== id)
     })
   }
 

@@ -28,7 +28,6 @@ export interface ProductsProps {
     name: string;
     imageUrl: string[] | string;
     price: number;
-    defaultPriceId: string;
   }[]
 }
 
@@ -46,7 +45,6 @@ export default async function Home() {
       name: product.name,
       imageUrl: product.images,
       price: price.unit_amount! / 100,
-      defaultPriceId: price.id,
     }
   }).sort(() => 0.5 - Math.random())
 

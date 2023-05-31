@@ -26,7 +26,6 @@ export default async function page({ params }: ParamsProps) {
       imageUrl: product.images,
       description: product.description,
       price: price.unit_amount! / 100,
-      defaultPriceId: price.id,
     }
   }).sort(() => 0.5 - Math.random())
 

@@ -13,7 +13,6 @@ interface ItemProps {
   name: string;
   imageUrl: string;
   price: number | string;
-  defaultPriceId?: string | undefined,
   quantity?: number,
 }
 
@@ -24,7 +23,7 @@ export function CartTableItem({ id, name, imageUrl, price }: ItemProps) {
     <tr className="border flex mb-10 items-center gap-6 pl-4 md:gap-0 md:pl-0">
       <td className="relative py-6 pl-4 w-full flex flex-col gap-2 items-start md:pl-10 xl:flex-row xl:gap-5 xl:items-center ">
         <Image src={imageUrl} width={54} height={54} alt="" />
-        <button className="absolute left-[0.650rem] md:top-[1.370rem] md:left-[2.075rem]" aria-label="remove from cart" title="remove from cart" onClick={() => removeFromCart(id)}>
+        <button className="absolute left-2 top-4 md:left-8" aria-label="remove from cart" title="remove from cart" onClick={() => removeFromCart(id)}>
           <IoClose size={20} className="text-exclusive-text-1 bg-exclusive-secondary rounded-full" />
         </button>
         <Link href={`/products/${id}`} className="line-clamp-5 hover:underline">{name}</Link>
