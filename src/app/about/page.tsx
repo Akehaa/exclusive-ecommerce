@@ -11,6 +11,11 @@ import { StaffSlider } from "@/src/components/about/slider/StaffSlider";
 import services from '@/public/home/newArrival/botton/services.svg'
 import services2 from '@/public/home/newArrival/botton/services2.svg'
 import services3 from '@/public/home/newArrival/botton/services3.svg'
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About"
+}
 
 export default function page() {
   return (

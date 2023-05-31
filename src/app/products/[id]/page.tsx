@@ -8,7 +8,25 @@ import Stripe from 'stripe';
 interface ParamsProps {
   params: {
     id: string;
+    name?: string;
   }
+}
+
+export async function generateMetadata({ params }: ParamsProps) {
+  const response = await stripe.products.list()
+
+  const products = response.data.map(product => {
+    return {
+      id: product.id,
+      name: product.name,
+    }
+  })
+
+  const productInfo = products.find(product => product.id === params.id)
+
+  return {
+    title: `${productInfo?.name}`,
+  };
 }
 
 export default async function page({ params }: ParamsProps) {

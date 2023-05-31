@@ -3,13 +3,14 @@ import './globals.css'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { CartProvider } from './context/CartContextProvider'
+import { Metadata } from 'next'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     default: 'Exclusive',
-    template: '%s | Exclusive'
+    template: '%s - Exclusive'
   },
-  description: 'Exclusive e-Commerce',
+  description: 'Exclusive Store',
 }
 
 const poppins = Poppins({

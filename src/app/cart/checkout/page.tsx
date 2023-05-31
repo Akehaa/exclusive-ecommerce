@@ -1,24 +1,13 @@
-"use client";
-
-import * as Checkbox from "@radix-ui/react-checkbox";
-import { BsCheckLg } from "react-icons/bs";
 import { Navigation } from "@/src/components/checkout/Navigation";
-import { ItemOnCheckout } from "@/src/components/checkout/ItemOnCheckout";
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContextProvider";
+import { Metadata } from "next";
+import { ShowCheckoutItems } from "@/src/components/checkout/ShowCheckoutItems";
+import { CheckoutCheckbox } from "@/src/components/checkout/CheckoutCheckbox";
+
+export const metadata: Metadata = {
+  title: "Checkout"
+}
 
 export default function page() {
-  const { cartItems } = useContext(CartContext)
-
-  const getTotalPrice = () => {
-    return (
-      cartItems.reduce((total, cartItem) => {
-        const item = cartItems.find(item => item.name === cartItem.name)
-        return total + ((item?.price) || 0) * cartItem.quantity
-      }, 0)
-    )
-  }
-
   return (
     <>
       <Navigation />
@@ -93,59 +82,9 @@ export default function page() {
               required
             />
           </div>
-          <div className="flex items-start mb-24 xl:mb-36">
-            <Checkbox.Root
-              className="flex h-6 w-9 md:w-6 appearance-none items-center justify-center rounded-[4px] bg-[#e0e0e0]"
-              defaultChecked
-              id="saveInfo"
-            >
-              <Checkbox.Indicator className="flex items-center rounded justify-center w-full h-full bg-exclusive-secondary">
-                <BsCheckLg className="text-exclusive-background" size={20} />
-              </Checkbox.Indicator>
-            </Checkbox.Root>
-            <label
-              className="pl-4 text-exclusive-text-2"
-              htmlFor="saveInfo"
-            >
-              Save this information for faster check-out next time
-            </label>
-          </div>
+          <CheckoutCheckbox />
         </form>
-        <div className="xl:w-full">
-          {cartItems.map(item => {
-            return (
-              <ItemOnCheckout key={item.id} id={item.id} name={item.name} imageUrl={item.imageURL} price={item.price} />
-            )
-          })}
-
-          <div className="flex justify-between border-b border-black/50 pb-4">
-            <span>Subtotal:</span>
-            <span>
-              {new Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: 'USD',
-              }).format(getTotalPrice())}
-            </span>
-          </div>
-          <div className="flex justify-between border-b border-black/50 pb-4 mt-4">
-            <span>Shipping:</span>
-            <span>Free</span>
-          </div>
-          <div className="flex justify-between pb-4 mt-4">
-            <span>Total:</span>
-            <span>
-              {new Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: 'USD',
-              }).format(getTotalPrice())}
-            </span>
-          </div>
-          <div className="flex flex-col justify-between gap-4 lg:flex-row">
-            <input type="text" name="" id="" className="border border-black px-6 py-4 h-fit rounded lg:w-[50%] 2xl:w-72" placeholder="Coupon Code" />
-            <button className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover h-fit duration-200 text-exclusive-text-1 py-4 px-12 text-sm font-medium mb-16 rounded md:text-base lg:w-[50%] 2xl:w-60">Apply Coupon</button>
-          </div>
-          <button type="submit" form="checkoutForm" className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover h-fit duration-200 text-exclusive-text-1 py-4 px-12 text-sm font-medium mb-16 rounded md:text-base ">Proceed to Payment</button>
-        </div>
+        <ShowCheckoutItems />
       </div>
     </>
   )

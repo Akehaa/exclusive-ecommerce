@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { BsTelephone } from 'react-icons/bs'
 import { AiOutlineMail } from 'react-icons/ai'
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+ title: 'Contact'
+}
 
 export default function page() {
   return (
