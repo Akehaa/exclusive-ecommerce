@@ -27,17 +27,9 @@ export default async function page({ params }: ParamsProps) {
 
   const filteredProductsByName = products.filter(name => name.name.toLowerCase().includes(`${params.productName.toLowerCase()}`))
 
-  function findedProducts() {
-    if (filteredProductsByName.length == 0) {
-      return filteredProductsByName
-    } else {
-      return false
-    }
-  }
-
   return (
     <div>
-      {findedProducts()
+      {filteredProductsByName.length == 0
         ? <div className="flex items-center justify-center my-10 md:my-20 xl:my-40 2xl:my-60 3xl:my-96">
           <span className="font-medium cursor-default md:text-3xl">Sorry, no products were found.</span>
         </div>

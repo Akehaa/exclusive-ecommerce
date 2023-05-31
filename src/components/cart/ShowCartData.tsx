@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import { CartContext } from "@/src/app/context/CartContextProvider"
 import Link from 'next/link'
 
-export function ShowCartPrices() {
+export function ShowCartData() {
   const { cartItems } = useContext(CartContext)
 
   const getTotalPrice = () => {

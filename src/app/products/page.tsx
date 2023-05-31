@@ -1,4 +1,4 @@
-import { AllProducts } from "@/src/components/product/productsPage/AllProducts";
+import { AllProducts } from "@/src/components/product/allProductsPage/AllProducts";
 import { stripe } from "@/src/lib/stripe";
 import Stripe from "stripe";
 

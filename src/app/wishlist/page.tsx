@@ -3,6 +3,11 @@ import { JustForYouSlider } from "@/src/components/wishlist/slider/JustForYouSli
 import { stripe } from "@/src/lib/stripe";
 import Link from "next/link";
 import Stripe from "stripe";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Wishlist"
+}
 
 export default async function page() {
   const response = await stripe.products.list({

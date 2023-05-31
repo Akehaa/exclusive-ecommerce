@@ -1,7 +1,7 @@
 import { Navigation } from "@/src/components/checkout/Navigation";
 import { Metadata } from "next";
-import { ShowCheckoutItems } from "@/src/components/checkout/ShowCheckoutItems";
 import { CheckoutCheckbox } from "@/src/components/checkout/CheckoutCheckbox";
+import { ShowCheckoutData } from "@/src/components/checkout/ShowCheckoutData";
 
 export const metadata: Metadata = {
   title: "Checkout"
@@ -84,7 +84,7 @@ export default function page() {
           </div>
           <CheckoutCheckbox />
         </form>
-        <ShowCheckoutItems />
+        <ShowCheckoutData />
       </div>
     </>
   )

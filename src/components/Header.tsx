@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Search } from './Search'
 import { WishlistAndCart } from './header/WishlistAndCart'
 
-export async function Header() {
+export function Header() {
   return (
     <header className="flex flex-col flex-wrap border-b border-opacity-30 border-black">
       <section className="bg-black text-exclusive-text-1 text-sm text-center py-3 px-3 ">

@@ -18,7 +18,7 @@ export function WishlistAndCart() {
           <Link href="/wishlist" aria-label='Wishlist' >
             <VscHeart size={23} />
           </Link>
-          <span className='absolute -top-1 -right-1 bg-exclusive-secondary text-exclusive-text-1 rounded-full text-xs px-1'>{counter}</span>
+          <Link href="/wishlist" className='absolute -top-1 -right-1 bg-exclusive-secondary text-exclusive-text-1 rounded-full text-xs px-1'>{counter}</Link>
         </div>
         :
         <Link href="/wishlist" aria-label='Wishlist' >
@@ -31,7 +31,7 @@ export function WishlistAndCart() {
           <Link href="/cart" aria-label='Cart'>
             <FiShoppingCart size={23} />
           </Link>
-          <span className='absolute -top-1 -right-2 bg-exclusive-secondary text-exclusive-text-1 rounded-full text-xs px-1'>{cartQuantity}</span>
+          <Link href="/cart" className='absolute -top-1 -right-2 bg-exclusive-secondary text-exclusive-text-1 rounded-full text-xs px-1'>{cartQuantity}</Link>
         </div>
         :
         <Link href="/cart" aria-label='Cart'>

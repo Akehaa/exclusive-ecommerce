@@ -4,7 +4,7 @@ import { CartContext } from "@/src/app/context/CartContextProvider";
 import { useContext } from "react";
 import { ItemOnCheckout } from "./ItemOnCheckout";
 
-export function ShowCheckoutItems() {
+export function ShowCheckoutData() {
   const { cartItems } = useContext(CartContext)
 
   const getTotalPrice = () => {
