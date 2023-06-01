@@ -22,10 +22,6 @@ export default function page() {
         </span>
       </div>
       <CartTable />
-      <div className="flex justify-between w-5/6 mx-auto mb-20">
-        <Link href="#" className="font-medium text-sm py-4 px-6 border border-black/40 rounded md:px-12 lg:text-base">Return To Shop</Link>
-        <button className="font-medium text-sm py-4 px-6 border border-black/40 rounded md:px-12 lg:text-base">Update Cart</button>
-      </div>
       <div className="flex flex-col w-5/6 mx-auto lg:flex-row lg:justify-between">
         <ShowCartData />
       </div>
