@@ -1,7 +1,6 @@
 'use client';
 
-import { Item } from '@radix-ui/react-navigation-menu';
-import { createContext, ReactNode, useState, Dispatch, SetStateAction } from 'react'
+import { createContext, ReactNode, useEffect, useState } from 'react'
 
 interface CartAndWishlistProviderProps {
   children: ReactNode
@@ -9,9 +8,9 @@ interface CartAndWishlistProviderProps {
 
 export interface CartItem {
   id: string,
-  name: string,
-  imageURL: string,
-  price: number,
+  name?: string,
+  imageURL?: string,
+  price?: number,
   quantity?: number,
 }
 
@@ -24,7 +23,6 @@ export interface WishlistItem {
 
 interface CartAndWishlistItemContext {
   cartItems: CartItem[],
-  setCartItems: Dispatch<SetStateAction<CartItem[]>>,
   cartQuantity: number,
   wishlistItems: WishlistItem[],
   handleAddItemOnCart: (id: string, name: string, imageURL: string, price: number, quantity: number) => void,
@@ -43,6 +41,35 @@ export const CartAndWishlistContext = createContext({} as CartAndWishlistItemCon
 export function CartAndWishlistProvider({ children }: CartAndWishlistProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
   const [wishlistItems, setWishlistItems] = useState<WishlistItem[]>([])
+
+  useEffect(() => {
+    const retrieveProducts = JSON.parse(localStorage.getItem('Exclusive-CartItems') || "[]");
+
+    const retrieveWishlist = JSON.parse(localStorage.getItem('Exclusive-WishlistItems') || "[]");
+
+    if (retrieveProducts) {
+      setCartItems(retrieveProducts)
+    }
+
+    if (retrieveWishlist) {
+      setWishlistItems(retrieveWishlist)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (cartItems.length == 0) {
+      localStorage.setItem("Exclusive-CartItems", "[]")
+    } else {
+      localStorage.setItem("Exclusive-CartItems", JSON.stringify(cartItems))
+    }
+
+    if (wishlistItems.length == 0) {
+      localStorage.setItem("Exclusive-WishlistItems", "[]")
+    } else {
+      localStorage.setItem("Exclusive-WishlistItems", JSON.stringify(wishlistItems))
+    }
+  }, [cartItems, wishlistItems])
+
 
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity! + quantity, 0
@@ -130,7 +157,7 @@ export function CartAndWishlistProvider({ children }: CartAndWishlistProviderPro
   }
 
   function verifyItemOnWishlist(id: string) {
-    if (wishlistItems.length >= 1) {
+    if (wishlistItems?.length) {
       return wishlistItems.some(currentItem => currentItem.id === id)
     }
   }
@@ -142,6 +169,7 @@ export function CartAndWishlistProvider({ children }: CartAndWishlistProviderPro
       setCartItems(cartItems.concat(wishlistItems.filter(item => !cartItems.some(cartItem => cartItem.id == item.id))))
     }
     setWishlistItems([])
+    localStorage.setItem("Exclusive-WishlistItems", "[]")
   }
 
 
@@ -149,7 +177,6 @@ export function CartAndWishlistProvider({ children }: CartAndWishlistProviderPro
     <CartAndWishlistContext.Provider
       value={{
         cartItems,
-        setCartItems,
         cartQuantity,
         handleAddItemOnCart,
         increaseItemQuantity,
