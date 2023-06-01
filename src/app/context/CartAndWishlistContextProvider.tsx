@@ -136,7 +136,11 @@ export function CartAndWishlistProvider({ children }: CartAndWishlistProviderPro
   }
 
   function handleMoveItemsFromWishlistToCart() {
-    setCartItems(cartItems.concat(wishlistItems))
+    if (cartItems.length == 0) {
+      setCartItems(cartItems.concat(wishlistItems))
+    } else {
+      setCartItems(cartItems.concat(wishlistItems.filter(item => !cartItems.some(cartItem => cartItem.id == item.id))))
+    }
     setWishlistItems([])
   }
 
