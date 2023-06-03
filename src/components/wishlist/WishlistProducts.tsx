@@ -27,7 +27,7 @@ export function WishlistProducts() {
             {wishlistItems.map(item => {
               return (
                 <li className="w-full" key={item.id}>
-                  <WishListProductCard justForYou={false} id={item.id} name={item.name} imageUrl={item.imageURL} price={item.price} />
+                  <WishListProductCard justForYou={false} id={item.id} name={item.name} imageUrl={item.imageURL} price={item.price} defaultPriceId={item.defaultPriceId!} />
                 </li>
               )
             })}

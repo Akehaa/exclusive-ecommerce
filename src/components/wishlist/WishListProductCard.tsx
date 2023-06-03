@@ -15,9 +15,10 @@ export interface WishListProductCardProps {
   name: string,
   imageUrl: string,
   price: number,
+  defaultPriceId: string,
 }
 
-export function WishListProductCard({ id, name, imageUrl, price, justForYou }: WishListProductCardProps) {
+export function WishListProductCard({ id, name, imageUrl, defaultPriceId, price, justForYou }: WishListProductCardProps) {
   const [discount, setDiscount] = useState(true)
   const [discountAmount, setDiscountAmout] = useState(20)
   const [newProduct, setNewProduct] = useState(true)
@@ -65,7 +66,7 @@ export function WishListProductCard({ id, name, imageUrl, price, justForYou }: W
         <footer className="w-full overflow-hidden">
           <button
             className="w-full text-exclusive-text-1 bg-black flex justify-center cursor-pointer rounded-b py-1 font-medium transform translate-y-[110%] opacity-0 group-hover:translate-y-[0%] group-hover:opacity-100 transition-all ease-in-out duration-200 mt-1 md:py-2 "
-            onClick={() => handleAddItemOnCart(id, name, imageUrl, price, quantity)}
+            onClick={() => handleAddItemOnCart(id, name, imageUrl, price, defaultPriceId!, quantity)}
           >
             Add To Cart
           </button>
@@ -84,6 +85,6 @@ export function WishListProductCard({ id, name, imageUrl, price, justForYou }: W
         }
         <ProductRating />
       </div>
-    </div>
+    </div >
   )
 }
