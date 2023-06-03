@@ -9,9 +9,10 @@ interface ItemProps {
   name: string,
   imageUrl: string,
   price: number,
+  defaultPriceId: string;
 }
 
-export function ItemOnCheckout({ id, name, imageUrl, price }: ItemProps) {
+export function ItemOnCheckout({ id, name, imageUrl, price, defaultPriceId }: ItemProps) {
   const { getItemQuantity } = useContext(CartAndWishlistContext)
 
   return (

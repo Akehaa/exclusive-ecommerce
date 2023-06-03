@@ -11,7 +11,7 @@ export function ShowCheckoutData() {
     return (
       cartItems.reduce((total, cartItem) => {
         const item = cartItems.find(item => item.name === cartItem.name)
-        return total + ((item?.price) || 0) * cartItem.quantity
+        return total + ((item?.price) || 0) * cartItem.quantity!
       }, 0)
     )
   }
@@ -20,7 +20,7 @@ export function ShowCheckoutData() {
     <div className="xl:w-full">
       {cartItems.map(item => {
         return (
-          <ItemOnCheckout key={item.id} id={item.id} name={item.name} imageUrl={item.imageURL} price={item.price} />
+          <ItemOnCheckout key={item.id} id={item.id} name={item.name!} imageUrl={item.imageURL!} price={item.price!} defaultPriceId={item.defaultPriceId!} />
         )
       })}
       <div className="flex justify-between border-b border-black/50 pb-4">
@@ -54,8 +54,14 @@ export function ShowCheckoutData() {
 
       </div>
       {cartItems.length < 1
-        ? <button className="bg-exclusive-secondary h-fit text-exclusive-text-1 py-4 px-12 text-sm font-medium mb-16 rounded md:text-base opacity-50 cursor-not-allowed ">Proceed to Payment</button>
-        : <button type="submit" form="checkoutForm" className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover h-fit duration-200 text-exclusive-text-1 py-4 px-12 text-sm font-medium mb-16 rounded md:text-base ">Proceed to Payment</button>
+        ? <button className="bg-exclusive-secondary h-fit text-exclusive-text-1 py-4 px-12 text-sm font-medium mb-16 rounded md:text-base opacity-50 cursor-not-allowed">Proceed to Payment</button>
+        : <button
+          type="submit"
+          form="checkoutForm"
+          className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover h-fit duration-200 text-exclusive-text-1 py-4 px-12 text-sm font-medium mb-16 rounded md:text-base disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-exclusive-secondary"
+        >
+          Proceed to Payment
+        </button>
       }
     </div>
   )

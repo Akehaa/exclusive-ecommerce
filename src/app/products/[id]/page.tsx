@@ -5,6 +5,7 @@ import { ProductInfoCard } from '@/src/components/product/productPage/ProductInf
 import { stripe } from '@/src/lib/stripe';
 import Stripe from 'stripe';
 
+
 interface ParamsProps {
   params: {
     id: string;
@@ -44,6 +45,7 @@ export default async function page({ params }: ParamsProps) {
       imageUrl: product.images,
       description: product.description,
       price: price.unit_amount! / 100,
+      defaultPriceId: price.id,
     }
   }).sort(() => 0.5 - Math.random())
 

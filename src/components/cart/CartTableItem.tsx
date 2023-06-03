@@ -14,6 +14,7 @@ interface ItemProps {
   imageUrl: string;
   price: number | string;
   quantity?: number,
+  defaultPriceId: string;
 }
 
 export function CartTableItem({ id, name, imageUrl, price }: ItemProps) {

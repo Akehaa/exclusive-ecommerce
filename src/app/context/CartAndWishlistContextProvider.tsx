@@ -12,6 +12,7 @@ export interface CartItem {
   imageURL?: string,
   price?: number,
   quantity?: number,
+  defaultPriceId?: string,
 }
 
 export interface WishlistItem {
@@ -19,21 +20,23 @@ export interface WishlistItem {
   name: string,
   imageURL: string,
   price: number,
+  defaultPriceId?: string,
 }
 
 interface CartAndWishlistItemContext {
   cartItems: CartItem[],
   cartQuantity: number,
   wishlistItems: WishlistItem[],
-  handleAddItemOnCart: (id: string, name: string, imageURL: string, price: number, quantity: number) => void,
+  handleAddItemOnCart: (id: string, name: string, imageURL: string, price: number, defaultPriceId: string, quantity: number) => void,
   increaseItemQuantity: (id: string) => void
   decreaseItemQuantity: (id: string) => void
   getItemQuantity: (id: string) => number,
   removeFromCart: (id: string) => void,
-  handleAddItemOnWishlist: (id: string, name: string, imageURL: string, price: number) => void,
+  handleAddItemOnWishlist: (id: string, name: string, imageURL: string, defaultPriceId: string, price: number) => void,
   removeFromWishlist: (id: string) => void,
   verifyItemOnWishlist: (id: string) => boolean | undefined,
   handleMoveItemsFromWishlistToCart: () => void,
+  handleCheckout: (e: React.FormEvent) => void,
 }
 
 export const CartAndWishlistContext = createContext({} as CartAndWishlistItemContext);
@@ -41,6 +44,7 @@ export const CartAndWishlistContext = createContext({} as CartAndWishlistItemCon
 export function CartAndWishlistProvider({ children }: CartAndWishlistProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
   const [wishlistItems, setWishlistItems] = useState<WishlistItem[]>([])
+  const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
 
   useEffect(() => {
     const retrieveProducts = JSON.parse(localStorage.getItem('Exclusive-CartItems') || "[]");
@@ -75,10 +79,31 @@ export function CartAndWishlistProvider({ children }: CartAndWishlistProviderPro
     (quantity, item) => item.quantity! + quantity, 0
   )
 
-  function handleAddItemOnCart(id: string, name: string, imageURL: string, price: number, quantity: number) {
+  async function handleCheckout(e: React.FormEvent) {
+    e.preventDefault()
+
+    setIsCreatingCheckoutSession(true)
+
+    const lineItems = cartItems.map(item => {
+      return {
+        price: item.defaultPriceId,
+        quantity: item.quantity,
+      }
+    })
+
+    const response = await fetch("/api/checkout", {
+      method: "POST",
+      body: JSON.stringify({ lineItems: lineItems })
+    })
+
+    const { checkoutUrl } = await response.json()
+    window.location.href = checkoutUrl
+  }
+
+  function handleAddItemOnCart(id: string, name: string, imageURL: string, price: number, defaultPriceId: string, quantity: number) {
     setCartItems(currentItem => {
       if (currentItem.find(item => item.name === name) == null) {
-        return [...currentItem, { id, name, imageURL, price, quantity }]
+        return [...currentItem, { id, name, imageURL, price, defaultPriceId, quantity }]
       } else {
         return currentItem.map(item => {
           if (item.name === name) {
@@ -134,10 +159,10 @@ export function CartAndWishlistProvider({ children }: CartAndWishlistProviderPro
   }
 
 
-  function handleAddItemOnWishlist(id: string, name: string, imageURL: string, price: number) {
+  function handleAddItemOnWishlist(id: string, name: string, imageURL: string, defaultPriceId: string, price: number) {
     setWishlistItems(currentItem => {
       if (currentItem.find(item => item.name === name) == null) {
-        return [...currentItem, { id, name, imageURL, price, quantity: 1 }]
+        return [...currentItem, { id, name, imageURL, price, defaultPriceId, quantity: 1 }]
       } else {
         return currentItem.map(item => {
           if (item.name === name) {
@@ -188,6 +213,7 @@ export function CartAndWishlistProvider({ children }: CartAndWishlistProviderPro
         wishlistItems,
         verifyItemOnWishlist,
         handleMoveItemsFromWishlistToCart,
+        handleCheckout,
       }}
     >
       {children}

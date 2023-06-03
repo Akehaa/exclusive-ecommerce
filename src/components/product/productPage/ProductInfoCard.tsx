@@ -21,6 +21,7 @@ interface ProductInfoProps {
     description: string | null;
     imageUrl: string[] | string;
     price: number;
+    defaultPriceId: string;
   }
 }
 
@@ -233,13 +234,13 @@ export function ProductInfoCard({ productInfo }: ProductInfoProps) {
                 type='submit'
                 form='sizesForm'
                 className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium py-[0.55rem] px-6 rounded md:text-base lg:px-11 xl:px-12"
-                onClick={() => handleAddItemOnCart(productInfo.id, productInfo.name, productInfo.imageUrl[0], productInfo.price, quantity)}
+                onClick={() => handleAddItemOnCart(productInfo.id, productInfo.name, productInfo.imageUrl[0], productInfo.price, productInfo.defaultPriceId, quantity)}
               >
                 Buy Now
               </button>
               : <button
                 className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium py-[0.55rem] px-6 rounded md:text-base lg:px-11 xl:px-12"
-                onClick={() => handleAddItemOnCart(productInfo.id, productInfo.name, productInfo.imageUrl[0], productInfo.price, quantity)}
+                onClick={() => handleAddItemOnCart(productInfo.id, productInfo.name, productInfo.imageUrl[0], productInfo.price, productInfo.defaultPriceId, quantity)}
               >
                 Buy Now
               </button>
@@ -254,7 +255,7 @@ export function ProductInfoCard({ productInfo }: ProductInfoProps) {
               </button>
               : <button
                 className='border p-[0.55rem] rounded border-black/40'
-                onClick={() => handleAddItemOnWishlist(productInfo.id, productInfo.name, productInfo.imageUrl?.[0], productInfo.price)}
+                onClick={() => handleAddItemOnWishlist(productInfo.id, productInfo.name, productInfo.imageUrl?.[0], productInfo.defaultPriceId, productInfo.price)}
               >
                 <VscHeart size={20} />
               </button>

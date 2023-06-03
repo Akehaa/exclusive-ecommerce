@@ -12,7 +12,7 @@ export function ShowCartData() {
     return (
       cartItems.reduce((total, cartItem) => {
         const item = cartItems.find(item => item.name === cartItem.name)
-        return total + ((item?.price) || 0) * cartItem.quantity
+        return total + ((item?.price) || 0) * cartItem.quantity!
       }, 0)
     )
   }
