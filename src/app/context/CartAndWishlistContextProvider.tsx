@@ -36,6 +36,7 @@ interface CartAndWishlistItemContext {
   removeFromWishlist: (id: string) => void,
   verifyItemOnWishlist: (id: string) => boolean | undefined,
   handleMoveItemsFromWishlistToCart: () => void,
+  handleCheckout: (e: React.FormEvent) => void,
 }
 
 export const CartAndWishlistContext = createContext({} as CartAndWishlistItemContext);
@@ -43,6 +44,7 @@ export const CartAndWishlistContext = createContext({} as CartAndWishlistItemCon
 export function CartAndWishlistProvider({ children }: CartAndWishlistProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
   const [wishlistItems, setWishlistItems] = useState<WishlistItem[]>([])
+  const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
 
   useEffect(() => {
     const retrieveProducts = JSON.parse(localStorage.getItem('Exclusive-CartItems') || "[]");
@@ -76,6 +78,27 @@ export function CartAndWishlistProvider({ children }: CartAndWishlistProviderPro
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity! + quantity, 0
   )
+
+  async function handleCheckout(e: React.FormEvent) {
+    e.preventDefault()
+
+    setIsCreatingCheckoutSession(true)
+
+    const lineItems = cartItems.map(item => {
+      return {
+        price: item.defaultPriceId,
+        quantity: item.quantity,
+      }
+    })
+
+    const response = await fetch("/api/checkout", {
+      method: "POST",
+      body: JSON.stringify({ lineItems: lineItems })
+    })
+
+    const { checkoutUrl } = await response.json()
+    window.location.href = checkoutUrl
+  }
 
   function handleAddItemOnCart(id: string, name: string, imageURL: string, price: number, defaultPriceId: string, quantity: number) {
     setCartItems(currentItem => {
@@ -190,6 +213,7 @@ export function CartAndWishlistProvider({ children }: CartAndWishlistProviderPro
         wishlistItems,
         verifyItemOnWishlist,
         handleMoveItemsFromWishlistToCart,
+        handleCheckout,
       }}
     >
       {children}

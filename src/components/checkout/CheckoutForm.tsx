@@ -1,8 +1,14 @@
+"use client";
+
+import { useContext } from "react";
 import { CheckoutCheckbox } from "./CheckoutCheckbox";
+import { CartAndWishlistContext } from "@/src/app/context/CartAndWishlistContextProvider";
 
 export default function CheckoutForm() {
+  const { handleCheckout } = useContext(CartAndWishlistContext)
+
   return (
-    <form className="xl:w-full" id="checkoutForm">
+    <form className="xl:w-full" id="checkoutForm" onSubmit={(e) => handleCheckout(e)}>
       <div className="flex flex-col">
         <label htmlFor="name" className="mb-2 opacity-50">First Name <span className="text-exclusive-secondary">*</span></label>
         <input

@@ -1,7 +1,7 @@
 "use client";
 
 import { CartAndWishlistContext } from "@/src/app/context/CartAndWishlistContextProvider";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ItemOnCheckout } from "./ItemOnCheckout";
 
 export function ShowCheckoutData() {
@@ -14,27 +14,6 @@ export function ShowCheckoutData() {
         return total + ((item?.price) || 0) * cartItem.quantity!
       }, 0)
     )
-  }
-
-  const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
-
-  async function handleCheckout() {
-    setIsCreatingCheckoutSession(true)
-
-    const lineItems = cartItems.map(item => {
-      return {
-        price: item.defaultPriceId,
-        quantity: item.quantity,
-      }
-    })
-
-    const response = await fetch("/api/checkout", {
-      method: "POST",
-      body: JSON.stringify({ lineItems: lineItems })
-    })
-
-    const { checkoutUrl } = await response.json()
-    window.location.href = checkoutUrl
   }
 
   return (
@@ -80,7 +59,6 @@ export function ShowCheckoutData() {
           type="submit"
           form="checkoutForm"
           className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover h-fit duration-200 text-exclusive-text-1 py-4 px-12 text-sm font-medium mb-16 rounded md:text-base disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-exclusive-secondary"
-          onClick={() => handleCheckout()}
         >
           Proceed to Payment
         </button>
