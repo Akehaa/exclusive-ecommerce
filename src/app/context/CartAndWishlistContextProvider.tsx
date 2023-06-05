@@ -98,6 +98,8 @@ export function CartAndWishlistProvider({ children }: CartAndWishlistProviderPro
 
     const { checkoutUrl } = await response.json()
     window.location.href = checkoutUrl
+
+    setCartItems([])
   }
 
   function handleAddItemOnCart(id: string, name: string, imageURL: string, price: number, defaultPriceId: string, quantity: number) {
