@@ -15,7 +15,7 @@ export interface WishListProductCardProps {
   name: string,
   imageUrl: string,
   price: number,
-  defaultPriceId: string,
+  defaultPriceId?: string,
 }
 
 export function WishListProductCard({ id, name, imageUrl, defaultPriceId, price, justForYou }: WishListProductCardProps) {
