@@ -1,6 +1,6 @@
 import Image from "next/image";
-import appleLogo from "@/public/home/carousel/iphone/1200px-Apple_gray_logo_1.svg"
-import phone from "@/public/home/carousel/iphone/hero_endframe__cvklg0xk3w6e_large_2.svg"
+import appleLogo from "../../../../../public/home/carousel/Iphone/1200px-Apple_gray_logo_1.svg"
+import phone from "../../../../../public/home/carousel/Iphone/hero_endframe__cvklg0xk3w6e_large_2.svg"
 
 import Link from "next/link";
 
