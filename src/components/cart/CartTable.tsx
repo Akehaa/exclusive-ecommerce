@@ -13,13 +13,13 @@ export function CartTable() {
       <table className="w-5/6 mx-auto text-xs 2xl:text-base">
         <tbody>
           <tr className="border flex justify-between mb-10 items-center gap-8 md:justify-normal">
-            <td className="py-6 pl-10 w-full">
+            <td className="py-6 w-full pl-7 md:pl-10">
               Product
             </td>
-            <td className="py-6 w-full px-4 pr-9 md:px-0">
+            <td className="py-6 w-full px-5 md:px-0">
               Price
             </td>
-            <td className="pr-6 py-6 w-full 2xl:pr-10 ">
+            <td className="py-6 w-full md:pr-6 2xl:pr-10 ">
               Quantity
             </td>
             <td className="w-full py-6 pr-16 text-right">
@@ -28,7 +28,7 @@ export function CartTable() {
           </tr>
           {cartItems.map(item => {
             return (
-              <CartTableItem key={item.id} id={item.id} name={item.name!} imageUrl={item.imageURL!}  price={item.price!} defaultPriceId={item.defaultPriceId!} quantity={item.quantity} />
+              <CartTableItem key={item.id} id={item.id} name={item.name!} imageUrl={item.imageURL!} price={item.price!} defaultPriceId={item.defaultPriceId!} quantity={item.quantity} />
             )
           })}
         </tbody>

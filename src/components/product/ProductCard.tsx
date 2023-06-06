@@ -68,7 +68,7 @@ export function ProductCard({ id, name, imageUrl, defaultPriceId, price }: Produ
           </button>
         </div>
       </div>
-      <div className="bg-[#ecebeb] flex flex-col items-center mb-4 rounded pt-[3.775rem] h-[19rem] group focus:outline-none ">
+      <div className="bg-[#ecebeb] flex flex-col items-center mb-4 rounded pt-[3.775rem] h-[20rem] group focus:outline-none ">
         <Link href={`/products/${id}`} className="h-[82%] mx-auto flex items-center justify-center focus:outline-none focus:border-none" >
           <Image
             src={imageUrl?.[0]}
@@ -81,7 +81,7 @@ export function ProductCard({ id, name, imageUrl, defaultPriceId, price }: Produ
         </Link>
         <footer className="w-full overflow-hidden">
           <button
-            className="w-full text-exclusive-text-1 bg-black flex justify-center cursor-pointer rounded-b py-1 font-medium transform translate-y-[110%] opacity-0 group-hover:translate-y-[0%] group-hover:opacity-100 transition-all ease-in-out duration-200 mt-1 md:py-2 "
+            className="w-full text-exclusive-text-1 bg-black flex justify-center cursor-pointer rounded-b py-1 font-medium transform translate-y-[110%] opacity-0 group-hover:translate-y-[0%] group-hover:opacity-100 transition-all ease-in-out duration-200 mt-4 md:py-2 md:mt-2 "
             onClick={() => handleAddItemOnCart(id, name, imageUrl?.[0], price, defaultPriceId, quantity)}
           >
             Add To Cart
