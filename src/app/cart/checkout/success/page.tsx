@@ -1,7 +1,23 @@
 import { stripe } from "@/src/lib/stripe"
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Stripe from "stripe";
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+}
 
 interface PageProps {
   searchParams: {
