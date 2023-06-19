@@ -8,6 +8,8 @@
 
 ### This project uses:
 
+[React](https://react.dev/);
+
 [Next.JS 13 with the App route ](https://nextjs.org/docs);
 
 [TypeScript](https://www.typescriptlang.org/);
