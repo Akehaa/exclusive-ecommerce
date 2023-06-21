@@ -2,11 +2,13 @@
 
 ## The design used is a free design from [Figma](https://www.figma.com/) and it was made by: [@mdrimel15](https://www.figma.com/@mdrimel15)
 
-### The design was just for Desktop, so i had to do some adaptations for mobile.
+### The design is just for Desktop, so i had to do some adaptations for mobile.
 
 ## About the project
 
 ### This project uses:
+
+[React](https://react.dev/);
 
 [Next.JS 13 with the App route ](https://nextjs.org/docs);
 
