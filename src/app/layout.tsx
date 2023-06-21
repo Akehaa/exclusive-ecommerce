@@ -4,6 +4,7 @@ import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { Metadata } from 'next'
 import { CartAndWishlistProvider } from './context/CartAndWishlistContextProvider'
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: {
@@ -42,6 +43,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </CartAndWishlistProvider>
+        <Analytics />
       </body>
     </html>
   )
