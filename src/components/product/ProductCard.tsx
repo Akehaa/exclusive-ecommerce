@@ -63,7 +63,7 @@ export function ProductCard({ id, name, imageUrl, defaultPriceId, price }: Produ
               <VscHeart size={20} />
             </button>
           }
-          <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full" >
+          <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full hover:cursor-not-allowed" >
             <FiEye size={20} />
           </button>
         </div>

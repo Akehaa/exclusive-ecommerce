@@ -44,7 +44,7 @@ export function WishListProductCard({ id, name, imageUrl, defaultPriceId, price,
         </div>
         <div className="flex flex-col h-fit gap-2 mt-2 mr-2 md:mt-3 md:mr-3">
           {justForYou
-            ? <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full">
+            ? <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full hover:cursor-not-allowed">
               <FiEye size={20} />
             </button>
             : <button className="bg-exclusive-background p-2 h-auto w-9 rounded-full" aria-label="remove from wishlist" title="remove from wishlist" onClick={() => removeFromWishlist(id)} >
