@@ -28,7 +28,7 @@ interface ProductInfoProps {
 export function ProductInfoCard({ productInfo }: ProductInfoProps) {
   const [nav1, setNav1] = useState<Slider | undefined>();
   const [nav2, setNav2] = useState<Slider | undefined>();
-  const { handleAddItemOnCart, handleAddItemOnWishlist, verifyItemOnWishlist, removeFromWishlist } = useContext(CartAndWishlistContext);
+  const { handleBuyItem, handleAddItemOnWishlist, verifyItemOnWishlist, removeFromWishlist } = useContext(CartAndWishlistContext);
   const [quantity, setQuantity] = useState(1);
 
   const inStock = true;
@@ -234,13 +234,13 @@ export function ProductInfoCard({ productInfo }: ProductInfoProps) {
                 type='submit'
                 form='sizesForm'
                 className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium py-[0.55rem] px-6 rounded md:text-base lg:px-11 xl:px-12"
-                onClick={() => handleAddItemOnCart(productInfo.id, productInfo.name, productInfo.imageUrl[0], productInfo.price, productInfo.defaultPriceId, quantity)}
+                onClick={() => handleBuyItem(productInfo.id, productInfo.name, productInfo.imageUrl[0], productInfo.price, productInfo.defaultPriceId, quantity)}
               >
                 Buy Now
               </button>
               : <button
                 className="bg-exclusive-secondary hover:bg-exclusive-secondary-hover duration-200 text-exclusive-text-1 text-sm font-medium py-[0.55rem] px-6 rounded md:text-base lg:px-11 xl:px-12"
-                onClick={() => handleAddItemOnCart(productInfo.id, productInfo.name, productInfo.imageUrl[0], productInfo.price, productInfo.defaultPriceId, quantity)}
+                onClick={() => handleBuyItem(productInfo.id, productInfo.name, productInfo.imageUrl[0], productInfo.price, productInfo.defaultPriceId, quantity)}
               >
                 Buy Now
               </button>

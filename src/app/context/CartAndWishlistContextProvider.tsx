@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { createContext, ReactNode, useEffect, useState } from 'react'
 
 interface CartAndWishlistProviderProps {
@@ -28,6 +29,7 @@ interface CartAndWishlistItemContext {
   cartQuantity: number,
   wishlistItems: WishlistItem[],
   handleAddItemOnCart: (id: string, name: string, imageURL: string, price: number, defaultPriceId: string, quantity: number) => void,
+  handleBuyItem: (id: string, name: string, imageURL: string, price: number, defaultPriceId: string, quantity: number) => void,
   increaseItemQuantity: (id: string) => void
   decreaseItemQuantity: (id: string) => void
   getItemQuantity: (id: string) => number,
@@ -45,6 +47,7 @@ export function CartAndWishlistProvider({ children }: CartAndWishlistProviderPro
   const [cartItems, setCartItems] = useState<CartItem[]>([])
   const [wishlistItems, setWishlistItems] = useState<WishlistItem[]>([])
   const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     const retrieveProducts = JSON.parse(localStorage.getItem('Exclusive-CartItems') || "[]");
@@ -116,6 +119,23 @@ export function CartAndWishlistProvider({ children }: CartAndWishlistProviderPro
         })
       }
     })
+  }
+
+  function handleBuyItem(id: string, name: string, imageURL: string, price: number, defaultPriceId: string, quantity: number) {
+    setCartItems(currentItem => {
+      if (currentItem.find(item => item.name === name) == null) {
+        return [...currentItem, { id, name, imageURL, price, defaultPriceId, quantity }]
+      } else {
+        return currentItem.map(item => {
+          if (item.name === name) {
+            return { ...item, quantity: item.quantity! + quantity }
+          } else {
+            return item
+          }
+        })
+      }
+    })
+    router.push("/cart")
   }
 
   function increaseItemQuantity(id: string) {
@@ -206,6 +226,7 @@ export function CartAndWishlistProvider({ children }: CartAndWishlistProviderPro
         cartItems,
         cartQuantity,
         handleAddItemOnCart,
+        handleBuyItem,
         increaseItemQuantity,
         decreaseItemQuantity,
         getItemQuantity,
